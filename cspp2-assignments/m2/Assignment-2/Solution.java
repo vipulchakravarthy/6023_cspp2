@@ -15,9 +15,9 @@ public final class Solution {
         */
         int four = 4;
         double dis = Math.sqrt((b * b) - (four * a * c));
-        double root1 = (-b + dis) / (2 * a);
-        double root2 = (-b - dis) / (2 * a);
-        System.out.println(root1+" "+root2);
+        double root1 = (- b + dis) / (2 * a);
+        double root2 = (- b - dis) / (2 * a);
+        System.out.println(root1 + " " + root2);
     }
     public static void main(final String[] args) {
         /** the main program will read the input from the user.
