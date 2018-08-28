@@ -9,12 +9,12 @@ public final class Solution {
         /** the constructor for performing this program.
         */
     }
-    public static void rootsOfQuadraticEquation(final int a,final int b,final int c) {
+    public static void rootsOfQuadraticEquation(final int a, final int b, final int c) {
         /**the function takes the co-efficient a,b and c.
         * prints the roots.
         */
-        int four = 4;
-        double dis = Math.sqrt((b * b) - (four * a * c));
+        int four = 2 * 2;
+        double dis = Math.sqrt((b * b)-(four * a * c));
         double root1 = (- b + dis) / (2 * a);
         double root2 = (- b - dis) / (2 * a);
         System.out.println(root1 + " " + root2);
