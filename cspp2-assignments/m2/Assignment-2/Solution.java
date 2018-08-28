@@ -11,9 +11,9 @@ public class Solution{
 		* prints the roots.
 		*/
 		int four = 4;
-		double dis = Math.sqrt(b * b);
-		double root1 = (-b + (dis - (four * a * c))) / (2 * a);
-		double root2 = (-b - (dis - (four * a * c))) / (2 * a);
+		double dis = Math.sqrt((b * b) - (four * a * c));
+		double root1 = (-b + dis) / (2 * a);
+		double root2 = (-b - dis) / (2 * a);
 		System.out.println(root1+" "+root2);
 	}
 	public static void main(String[] args){
@@ -24,7 +24,7 @@ public class Solution{
 		int a = scan.nextInt();
 		int b = scan.nextInt();
 		int c = scan.nextInt();
-		rootsOfQuadraticEquation(a, b, c);
+		rootsOfQuadraticEquation(a, b, c); 
 	}
 }
 
