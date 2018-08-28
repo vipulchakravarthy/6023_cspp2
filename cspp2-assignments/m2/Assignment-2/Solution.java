@@ -23,7 +23,8 @@ public final class Solution {
         System.out.println(root1 + " " + root2);
     }
     /** the main program will read the input from the user.
-    *  calls the function to get the roots of equation.
+    *calls the function to get the roots of equation.
+    *@param args String
     */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
