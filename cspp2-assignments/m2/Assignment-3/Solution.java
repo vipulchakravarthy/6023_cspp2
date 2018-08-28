@@ -1,29 +1,34 @@
 import java.util.Scanner;
-
-public class Solution {
+/**the program is to find the power of given number
+*/
+public final class Solution {
 	/**
 	Do not modify this main function.
 	*/
-	private Solution () {
+	private Solution() {
 		/* this is the class constructor.
 		*/
 	}
 	/**this is the main function.
 	*@param args String
 	*/ 
-	public static void main(String[] args) {
-		Scanner s= new Scanner(System.in);      
-        int base = s.nextInt();
-        int exponent = s.nextInt();
-        int result = power(base,exponent);
+	public static void main(final String[] args) {
+		Scanner s = new Scanner(System.in);      
+        long base = s.nextLong();
+        long exponent = s.nextLong();
+        long result = power(base, exponent);
         System.out.println(result);
 	}
 	/**the function is to find the power and print the output.
-	*@param base int
-	*@param exponent int
+	*@param base long
+	*@param exponent long
 	*/
-	public static int power(int base, int exponent) {
-		if (exponent == 0) return 1;
-		else return base * power(base, exponent - 1);
+	public static long power(final long base, final long exponent) {
+		if (exponent == 0) {
+		 return 1;
+		}
+		else {
+		 return base * power(base, exponent - 1);
+		}
 	}
 }
