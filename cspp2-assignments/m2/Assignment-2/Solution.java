@@ -11,8 +11,11 @@ public final class Solution {
     }
     /**the function takes the co-efficient a,b and c.
     * prints the roots.
+    *@param a int
+    *@param b int
+    *@param c int
     */
-    public static void roots(final int a, final int b, final int c){
+    public static void roots(final int a, final int b, final int c) {
         int four = 2 * 2;
         double dis = Math.sqrt((b * b) - (four * a * c));
         double root1 = (-b + dis) / (2 * a);
@@ -22,7 +25,7 @@ public final class Solution {
     /** the main program will read the input from the user.
     *  calls the function to get the roots of equation.
     */
-    public static void main(final String[] args){
+    public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
         int b = scan.nextInt();
