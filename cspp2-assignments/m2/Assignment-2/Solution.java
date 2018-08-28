@@ -14,12 +14,12 @@ public final class Solution {
         * prints the roots.
         */
         int four = 2 * 2;
-        double dis = Math.sqrt((b * b)-(four * a * c));
-        double root1 = (- b + dis) / (2 * a);
-        double root2 = (- b - dis) / (2 * a);
+        double dis = Math.sqrt((b * b) - (four * a * c));
+        double root1 = (-b + dis) / (2 * a);
+        double root2 = (-b - dis) / (2 * a);
         System.out.println(root1 + " " + root2);
     }
-    public static void main(final String[] args) {
+    public static void main(final String[] args){
         /** the main program will read the input from the user.
         *  calls the function to get the roots of equation.
         */
