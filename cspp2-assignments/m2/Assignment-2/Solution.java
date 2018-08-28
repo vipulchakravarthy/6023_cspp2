@@ -9,25 +9,25 @@ public final class Solution {
         /** the constructor for performing this program.
         */
     }
-    public static void rootsOfQuadraticEquation(final int a, final int b, final int c) {
-        /**the function takes the co-efficient a,b and c.
-        * prints the roots.
-        */
+    /**the function takes the co-efficient a,b and c.
+    * prints the roots.
+    */
+    public static void roots(final int a, final int b, final int c){
         int four = 2 * 2;
         double dis = Math.sqrt((b * b) - (four * a * c));
         double root1 = (-b + dis) / (2 * a);
         double root2 = (-b - dis) / (2 * a);
         System.out.println(root1 + " " + root2);
     }
+    /** the main program will read the input from the user.
+    *  calls the function to get the roots of equation.
+    */
     public static void main(final String[] args){
-        /** the main program will read the input from the user.
-        *  calls the function to get the roots of equation.
-        */
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
         int b = scan.nextInt();
         int c = scan.nextInt();
-        rootsOfQuadraticEquation(a, b, c); 
+        roots(a, b, c);
     }
 }
 
