@@ -14,7 +14,7 @@ public final class Solution {
      * @param args  The arguments
      */
     public static void main(final String[] args) {
-        Scanner s = new Scanner(System.in);  
+        Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         final int a = 7;
         final int b = 10;
