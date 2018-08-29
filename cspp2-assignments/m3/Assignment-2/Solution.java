@@ -13,17 +13,19 @@ public final class Solution {
 	 * @param args  The arguments
 	 */
     public static void main(final String[] args) {
-        Scanner s=new Scanner(System.in);      
+        Scanner s = new Scanner(System.in);      
         int n = s.nextInt();
+        final int a = 7;
+        final int b = 10;
         int count = 0;
         int temp;
-        for (int i =1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
         	temp = i;
         	while(temp != 0) {
-        		if (temp % 10 == 7) {
+        		if (temp % b == a) {
         			count += 1;
         		}
-        		temp = temp/10;
+        		temp = temp/b;
         	}
         }
         System.out.println(count);
