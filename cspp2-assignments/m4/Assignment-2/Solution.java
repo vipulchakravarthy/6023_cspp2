@@ -22,6 +22,7 @@ public class Solution {
 		int m,n;
 		m = scan.nextInt();
 		n = scan.nextInt();
+		System.out.println(m);
 		int[][] array = new int[m][n];
 		for (int i = 0; i < m; i++) {
 			for(int j = 0; j < n; j++) {
