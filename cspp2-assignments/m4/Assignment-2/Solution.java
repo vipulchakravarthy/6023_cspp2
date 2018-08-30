@@ -21,25 +21,25 @@ public final class Solution {
 			result = add(matrix1, matrix2);
 			for (int i = 0; i < result.length; i++) {
 				for (int j = 0; j < result[0].length - 1; j++) {
-					System.out.print(result[i][j]+" ");
+					System.out.print(result[i][j] + " ");
 				}
 				System.out.println(result[i][result[0].length - 1]);
 			 }
-		}
-		else 
+		} else {
 			System.out.println("not possible");
+		}
 	}
 	/** the function is to read the matrices.
 	*@param scan object of scanner
-	*@return array 
+	*@return array
 	*/
 	public static int[][] readmatrix(final Scanner scan) {
-		int m,n;
+		int m, n;
 		m = scan.nextInt();
 		n = scan.nextInt();
 		int[][] array = new int[m][n];
 		for (int i = 0; i < m; i++) {
-			for(int j = 0; j < n; j++) {
+			for (int j = 0; j < n; j++) {
 				array[i][j] = scan.nextInt();
 		    }
 	   }
