@@ -22,13 +22,13 @@ public class Solution {
 		int m,n;
 		m = scan.nextInt();
 		n = scan.nextInt();
-		System.out.println(m);
 		int[][] array = new int[m][n];
 		for (int i = 0; i < m; i++) {
 			for(int j = 0; j < n; j++) {
 				array[i][j] = scan.nextInt();
 		    }
 	   }
+	   System.out.println(Arrays.toString(array));
 	   return array;
 	}
 	public static int[][] add(int[][] matrix1, int[][] matrix2) {
