@@ -17,7 +17,8 @@ public final class Solution {
         int[][] matrix1 = readmatrix(scan);
         int[][] matrix2 = readmatrix(scan);
         int[][] result = new int[matrix1.length][matrix1[0].length];
-    if ((matrix1.length == matrix2.length) && (matrix1[0].length == matrix2[0].length)) {
+    if ((matrix1.length == matrix2.length) && 
+        (matrix1[0].length == matrix2[0].length)) {
             result = add(matrix1, matrix2);
             for (int i = 0; i < result.length; i++) {
                 for (int j = 0; j < result[0].length - 1; j++) {
