@@ -9,14 +9,14 @@ public class Solution {
 		if ((matrix1.length == matrix2.length) && (matrix1[0].length == matrix2[0].length)) {
 			result = add(matrix1,matrix2);
 			for (int i = 0; i < result.length ; i ++) {
-				for (int j = 0; j < result[0].length; j++) {
+				for (int j = 0; j < result[0].length-1; j++) {
 					System.out.print(result[i][j] + " ");
 				}
-				System.out.println();
+				System.out.println(result[i][result[0].length-1]);
 			 }
 		}
 		else 
-			System.out.println("Not Possible");
+			System.out.println("not possible");
 	}
 	
 	public static int[][] readmatrix(Scanner scan) {
