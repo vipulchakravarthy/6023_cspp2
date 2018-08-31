@@ -2,7 +2,7 @@ import java.util.Scanner;
 /** the program is to perform the reverse operation of a string.
 */
 public final class Solution {
-        /**this a constructor for this program. 
+        /**this a constructor for this program.
         */
     private Solution() {
     }
