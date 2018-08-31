@@ -16,9 +16,10 @@ public class Solution {/*
 	}
 	public static String binaryToDecimal(String s) {
 		int sum = 0;
-		for (int i = 0; i <= (s.length() - 1) ; i++) {
+		int unit = s.length() - 1;
+		for (int i = 0; i <= unit ; i++) {
 			if (s.charAt(i) == '1') {
-				sum += Math.pow(2, i);
+				sum += Math.pow(2, unit - i);
 			}
 		}
 		String str = sum + "";
