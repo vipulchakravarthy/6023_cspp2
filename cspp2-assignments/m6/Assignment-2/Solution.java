@@ -22,10 +22,11 @@ final class Solution {
      *
      * @return     Matrix of the rounded elements
      */
-    static int[][] roundHundred(final int[][] a, final int rows, final int columns) {
+    static int[][] roundHundred(final int[][] a,
+        final int rows, final int columns) {
         final int fifty = 50;
         final int hundred = 100;
-        final int oneFifty =150;
+        final int oneFifty = 150;
         final int twoHundred = 200;
         final int twoFifty = 250;
         final int threeHundred = 300;
@@ -35,11 +36,11 @@ final class Solution {
         final int fiveHundred = 500;
         final int fiveFifty = 550;
     for (int i = 0; i < rows; i++) {
-        for (int j = 0; j< columns; j ++) {
+        for (int j = 0; j < columns; j++) {
             if (a[i][j] <  fifty) {
                 a[i][j] = 0;
             }
-            if (a[i][j] >fifty && a[i][j] <= oneFifty) {
+            if (a[i][j] > fifty && a[i][j] <= oneFifty) {
                 a[i][j] = hundred;
             }
             if (a[i][j] > oneFifty && a[i][j] <= twoFifty) {
@@ -57,7 +58,6 @@ final class Solution {
         }
     }
     return a;
-    
     }
     /**
      * Main function.
