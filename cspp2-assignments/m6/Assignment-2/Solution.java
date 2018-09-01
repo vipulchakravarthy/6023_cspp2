@@ -3,7 +3,7 @@ import java.util.Scanner;
  * Write a java program to round the
  * elements of a matrix to the nearest 100.
  *
- * @author : 
+ * @author : vipul.
  */
 final class Solution {
     /**
@@ -25,39 +25,39 @@ final class Solution {
     static int[][] roundHundred(final int[][] a, final int rows, final int columns) {
         final int fifty = 50;
         final int hundred = 100;
-        final int one_fifty =150;
-        final int two_hundred = 200;
-        final int two_fifty = 250;
-        final int three_hundred = 300;
-        final int three_fifty = 350;
-        final int four_hundred = 400;
-        final int four_fifty = 450;
-        final int five_hundred = 500;
-        final int five_fifty = 550;
-	for (int i = 0; i < rows; i++) {
+        final int oneFifty =150;
+        final int twoHundred = 200;
+        final int twoFifty = 250;
+        final int threeHundred = 300;
+        final int threeFifty = 350;
+        final int fourHundred = 400;
+        final int fourFifty = 450;
+        final int fiveHundred = 500;
+        final int fiveFifty = 550;
+    for (int i = 0; i < rows; i++) {
         for (int j = 0; j< columns; j ++) {
             if (a[i][j] <  fifty) {
                 a[i][j] = 0;
             }
-            if (a[i][j] >fifty && a[i][j] <= one_fifty) {
+            if (a[i][j] >fifty && a[i][j] <= oneFifty) {
                 a[i][j] = hundred;
             }
-            if (a[i][j] > one_fifty && a[i][j] <= two_fifty) {
-                a[i][j] = two_hundred;
+            if (a[i][j] > oneFifty && a[i][j] <= twoFifty) {
+                a[i][j] = twoHundred;
             }
-            if (a[i][j] > two_fifty && a[i][j] <= three_fifty) {
-                a[i][j] = three_hundred;
+            if (a[i][j] > twoFifty && a[i][j] <= threeFifty) {
+                a[i][j] = threeHundred;
             }
-            if (a[i][j] > three_fifty && a[i][j] <= four_fifty) {
-                a[i][j] = four_hundred;
+            if (a[i][j] > threeFifty && a[i][j] <= fourFifty) {
+                a[i][j] = fourHundred;
             }
-            if (a[i][j] > four_fifty && a[i][j] <= five_fifty) {
-                a[i][j] = five_hundred;
+            if (a[i][j] > fourFifty && a[i][j] <= fiveFifty) {
+                a[i][j] = fiveHundred;
             }
         }
     }
     return a;
-	
+    
     }
     /**
      * Main function.
