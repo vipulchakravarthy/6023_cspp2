@@ -23,26 +23,26 @@ final class Solution {
      * @return     Matrix of the rounded elements
      */
     static int[][] roundHundred(final int[][] a, final int rows, final int columns) {
-
+    final int[] multiples = {50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550};
 	for (int i = 0; i < rows; i++) {
         for (int j = 0; j< columns; j ++) {
-            if (a[i][j] <  50) {
+            if (a[i][j] <  multiples[0]) {
                 a[i][j] = 0;
             }
-            if (a[i][j] >50 && a[i][j] <= 150) {
-                a[i][j] = 100;
+            if (a[i][j] >multiples[0] && a[i][j] <= multiples[2]) {
+                a[i][j] = multiples[1];
             }
-            if (a[i][j] > 150 && a[i][j] <= 250) {
-                a[i][j] = 200;
+            if (a[i][j] > multiples[2] && a[i][j] <= multiples[4]) {
+                a[i][j] = multiples[3];
             }
-            if (a[i][j] >250 && a[i][j] <= 350) {
-                a[i][j] = 300;
+            if (a[i][j] > multiples[4] && a[i][j] <= multiples[6]) {
+                a[i][j] = multiples[5];
             }
-            if (a[i][j] > 350 && a[i][j] <= 450) {
-                a[i][j] = 400;
+            if (a[i][j] > multiples[6] && a[i][j] <= multiples[8]) {
+                a[i][j] = multiples[7];
             }
-            if (a[i][j] > 450 && a[i][j] <= 550) {
-                a[i][j] = 500;
+            if (a[i][j] > multiples[8] && a[i][j] <= multiples[10]) {
+                a[i][j] = multiples[9];
             }
         }
     }
