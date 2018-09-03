@@ -8,6 +8,8 @@ class InputValidator {
      * the instance variables are declared with private specifier.
      */
     private String input;
+    /** the instnace varaible is declared with private specifier.
+    */
     private String text;
     /**
      * the constructor is to initialize the input given.
@@ -17,8 +19,8 @@ class InputValidator {
         this.input = input;
     }
     /**
-     *the validateData method is to either it is valid or not. if it is valid return
-     *true or else false.
+     *the validateData method is to either it is valid or not.
+     *if it is valid return true or else false.
      * @return  boolean either true or false.
      */
     public boolean validateData() {
@@ -33,17 +35,17 @@ class InputValidator {
 /**
  * this solution class is to write the main program.
  */
-public class Solution {
+public final class Solution {
     /** this is a empty constructor.
     */
-    public Solution() {
+    private Solution() {
     }
     /**
      * In this main program it reads the input from the user and creates
      * an object and call the method called ValidateData.
      * @param args String
      */
-    public static void main(final String args[]) {
+    public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         String input = scan.next();
         InputValidator text = new InputValidator(input);        
