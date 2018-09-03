@@ -11,15 +11,15 @@ public final class Solution {
     }
     /**the function takes the co-efficient a,b and c.
     * prints the roots.
-    *@param a int
-    *@param b int
-    *@param c int
-    */
-    public static void roots(final int a, final int b, final int c) {
+     * @param      numberOne    The number one
+     * @param      numberTwo    The number two
+     * @param      numberThree  The number three
+     */
+    public static void roots(final int numberOne, final int numberTwo, final int numberThree) {
         int four = 2 * 2;
-        double dis = Math.sqrt((b * b) - (four * a * c));
-        double root1 = (-b + dis) / (2 * a);
-        double root2 = (-b - dis) / (2 * a);
+        double dis = Math.sqrt((numberTwo * numberTwo) - (four * numberOne * numberThree));
+        double root1 = (-numberTwo + dis) / (2 * numberOne);
+        double root2 = (-numberTwo - dis) / (2 * numberOne);
         System.out.println(root1 + " " + root2);
     }
     /** the main program will read the input from the user.
@@ -28,10 +28,10 @@ public final class Solution {
     */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
-        int a = scan.nextInt();
-        int b = scan.nextInt();
-        int c = scan.nextInt();
-        roots(a, b, c);
+        int numberOne = scan.nextInt();
+        int numberTwo = scan.nextInt();
+        int numberThree = scan.nextInt();
+        roots(numberOne, numberTwo, numberThree);
     }
 }
 
