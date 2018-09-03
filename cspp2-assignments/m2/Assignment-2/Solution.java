@@ -15,11 +15,11 @@ public final class Solution {
      * @param      numberTwo    The number two
      * @param      numberThree  The number three
      */
-    public static void roots(final int numberOne, 
+    public static void roots(final int numberOne,
     final int numberTwo, final int numberThree) {
         int four = 2 * 2;
-        double dis = Math.sqrt((numberTwo * numberTwo) - 
-            (four * numberOne * numberThree));
+        double dis = Math.sqrt((numberTwo * numberTwo)
+        - (four * numberOne * numberThree));
         double root1 = (-numberTwo + dis) / (2 * numberOne);
         double root2 = (-numberTwo - dis) / (2 * numberOne);
         System.out.println(root1 + " " + root2);
