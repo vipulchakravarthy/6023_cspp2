@@ -17,8 +17,8 @@ public final class Solution {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         for (int i = 0; i < n; i++) {
-            String s = sc.next();
-            String res = binaryToDecimal(s);
+            String string = sc.next();
+            String res = binaryToDecimal(string);
             System.out.println(res);
         }
     }
@@ -28,11 +28,11 @@ public final class Solution {
      *@param s String
      *@return Str string
      */
-    public static String binaryToDecimal(final String s) {
+    public static String binaryToDecimal(final String string) {
         int sum = 0;
-        int unit = s.length() - 1;
+        int unit = string.length() - 1;
         for (int i = 0; i <= unit; i++) {
-            if (s.charAt(i) == '1') {
+            if (string.charAt(i) == '1') {
                 sum += Math.pow(2, unit - i);
             }
         }
