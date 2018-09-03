@@ -15,8 +15,8 @@ class InputValidator {
      * the constructor is to initialize the input given.
      * @param      input  given text input
      */
-    public InputValidator(final String input) {
-        this.input = input;
+    InputValidator(final String string) {
+        this.input = string;
     }
     /**
      *the validateData method is to either it is valid or not.
@@ -48,7 +48,7 @@ public final class Solution {
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         String input = scan.next();
-        InputValidator text = new InputValidator(input);        
+        InputValidator text = new InputValidator(input); 
         System.out.println(text.validateData());
     }
 }
