@@ -25,7 +25,7 @@ public final class Solution {
     /**
      * the function is to return the decimal value of the given
      * binary string.
-     *@param s String
+     *@param string String
      *@return Str string
      */
     public static String binaryToDecimal(final String string) {
