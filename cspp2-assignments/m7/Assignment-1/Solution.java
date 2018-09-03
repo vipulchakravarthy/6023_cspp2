@@ -4,6 +4,9 @@ import java.util.Scanner;
  * of length six or else false.
  */
 class InputValidator {
+    /**
+     * the instance variables are declared with private specifier.
+     */
     private String input;
     private String text;
     /**
@@ -31,6 +34,10 @@ class InputValidator {
  * this solution class is to write the main program.
  */
 public class Solution {
+    /** this is a empty constructor.
+    */
+    public Solution() {
+    }
     /**
      * In this main program it reads the input from the user and creates
      * an object and call the method called ValidateData.
