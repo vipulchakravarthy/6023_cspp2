@@ -13,7 +13,7 @@ class InputValidator {
     private String text;
     /**
      * the constructor is to initialize the input given.
-     * @param      input  given text input
+     * @param     string  given text input
      */
     InputValidator(final String string) {
         this.input = string;
@@ -48,7 +48,7 @@ public final class Solution {
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         String input = scan.next();
-        InputValidator text = new InputValidator(input); 
+        InputValidator text = new InputValidator(input);
         System.out.println(text.validateData());
     }
 }
