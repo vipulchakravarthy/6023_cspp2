@@ -36,9 +36,3 @@ public final class Solution {
         roots(numberOne, numberTwo, numberThree);
     }
 }
-
-
-
-
-
-
