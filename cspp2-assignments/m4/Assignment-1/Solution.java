@@ -15,10 +15,10 @@ public final class Solution {
     */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        int arraySize = sc.nextInt();
         int max = 0;
-        int[] array = new int[n];
-        for (int i = 0; i < n; i++) {
+        int[] array = new int[arraySize];
+        for (int i = 0; i < arraySize; i++) {
             array[i] = sc.nextInt();
         }
         for (int element : array) {
