@@ -12,21 +12,21 @@ public final class Solution {
      * @param args  The arguments
      */
     public static void main(final String[] args) {
-        Scanner s = new Scanner(System.in);
-        int n1 = s.nextInt();
-        int n2 = s.nextInt();
-        System.out.println(gcd(n1, n2));
+        Scanner scan = new Scanner(System.in);
+        int numberOne = scan.nextInt();
+        int numberTwo = scan.nextInt();
+        System.out.println(gcd(numberOne, numberTwo));
     }
     /**
     *Need to write the gcd function and print the output.
-    *@param n1 int
-    *@param n2 int
+    *@param numberOne int
+    *@param numberTwo int
      *@return int
     */
-    public static int gcd(final int n1, final int n2) {
+    public static int gcd(final int numberOne, final int numberTwo) {
         int result = 1;
-        for (int i = 1; i <= n1 && i <= n2; ++i) {
-            if (n1 % i == 0 && n2 % i == 0) {
+        for (int i = 1; i <= numberOne && i <= numberTwo; ++i) {
+            if (numberOne % i == 0 && numberTwo % i == 0) {
                 result = i;
             }
         }
