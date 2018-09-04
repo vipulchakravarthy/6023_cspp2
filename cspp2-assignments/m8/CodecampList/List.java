@@ -176,9 +176,12 @@ public class List {
      *
      */
     public String toString() {
-    	int[] result = new int[count];
-    	result = Arrays.copyOfRange(array,0,count);
-        return Arrays.toString(result);
+    	String result = "[";
+    	for (int i = 0; i < count - 1; i++) {
+    		result += array[i] + ",";
+    	}
+    	result += array[count - 1] + "]";
+        return result;
     } 
     
     /**
