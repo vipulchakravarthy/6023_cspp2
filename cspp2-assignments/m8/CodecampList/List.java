@@ -1,6 +1,6 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-/** the program is to do operations on list
+/** the program is to do operations on list.
 */
 public final class List {
     //Implement all the methods mentioned to build a ListADT
@@ -43,17 +43,16 @@ public final class List {
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
      */
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor.
-    /**
-     * The purpose of the constructor is to initialize the
-     * class variables with some default values.
-     */
     private int[] array;
     private int count;
+    /**
+    * The purpose of the constructor is to initialize the
+    * class variables with some default values.
+    */
     public List() {
         final int ten = 10;
         array = new int[ten];
@@ -83,7 +82,7 @@ public final class List {
      */
     public void add(int item) {
         array[count] = item;
-        count += 1;    
+        count += 1;
     }
     /**
      * The size method returns the value of the size.
@@ -94,8 +93,7 @@ public final class List {
      */
     public int size() {
         // replace the code below to implement the size method
-        if (count > 0) return count;
-        else return 0;
+        return count;
     }
     /**
      * The remove method does what the name suggests.
@@ -125,7 +123,6 @@ public final class List {
       array[count] = 0;
         count -= 1;
     }
-
     /**
      * Get method has to return the items that is
      * at the index position passed as an argument to the method.
@@ -145,7 +142,6 @@ public final class List {
         }
         return -1;
     }
-
     /**
      * What happens when you print an object using println?
      * Java provides a method named toString that is internally
@@ -186,11 +182,12 @@ public final class List {
      */
     public boolean contains(int item) {
         for (int element: array ) {
-            if (element == item) return true;
+            if (element == item) {
+                return true;
+            }
         }
         return true;
     }
-
     /**
      * Returns the index of the first occurrence 
      * of the specified element in this list,
@@ -200,7 +197,9 @@ public final class List {
      */
     public int indexOf(int item) {
         for (int i = 0; i < count ; i++){
-            if (array[i] == item) return i;
+            if (array[i] == item) {
+            return i;
+            }
         }
         return -1;
     }
