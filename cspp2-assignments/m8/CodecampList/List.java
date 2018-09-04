@@ -1,6 +1,8 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-public class List {
+/** the program is to do operations on list
+*/
+public final class List {
     //Implement all the methods mentioned to build a ListADT
     /**
      * The goal for the list is to store items.
@@ -21,12 +23,9 @@ public class List {
      * This is not desirable and so having private access specifer
      * will protect the array such corruption.
      * This is a hard concept to understand. Discuss with your mentor.
-     *
-    */ 
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
-
     /**
      * What are the other class variables needed for creating a list?
      * How about keeping track of the size of the list?
@@ -46,11 +45,9 @@ public class List {
      * to be accessed by the methods that are outside of the List class.
      * 
      */
-
     // declare a private int size
     // again, don't initialize it here
-    // variable initialization should be done in the constructor
-
+    // variable initialization should be done in the constructor.
     /**
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
@@ -62,13 +59,11 @@ public class List {
         array = new int[ten];
         this.array = array;
         count = 0;
-
         // what are the two variables to be initialized here?
         // think about the private variables described above.
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
@@ -83,7 +78,7 @@ public class List {
      * Is it the same as the end of the array?
      * Think about how you can use the size variable to add item
      * to the list.
-     * 
+     *@param item int
      * The method returns void (nothing)
      */
     public void add(int item) {
@@ -94,7 +89,7 @@ public class List {
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
      * to the objects outside the list
-     * 
+     * @return size of an array.
      * The method returns an int. Empty list should return 0.
      */
     public int size() {
@@ -102,7 +97,6 @@ public class List {
         if (count > 0) return count;
         else return 0;
     }
-
     /**
      * The remove method does what the name suggests.
      * Removes an int item, specified by the index argument, from the list
@@ -122,6 +116,7 @@ public class List {
      * So, the new array looks like this.
      * array = [1,3,0,0,0,0,0,0,0,0]
      * The method returns void (nothing)
+     * @param index int
      */
     public void remove(int index) {
        for(int i = index; i < count - 1; i++){
@@ -141,6 +136,8 @@ public class List {
      * in the list then that would mean the item doesn't exist.
      * How do we check if the position is greater than the 
      * number of items in the list? Would size variable be useful?
+     * @param index int
+     * @return element at that index
      */
     public int get(int index) {
         if (index > 0 && index <= count) {
@@ -167,6 +164,7 @@ public class List {
      * Example: [1,2,3,0,0,0,0,0,0,0]
      * toString should only return the items in the list and
      * not all the elements of the array.
+     * @return result array
      *
      */
     public String toString() {
@@ -182,7 +180,9 @@ public class List {
      * Contains return true if the list has
      * the item passed as an argument to the method
      * So, iterate through the list and return true if
-     * the item exists and otherwise false
+     * the item exists and otherwise false.
+     * @param item element that contains in array or not
+     * @return boolean
      */
     public boolean contains(int item) {
         for (int element: array ) {
@@ -195,6 +195,8 @@ public class List {
      * Returns the index of the first occurrence 
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
+     * @param item int
+     * @return index
      */
     public int indexOf(int item) {
         for (int i = 0; i < count ; i++){
@@ -202,11 +204,12 @@ public class List {
         }
         return -1;
     }
-
+    /** the program is to call all the operations on list.
+     *@param args string
+     */
     public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
-
         // code to read the test cases input file
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         // check if there is one more line to process
