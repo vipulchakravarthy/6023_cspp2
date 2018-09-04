@@ -133,6 +133,7 @@ public class List {
        for(int i = index; i < count - 1; i++){
         array[i] = array[i + 1];
       }
+      array[count] = 0;
     	count -= 1;
     }
 
@@ -175,7 +176,9 @@ public class List {
      *
      */
     public String toString() {
-        return Arrays.toString(array);
+    	int[] result = new int[count];
+    	result = Arrays.copyOfRange(array, 0, count);
+        return Arrays.toString(result);
     } 
     
     /**
@@ -197,7 +200,7 @@ public class List {
      * or -1 if this list does not contain the element.
      */
     public int indexOf(int item) {
-        for (int i = 0; i < count - 1; i++){
+        for (int i = 0; i < count ; i++){
         	if (array[i] == item) return i;
         }
         return -1;
