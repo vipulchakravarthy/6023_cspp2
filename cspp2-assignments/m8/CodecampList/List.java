@@ -125,8 +125,7 @@ public final class List {
             }
             array[count] = 0;
             count -= 1;
-        }
-        else {
+        } else {
         System.out.println("Invalid Position Exception");
     }
     }
@@ -247,7 +246,7 @@ public final class List {
                 break;
             case "get":
             if (Integer.parseInt(tokens[1] ) < l.size()) {
-                System.out.println(l.get(Integer.parseInt(tokens[1]))); 
+                System.out.println(l.get(Integer.parseInt(tokens[1])));
             }
                 break;
             case "contains":
