@@ -119,11 +119,16 @@ public final class List {
      * @param index int
      */
     public void remove(final int index) {
-       for (int i = index; i < count - 1; i++) {
-        array[i] = array[i + 1];
-      }
-      array[count] = 0;
-        count -= 1;
+        if (index > 0 && index < count) {
+            for (int i = index; i < count - 1; i++) {
+                array[i] = array[i + 1];
+            }
+            array[count] = 0;
+            count -= 1;
+        }
+        else {
+        System.out.println("Invalid Position Exception");
+    }
     }
     /**
      * Get method has to return the items that is
@@ -181,7 +186,7 @@ public final class List {
      * @return boolean
      */
     public boolean contains(final int item) {
-        for (int element: array) {
+        for (int element : array) {
             if (element == item) {
                 return true;
             }
@@ -198,7 +203,7 @@ public final class List {
     public int indexOf(final int item) {
         for (int i = 0; i < count; i++) {
             if (array[i] == item) {
-            return i;
+                return i;
             }
         }
         return -1;
@@ -219,34 +224,36 @@ public final class List {
             String[] tokens = line.split(" ");
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
-                case "add":
+            case "add":
                 l.add(Integer.parseInt(tokens[1]));
                 break;
-                case "size":
+            case "size":
                 // invoke size method and print the list size
                 // BTW, list size is not the array size
                 // it is the number of items in the list
                 System.out.println(l.size());
                 break;
-                case "print":
+            case "print":
                 // print the list (implement toString for this to work)
                 // expected format is [item-1,item-2,...,item-n]
                 // review the output testcase file
                 System.out.println(l);
                 break;
-                case "remove":
+            case "remove":
                 l.remove(Integer.parseInt(tokens[1]));
                 break;
-                case "indexOf":
+            case "indexOf":
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
-                case "get":
-                System.out.println(l.get(Integer.parseInt(tokens[1])));
+            case "get":
+            if (Integer.parseInt(tokens[1] ) < l.size()) {
+                System.out.println(l.get(Integer.parseInt(tokens[1]))); 
+            }
                 break;
-                case "contains":
+            case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
-                default :
+            default :
             }
         }
     }
