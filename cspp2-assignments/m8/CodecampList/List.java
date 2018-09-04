@@ -68,7 +68,6 @@ public final class List {
         // An empty list has how many items?
         // That is the initial value to use for size.
     }
-    
     /**
      * The add method does what the name suggests.
      * Add an int item to the list.
@@ -80,7 +79,7 @@ public final class List {
      *@param item int
      * The method returns void (nothing)
      */
-    public void add(int item) {
+    public void add(final int item) {
         array[count] = item;
         count += 1;
     }
@@ -116,8 +115,8 @@ public final class List {
      * The method returns void (nothing)
      * @param index int
      */
-    public void remove(int index) {
-       for(int i = index; i < count - 1; i++){
+    public void remove(final int index) {
+       for (int i = index; i < count - 1; i++) {
         array[i] = array[i + 1];
       }
       array[count] = 0;
@@ -136,7 +135,7 @@ public final class List {
      * @param index int
      * @return element at that index
      */
-    public int get(int index) {
+    public int get(final int index) {
         if (index > 0 && index <= count) {
             return array[index];
         }
@@ -180,8 +179,8 @@ public final class List {
      * @param item element that contains in array or not
      * @return boolean
      */
-    public boolean contains(int item) {
-        for (int element: array ) {
+    public boolean contains(final int item) {
+        for (int element: array) {
             if (element == item) {
                 return true;
             }
@@ -195,8 +194,8 @@ public final class List {
      * @param item int
      * @return index
      */
-    public int indexOf(int item) {
-        for (int i = 0; i < count ; i++){
+    public int indexOf(final int item) {
+        for (int i = 0; i < count; i++){
             if (array[i] == item) {
             return i;
             }
@@ -246,6 +245,7 @@ public final class List {
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
+                default :
             }
         }
     }
