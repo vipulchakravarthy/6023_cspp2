@@ -48,6 +48,9 @@ public final class List {
     // again, don't initialize it here
     // variable initialization should be done in the constructor.
     private int[] array;
+    /** the class variables are declared with
+    *specifier with private.
+    */
     private int count;
     /**
     * The purpose of the constructor is to initialize the
@@ -98,7 +101,7 @@ public final class List {
      * The remove method does what the name suggests.
      * Removes an int item, specified by the index argument, from the list
      * It also does an additional step.
-     * Think about what happens when 
+     * Think about what happens when
      * an item is removed from the middle of the list
      * It creates a hole in the list, right?
      * This would mean, all the items that are
@@ -130,7 +133,7 @@ public final class List {
      * How can an element not be there at a given position?
      * Well, if the position is greater than the number of items
      * in the list then that would mean the item doesn't exist.
-     * How do we check if the position is greater than the 
+     * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
      * @param index int
      * @return element at that index
@@ -150,7 +153,6 @@ public final class List {
      * System.out.println(l);
      * This statement is a shortcut for
      * System.out.println(l.toString());
-     * 
      * So, implement the toString method to display the items
      * in the list in the square brackets notation.
      * i.e., if the list has numbers 1, 2, 3
@@ -169,8 +171,7 @@ public final class List {
         }
         result += array[count - 1] + "]";
         return result;
-    } 
-    
+    }
     /**
      * Contains return true if the list has
      * the item passed as an argument to the method
@@ -188,14 +189,14 @@ public final class List {
         return true;
     }
     /**
-     * Returns the index of the first occurrence 
+     * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      * @param item int
      * @return index
      */
     public int indexOf(final int item) {
-        for (int i = 0; i < count; i++){
+        for (int i = 0; i < count; i++) {
             if (array[i] == item) {
             return i;
             }
