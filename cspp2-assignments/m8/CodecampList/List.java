@@ -1,11 +1,7 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-import java.util.Arrays;
-import java.util.ArrayList;
-
 public class List {
-	//Implement all the methods mentioned to build a ListADT
-
+    //Implement all the methods mentioned to build a ListADT
     /**
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
@@ -62,9 +58,10 @@ public class List {
     private int[] array;
     private int count;
     public List() {
-    	array = new int[10];
-    	this.array = array;
-    	count = 0;
+        final int ten = 10;
+        array = new int[ten];
+        this.array = array;
+        count = 0;
 
         // what are the two variables to be initialized here?
         // think about the private variables described above.
@@ -76,7 +73,6 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-
     }
     
     /**
@@ -91,11 +87,9 @@ public class List {
      * The method returns void (nothing)
      */
     public void add(int item) {
-    	array[count] = item;
-    	count += 1;
-        
+        array[count] = item;
+        count += 1;    
     }
-
     /**
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
@@ -134,7 +128,7 @@ public class List {
         array[i] = array[i + 1];
       }
       array[count] = 0;
-    	count -= 1;
+        count -= 1;
     }
 
     /**
@@ -150,7 +144,7 @@ public class List {
      */
     public int get(int index) {
         if (index > 0 && index <= count) {
-        	return array[index];
+            return array[index];
         }
         return -1;
     }
@@ -176,11 +170,11 @@ public class List {
      *
      */
     public String toString() {
-    	String result = "[";
-    	for (int i = 0; i < count - 1; i++) {
-    		result += array[i] + ",";
-    	}
-    	result += array[count - 1] + "]";
+        String result = "[";
+        for (int i = 0; i < count - 1; i++) {
+            result += array[i] + ",";
+        }
+        result += array[count - 1] + "]";
         return result;
     } 
     
@@ -192,7 +186,7 @@ public class List {
      */
     public boolean contains(int item) {
         for (int element: array ) {
-        	if (element == item) return true;
+            if (element == item) return true;
         }
         return true;
     }
@@ -204,12 +198,12 @@ public class List {
      */
     public int indexOf(int item) {
         for (int i = 0; i < count ; i++){
-        	if (array[i] == item) return i;
+            if (array[i] == item) return i;
         }
         return -1;
     }
 
-	public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -252,5 +246,5 @@ public class List {
                 break;
             }
         }
-	}
+    }
 }
