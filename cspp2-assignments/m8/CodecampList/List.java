@@ -177,7 +177,7 @@ public class List {
      */
     public String toString() {
     	int[] result = new int[count];
-    	result = Arrays.copyOfRange(array, 0, count);
+    	result = Arrays.copyOfRange(array,0,count);
         return Arrays.toString(result);
     } 
     
