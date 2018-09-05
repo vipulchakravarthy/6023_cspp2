@@ -30,30 +30,30 @@ public final class Fibonacci {
     }
     /** the fibonacci method takes the number from user.
     *and return the list of fibonacci series upto that number.
-    *@param n int
+    *@param range int
     *@return l list
     */
-    public static List fib(final int n) {
-        List l = new List(n);
-        l.add(0);
-        l.add(1);
+    public static List fib(final int range) {
+        List listObj = new List(range);
+        listObj.add(0);
+        listObj.add(1);
         int numberOne = 0;
         int numberTwo = 1;
-        for (int i = 1; i < n - 1; i++) {
+        for (int i = 1; i < range - 1; i++) {
             int sum = numberOne + numberTwo;
             numberOne = numberTwo;
             numberTwo = sum;
-            l.add(sum);
+            listObj.add(sum);
         }
-        return l;
+        return listObj;
     }
     /** the main program is to print the fibonacci series in
     * a list upto a given term.
     *@param args String
     */
     public static void main(final String[] args) {
-        Scanner s = new Scanner(System.in);
-        int n = s.nextInt();
-        System.out.println(fib(n));
+        Scanner scan = new Scanner(System.in);
+        int range = scan.nextInt();
+        System.out.println(fib(range));
     }
 }
