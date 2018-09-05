@@ -2,7 +2,7 @@ import java.io.BufferedInputStream;
 import java.util.Scanner;
 
 public class List {
-	//Implement all the methods mentioned to build a ListADT
+	//Implement all the methods mentioned to build a ListADT.
 
     /*
      * The goal for the list is to store items.
