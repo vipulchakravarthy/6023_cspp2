@@ -25,8 +25,9 @@ public class Fibonacci
      *
      * Look for the hint.txt if some of the testcases fail.
      */
-    static List l = new List();
+    
     public static List fib(int n) {
+        List l = new List(n);
         l.add(0);
         l.add(1);
         int numberOne = 0;
