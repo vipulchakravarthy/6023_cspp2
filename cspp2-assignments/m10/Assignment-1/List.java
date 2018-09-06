@@ -1,5 +1,6 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class List {
 	//Implement all the methods mentioned to build a ListADT
@@ -301,11 +302,13 @@ public class List {
     *array to the end of list
     */
     public void addAll(int[] temp) {
+    	System.out.println(Arrays.toString(temp));
         int j = 0;
         for (int i = size; i < (size + temp.length); i++) {
             list[i] = temp[j];
             j++;
         }
+        System.out.println(Arrays.toString(temp));
     }
 	public static void main(String[] args) {
         // create an object of the list to invoke methods on it
@@ -341,7 +344,7 @@ public class List {
                 int temp[] = new int[t1.length];
                 for(int i = 0;i < temp.length;i++)
                     temp[i] = Integer.parseInt(t1[i]);
-                System.out.println(temp);
+                System.out.println(Arrays.toString(temp));
                 l.addAll(temp);
                 }
                 break;
