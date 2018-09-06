@@ -300,10 +300,10 @@ public class List {
     *@param items array to be added
     *array to the end of list
     */
-    public void addAll(int[] items) {
+    public void addAll(int[] temp) {
         int j = 0;
-        for (int i = size; i < (size + items.length); i++) {
-            list[i] = items[j];
+        for (int i = size; i < (size + temp.length); i++) {
+            list[i] = temp[j];
             j++;
         }
     }
@@ -338,9 +338,10 @@ public class List {
                 case "addAll":
                 if(tokens.length==2){
                 String[] t1 = tokens[1].split(",");
-                int temp[]=new int[t1.length];
-                for(int i=0;i<temp.length;i++)
-                    temp[i]=Integer.parseInt(t1[i]);
+                int temp[] = new int[t1.length];
+                for(int i = 0;i < temp.length;i++)
+                    temp[i] = Integer.parseInt(t1[i]);
+                System.out.println(temp);
                 l.addAll(temp);
                 }
                 break;
