@@ -49,7 +49,7 @@ public final class Solution {
     private Solution() {
     }
     /**the main method to perform the operations.
-     *on all data types.
+    *on all data types.
     *@param args
     */
     public static void main(final String[] args) {
@@ -163,8 +163,8 @@ public final class Solution {
                 case "addAll":
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
-                        Float temp[] = new Float[t1.length];
-                        for (int i = 0; i < t1.length; i++ ) {
+                        Float[] temp = new Float[t1.length];
+                        for (int i = 0; i < t1.length; i++) {
                             temp[i] = Float.parseFloat(t1[i]);
                         }
                         listFloat.addAll(temp);
@@ -210,7 +210,7 @@ public final class Solution {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Character[] temp = new Character[t1.length];
-                        for (int i = 0; i < t1.length; i++ ) {
+                        for (int i = 0; i < t1.length; i++) {
                             temp[i] = t1[i].charAt(0);
                         }
                         listCharacter.addAll(temp);
@@ -257,7 +257,7 @@ public final class Solution {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Double[] temp = new Double[t1.length];
-                        for (int i = 0; i < t1.length; i++ ) {
+                        for (int i = 0; i < t1.length; i++) {
                             temp[i] = Double.parseDouble(t1[i]);
                         }
                         listDouble.addAll(temp);
@@ -303,7 +303,7 @@ public final class Solution {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Student[] temp = new Student[t1.length];
-                        for (int i = 0; i < t1.length; i++ ) {
+                        for (int i = 0; i < t1.length; i++) {
                             temp[i] = new Student(t1[i]);
                         }
                         listStudent.addAll(temp);
@@ -332,7 +332,7 @@ public final class Solution {
                     new Student(tokens[1])));
                     break;
                 default:
-                		break;
+                	break;
                 }
             }
             break;
