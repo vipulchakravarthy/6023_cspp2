@@ -99,7 +99,7 @@ public final class Solution {
                 default:
                     break;
                 }
-                }             
+                } 
 }
    /** the method is to do the operations on double type.
     *@param stdin Scanner
@@ -148,11 +148,11 @@ public final class Solution {
                     break;
                 default: break;
                 }
-            }       
+            }
     }   /** the method is to do the operations on char type.
     *@param stdin Scanner
     */
-    public static void charMethod(final Scanner stdin ) {
+    public static void charMethod(final Scanner stdin) {
         List<Character> listCharacter = new List();
         while (stdin.hasNext()) {
                 String line = stdin.nextLine();
@@ -344,7 +344,7 @@ public final class Solution {
             break;
         case "O":
             objectMethod(stdin);
-            break;    
+            break;
         default:
                 break;
         }
