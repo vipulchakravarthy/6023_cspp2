@@ -99,7 +99,7 @@ public final class Solution {
                 default:
                     break;
                 }
-                } 
+                }
 }
    /** the method is to do the operations on double type.
     *@param stdin Scanner
