@@ -303,7 +303,7 @@ public class List {
     public void addAll(int[] items) {
         int j = 0;
         for (int i = size; i < (size + items.length); i++) {
-            list[i] = list[j];
+            list[i] = items[j];
             j++;
         }
     }
