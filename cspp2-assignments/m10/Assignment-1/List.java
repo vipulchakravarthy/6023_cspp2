@@ -143,8 +143,9 @@ public class List {
      * You know enough of Object Oriented Programming to answer these questions :-)
      *
      */
-
-    // todo create resize method
+    private void resize() {
+    	list = Arrays.copyOf(list, 2 * list.length);
+    }
 
     /**
      * The size method returns the value of the size.
@@ -203,7 +204,7 @@ public class List {
      * number of items in the list? Would size variable be useful?
      */
     public int get(int index) {
-        if(index < 0 || index >= size) {
+        if (index < 0) {
             return -1;
         } else {
             return list[index];
@@ -290,11 +291,20 @@ public class List {
     *@param item integer element to be added
     */
     public void add(final int index, final int item) {
-        for (int i = size; i > index; i--) {
-            list[i] = list[i-1];
-        }
-        list[index] = item;
-        size++;
+    	if (index < 0) {
+    		System.out.println("Negative Index Exception");
+    	}
+    	if (index == 0 && size == 0) {
+    		list[0] = list[item];
+    		size++;
+    	} 
+    	if (index > 0) {
+		for (int i = size; i > index; i--) {
+        list[i] = list[i-1];
+    	}
+    	list[index] = item;
+    	size++;
+    	}
     }
    /**
    *Inserts all the elements of specified int
@@ -302,6 +312,9 @@ public class List {
     *array to the end of list
     */
     public void addAll(int[] temp) {
+        if (size() == list.length) {
+        	resize();
+        }
         int j = 0;
         for (int i = size; i < (size + temp.length); i++) {
             list[i] = temp[j];
