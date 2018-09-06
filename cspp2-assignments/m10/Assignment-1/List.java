@@ -312,7 +312,7 @@ public class List {
     *array to the end of list
     */
     public void addAll(int[] temp) {
-        if (size() == list.length) {
+        if ((size() + temp.length) > 10) {
         	resize();
         }
         int j = 0;
