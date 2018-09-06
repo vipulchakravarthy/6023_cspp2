@@ -50,7 +50,7 @@ public final class Solution {
     }
     /**the main method to perform the operations.
     *on all data types.
-    *@param args
+    *@param args String
     */
     public static void main(final String[] args) {
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
@@ -72,16 +72,9 @@ public final class Solution {
                     }
                     break;
                 case "size":
-                    // invoke size method and print the list size
-                    // BTW, list size is not the array size
-                    // it is the number of items in the list
                     System.out.println(listString.size());
                     break;
                 case "print":
-                    // print the list (implement toString in List class
-                    //for this to work)
-                    // expected format is [item-1,item-2,...,item-n]
-                    // review the output testcase file
                     System.out.println(listString);
                     break;
                 case "remove":
@@ -117,7 +110,7 @@ public final class Solution {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Integer[] temp = new Integer[t1.length];
-                        for (int i = 0; i < temp.length; i++ ) {
+                        for (int i = 0; i < temp.length; i++) {
                             temp[i] = Integer.parseInt(t1[i]);
                         }
                         listInteger.addAll(temp);
@@ -192,7 +185,6 @@ public final class Solution {
                     Float.parseFloat(tokens[1])));
                     break;
                 default: break;
-
                 }
             }
             break;
@@ -200,7 +192,6 @@ public final class Solution {
             List<Character> listCharacter = new List();
             while (stdin.hasNext()) {
                 String line = stdin.nextLine();
-                // split the line using space
                 String[] tokens = line.split(" ");
                 switch (tokens[0]) {
                 case "add":
