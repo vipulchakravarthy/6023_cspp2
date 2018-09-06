@@ -57,8 +57,8 @@ public final class List {
         // think about the private variables described above.
         // What should be the default values?
         // In the case of the list, it should be empty but
-        // it should be initialized with an array size like 10
-        list = new int[10];
+        int ten = 10;
+        list = new int[ten];
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
@@ -165,8 +165,8 @@ public final class List {
     public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
-        if(index >= 0 && index < size) {
-            for(int i = index; i < size - 1; i++) {
+        if (index >= 0 && index < size) {
+            for (int i = index; i < size - 1; i++) {
                 list[i] = list[i + 1];
             }
             size--;
@@ -214,8 +214,9 @@ public final class List {
      * @return str string
      */
     public String toString() {
-        if(size == 0)
+        if (size == 0) {
             return "[]";
+        }
         String str = "[";
         int i = 0;
         for(i = 0; i < size - 1; i++) {
@@ -243,9 +244,10 @@ public final class List {
      * @return index 
      */
     public int indexOf(final int item) {
-        for(int i = 0; i < size; i++) {
-            if(item == list[i])
+        for (int i = 0; i < size; i++) {
+            if (item == list[i]) {
                 return i;
+            }
         }
         return -1;
     }
