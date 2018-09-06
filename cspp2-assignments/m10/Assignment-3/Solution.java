@@ -8,6 +8,7 @@ class Student {
     */
     private String name;
     /**A constructor used to initialize the instance variables.
+    *@param nameOne
     */
     Student(final String nameOne) {
         this.name = nameOne;
@@ -43,7 +44,7 @@ class Student {
 /** the main class to complete the program.
 */
 public final class Solution {
-    /**this is a constructor for the solution class
+    /**this is a constructor for the solution class.
     */
     private Solution() {
     }
@@ -99,6 +100,7 @@ public final class Solution {
                     System.out.println(listString.contains(
                     tokens[1]));
                     break;
+                default: break;
                 }
             }
             break;
@@ -143,6 +145,7 @@ public final class Solution {
                     System.out.println(listInteger.contains(
                     Integer.parseInt((tokens[1]))));
                     break;
+                default: break;
                 }
             }
             break;
@@ -153,7 +156,6 @@ public final class Solution {
                 String line = stdin.nextLine();
                 // split the line using space
                 String[] tokens = line.split(" ");
-                // based on the list operation invoke the corresponding method
                 switch (tokens[0]) {
                 case "add":
                     listFloat.add(Float.parseFloat(tokens[1]));
@@ -169,16 +171,9 @@ public final class Solution {
                     }
                     break;
                 case "size":
-                    // invoke size method and print the list size
-                    // BTW, list size is not the array size
-                    // it is the number of items in the list
                     System.out.println(listFloat.size());
                     break;
                 case "print":
-                    // print the list (implement toString in List class
-                    //for this to work)
-                    // expected format is [item-1,item-2,...,item-n]
-                    // review the output testcase file
                     System.out.println(listFloat);
                     break;
                 case "remove":
@@ -196,10 +191,12 @@ public final class Solution {
                     System.out.println(listFloat.contains(
                     Float.parseFloat(tokens[1])));
                     break;
+                default: break;
+
                 }
             }
             break;
-        case "C"://This case will be executed for Character type list
+        case "C":
             List<Character> listCharacter = new List();
             while (stdin.hasNext()) {
                 String line = stdin.nextLine();
@@ -241,6 +238,7 @@ public final class Solution {
                     System.out.println(listCharacter.contains(
                     tokens[1].charAt(0)));
                     break;
+                default: break;
                 }
             }
             break;
@@ -266,9 +264,6 @@ public final class Solution {
                     }
                     break;
                 case "size":
-                    // invoke size method and print the list size
-                    // BTW, list size is not the array size
-                    // it is the number of items in the list
                     System.out.println(listDouble.size());
                     break;
                 case "print":
@@ -290,11 +285,11 @@ public final class Solution {
                     System.out.println(listDouble.contains(
                         Double.parseDouble(tokens[1])));
                     break;
+                default: break;
                 }
             }
             break;
-
-        case "O"://This case will be executed for Student type list i.e
+        case "O":
             List<Student> listStudent = new List();
             while (stdin.hasNext()) {
                 // read the line
