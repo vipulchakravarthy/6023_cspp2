@@ -343,7 +343,6 @@ public class List {
                 int temp[] = new int[t1.length];
                 for(int i = 0;i < temp.length;i++)
                     temp[i] = Integer.parseInt(t1[i]);
-                System.out.println(Arrays.toString(temp));
                 l.addAll(temp);
                 }
                 break;
