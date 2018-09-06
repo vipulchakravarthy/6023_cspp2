@@ -1,10 +1,10 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-
+/**the List is a ADT here.
+*/
 public class List {
 	//Implement all the methods mentioned to build a ListADT
-
     /**
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
@@ -26,10 +26,6 @@ public class List {
      * This is a hard concept to understand. Discuss with your mentor.
      *
     */
-    
-    // declare a private int[]
-    // don't create the array yet using new
-    // that's the job of the List constructor
     private int[] list;
 
     /**
@@ -51,10 +47,6 @@ public class List {
      * to be accessed by the methods that are outside of the List class.
      * 
      */
-
-    // declare a private int size
-    // again, don't initialize it here
-    // variable initialization should be done in the constructor
     private int size;
 
     /**
@@ -90,7 +82,7 @@ public class List {
      * The overloaded constructor is a way to initialize a list with
      * a list capacity of n items where n is given as an argument to
      * constructor.
-     * 
+     * @param capacity int
      */
     public List(int capacity) {
         size = 0;
@@ -107,6 +99,7 @@ public class List {
      * to the list.
      * 
      * The method returns void (nothing)
+     * @param item int
      */
     public void add(int item) {
         //Inserts the specified element at the end of the zelist.
@@ -150,9 +143,9 @@ public class List {
     /**
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
-     * to the objects outside the list
-     * 
+     * to the objects outside the list 
      * The method returns an int. Empty list should return 0.
+     * @return size int
      */
     public int size() {
         return size;
@@ -177,6 +170,7 @@ public class List {
      * So, the new array looks like this.
      * array = [1,3,0,0,0,0,0,0,0,0]
      * The method returns void (nothing)
+     * @param index int
      */
 
     public void remove(int index) {
@@ -202,6 +196,8 @@ public class List {
      * in the list then that would mean the item doesn't exist.
      * How do we check if the position is greater than the 
      * number of items in the list? Would size variable be useful?
+     * @param index int
+     * @return element at that index
      */
     public int get(int index) {
         if (index < 0) {
@@ -210,7 +206,6 @@ public class List {
             return list[index];
         }
     }
-
     /**
      * What happens when you print an object using println?
      * Java provides a method named toString that is internally
@@ -229,7 +224,7 @@ public class List {
      * Example: [1,2,3,0,0,0,0,0,0,0]
      * toString should only return the items in the list and
      * not all the elements of the array.
-     *
+     * @return str string
      */
     public String toString() {
         if(size == 0)
@@ -259,6 +254,8 @@ public class List {
      * Returns the index of the first occurrence 
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
+     * @param item int
+     * @return index 
      */
     public int indexOf(int item) {
         for(int i = 0; i < size; i++) {
@@ -322,6 +319,10 @@ public class List {
         }
         size = size + temp.length;
     }
+    /** the main method is to create all the operation cases on 
+    *list.
+    *@param args String
+    */
 	public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
@@ -336,13 +337,12 @@ public class List {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                case "add":
-                if((tokens.length)==2){
+                if ((tokens.length) == 2) {
                 String[] t = tokens[1].split(",");
-                if(t.length==1){
+                if (t.length == 1) {
                     l.add(Integer.parseInt(tokens[1]));
-                }
-                else{
-                    if(t.length>1)
+                } else {
+                    if (t.length > 1)
                         l.add(Integer.parseInt(t[0]),Integer.parseInt(t[1]));
                     }
                 }
@@ -351,10 +351,10 @@ public class List {
                 System.out.println(l.countElement(Integer.parseInt(tokens[1])));
                 break;
                 case "addAll":
-                if(tokens.length==2){
+                if (tokens.length == 2) {
                 String[] t1 = tokens[1].split(",");
                 int temp[] = new int[t1.length];
-                for(int i = 0;i < temp.length;i++)
+                for (int i = 0; i < temp.length; i++)
                     temp[i] = Integer.parseInt(t1[i]);
                 l.addAll(temp);
                 }
