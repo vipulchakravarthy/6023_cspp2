@@ -8,7 +8,7 @@ class Student {
     */
     private String name;
     /**A constructor used to initialize the instance variables.
-    *@param nameOne
+    *@param nameOne string
     */
     Student(final String nameOne) {
         this.name = nameOne;
@@ -142,7 +142,6 @@ public final class Solution {
                 }
             }
             break;
-
         case "F":
             List<Float> listFloat = new List();
             while (stdin.hasNext()) {
@@ -233,7 +232,6 @@ public final class Solution {
                 }
             }
             break;
-
         case "D"://This case will be executed for Double type list
             List<Double> listDouble = new List();
             while (stdin.hasNext()) {
@@ -323,7 +321,7 @@ public final class Solution {
                     new Student(tokens[1])));
                     break;
                 default:
-                	break;
+                    break;
                 }
             }
             break;
