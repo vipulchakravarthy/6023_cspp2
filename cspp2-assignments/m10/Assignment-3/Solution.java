@@ -96,9 +96,7 @@ public final class Solution {
                 default:
                     break;
                 }
-                break;
-                }
-                
+                }             
 }
     public static void Double(final Scanner stdin) {
             List<Double> listDouble = new List();
