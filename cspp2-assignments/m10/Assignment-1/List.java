@@ -303,12 +303,11 @@ public class List {
     */
     public void addAll(int[] temp) {
         int j = 0;
-        for (int i = size; i < (size + temp.length); i++) {
+        for (int i = size; i < (size + temp.length)-1; i++) {
             list[i] = temp[j];
-            System.out.println(Arrays.toString(temp));
             j++;
         }
-        System.out.println(Arrays.toString(list));
+        size = size + temp.length;
     }
 	public static void main(String[] args) {
         // create an object of the list to invoke methods on it
