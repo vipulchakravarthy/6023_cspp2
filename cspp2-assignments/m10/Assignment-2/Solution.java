@@ -3,12 +3,12 @@ import java.util.Scanner;
 /** the class is to print the array list of string type.
 */
 public final class Solution {
-    /** this is a contructor of the solution class
+    /** this is a contructor of the solution class.
     */
     private Solution() {
     }
-    /** the main function is to take the input from the user
-     * and interface which contains operations on array list
+    /** the main function is to take the input from the user.
+     * and interface which contains operations on array list.
      * @param args String
      */
     public static void main(final String[] args) {
@@ -60,6 +60,7 @@ public final class Solution {
                 case "contains":
                 System.out.println(l.contains(tokens[1]));
                 break;
+                default:
             }
         }
     }
