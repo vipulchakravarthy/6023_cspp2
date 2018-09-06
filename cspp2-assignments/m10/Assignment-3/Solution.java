@@ -52,7 +52,10 @@ public final class Solution {
     */
     private Solution() {
     }
-    public static void Object(final Scanner stdin) {
+    /** the method is to do the operations on object type.
+    *@param stdin Scanner
+    */
+    public static void objectMethod(final Scanner stdin) {
         List<Student> listStudent = new List();
             while (stdin.hasNext()) {
                 String line = stdin.nextLine();
@@ -98,7 +101,10 @@ public final class Solution {
                 }
                 }             
 }
-    public static void Double(final Scanner stdin) {
+   /** the method is to do the operations on double type.
+    *@param stdin Scanner
+    */
+    public static void doubleMethod(final Scanner stdin) {
             List<Double> listDouble = new List();
             while (stdin.hasNext()) {
                 String line = stdin.nextLine();
@@ -143,8 +149,10 @@ public final class Solution {
                 default: break;
                 }
             }       
-    }
-    public static void Char(final Scanner stdin ) {
+    }   /** the method is to do the operations on char type.
+    *@param stdin Scanner
+    */
+    public static void charMethod(final Scanner stdin ) {
         List<Character> listCharacter = new List();
         while (stdin.hasNext()) {
                 String line = stdin.nextLine();
@@ -329,13 +337,13 @@ public final class Solution {
             }
             break;
         case "C":
-            Char(stdin);
+            charMethod(stdin);
             break;
         case "D":
-            Double(stdin);
+            doubleMethod(stdin);
             break;
         case "O":
-            Object(stdin);
+            objectMethod(stdin);
             break;    
         default:
                 break;
