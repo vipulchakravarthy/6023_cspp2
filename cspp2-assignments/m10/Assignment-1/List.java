@@ -96,7 +96,7 @@ public final class List {
      */
     public void add(final int item) {
         //Inserts the specified element at the end of the zelist.
-        list[size++] = item; 
+        list[size++] = item;
     }
     /**
      *
@@ -147,7 +147,7 @@ public final class List {
      * The remove method does what the name suggests.
      * Removes an int item, specified by the index argument, from the list
      * It also does an additional step.
-     * Think about what happens when 
+     * Think about what happens when
      * an item is removed from the middle of the list
      * It creates a hole in the list, right?
      * This would mean, all the items that are
@@ -184,7 +184,7 @@ public final class List {
      * How can an element not be there at a given position?
      * Well, if the position is greater than the number of items
      * in the list then that would mean the item doesn't exist.
-     * How do we check if the position is greater than the 
+     * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
      * @param index int
      * @return element at that index
@@ -270,7 +270,7 @@ public final class List {
         }
         return countOf;
     }
-    /**Inserts the specified element at the specified index 
+    /**Inserts the specified element at the specified index
     *by moving all the elements to the right.
     *The method returns void (nothing)
     *@param index integer where the element is present
@@ -283,7 +283,7 @@ public final class List {
         if (index == 0 && size == 0) {
             list[0] = list[item];
             size++;
-        } 
+        }
         if (index > 0) {
         for (int i = size; i > index; i--) {
         list[i] = list[i - 1];
@@ -332,8 +332,9 @@ public final class List {
                 if (t.length == 1) {
                     l.add(Integer.parseInt(tokens[1]));
                 } else {
-                    if (t.length > 1)
-                        l.add(Integer.parseInt(t[0]),Integer.parseInt(t[1]));
+                    if (t.length > 1) {
+                        l.add(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
+                    }
                     }
                 }
                 break;
@@ -374,6 +375,7 @@ public final class List {
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
+                default: break;
             }
         }
     }
