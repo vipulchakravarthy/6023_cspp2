@@ -57,7 +57,7 @@ public final class List {
         // think about the private variables described above.
         // What should be the default values?
         // In the case of the list, it should be empty but
-        int ten = 10;
+        final int ten = 10;
         list = new int[ten];
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
@@ -96,7 +96,7 @@ public final class List {
      */
     public void add(final int item) {
         //Inserts the specified element at the end of the zelist.
-        list[size++] = item;   
+        list[size++] = item; 
     }
     /**
      *
@@ -111,21 +111,23 @@ public final class List {
      * Create a new array of the desired size,
      * and copy the contents from the original array to the new array,
      * using java.lang.System.arraycopy(...);
-     * 
+     *
      * Option 2
      * Use java.util.Arrays.copyOf(...) methods which returns a bigger array,
      * with the contents of the original array.
      *
      * TODO
-     * Create a method called resize(). Resize should create an new array that is
+     * Create a method called resize(). Resize should create an
+     * new array that is
      * double the size of the old array.
      * Then copy the contents of the old array to the new one.
-     * 
+     *
      * When should the resize method be invoked and from where?
      * Will the client invoke resize or is it internal to List class?
      * Should the resize be public method or private?
      * Should the resize method return any values?
-     * You know enough of Object Oriented Programming to answer these questions :-)
+     * You know enough of Object Oriented Programming to
+     * answer these questions :-)
      *
      */
     private void resize() {
@@ -134,7 +136,7 @@ public final class List {
     /**
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
-     * to the objects outside the list 
+     * to the objects outside the list
      * The method returns an int. Empty list should return 0.
      * @return size int
      */
@@ -219,14 +221,14 @@ public final class List {
         }
         String str = "[";
         int i = 0;
-        for(i = 0; i < size - 1; i++) {
+        for (i = 0; i < size - 1; i++) {
             str = str + list[i] + ",";
         }
         str = str + list[i] + "]";
         return str;
     }
     /**
-     * Contains return true if the list has
+     * Contains return true if the list has.
      * the item passed as an argument to the method
      * So, iterate through the list and return true if
      * the item exists and otherwise false
@@ -237,11 +239,11 @@ public final class List {
         return indexOf(item) == -1;
     }
     /**
-     * Returns the index of the first occurrence 
+     * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      * @param item int
-     * @return index 
+     * @return index
      */
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
@@ -284,19 +286,20 @@ public final class List {
         } 
         if (index > 0) {
         for (int i = size; i > index; i--) {
-        list[i] = list[i-1];
+        list[i] = list[i - 1];
         }
         list[index] = item;
         size++;
         }
     }
    /**
-   *Inserts all the elements of specified int
-    *@param items array to be added
+   *Inserts all the elements of specified int.
+    *@param temp array to be added
     *array to the end of list
     */
     public void addAll(final int[] temp) {
-        if ((size() + temp.length) > 10) {
+        final int tenNumber = 10;
+        if ((size() + temp.length) > tenNumber) {
             resize();
         }
         int j = 0;
@@ -306,7 +309,7 @@ public final class List {
         }
         size = size + temp.length;
     }
-    /** the main method is to create all the operation cases on 
+    /** the main method is to create all the operation cases on
     *list.
     *@param args String
     */
@@ -340,9 +343,10 @@ public final class List {
                 case "addAll":
                 if (tokens.length == 2) {
                 String[] t1 = tokens[1].split(",");
-                int temp[] = new int[t1.length];
-                for (int i = 0; i < temp.length; i++)
+                int[] temp = new int[t1.length];
+                for (int i = 0; i < temp.length; i++) {
                     temp[i] = Integer.parseInt(t1[i]);
+                }
                 l.addAll(temp);
                 }
                 break;
