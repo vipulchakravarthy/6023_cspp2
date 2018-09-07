@@ -200,7 +200,7 @@ public final class List {
     /**
     *Removes all of its elements that are contained in the specified int
     *array.
-    *@param newArray
+    *@param newArray int[]
     */
     public void removeAll(final int[] newArray) {
     // for (int i = 0; i < size ; i++) {
@@ -216,7 +216,7 @@ public final class List {
     /**
     *Returns a list object containing elements, including startIndex and
     *excluding endIndex. The first parameter indicates the startIndex and the
-    *second parameter indicates the endIndex. Returns null and print 
+    *second parameter indicates the endIndex. Returns null and print
     *"Index Out of Bounds Exception" if any of values start and end are negative
     *and also if start is greater than end.
     *@param start integer
@@ -225,8 +225,8 @@ public final class List {
     */
     public List subList(final int start, final int end) {
         List resultList = new List();
-        if ((start < 0) || (end < 0) || (start > size) ||
-            (end > size) || (size == 0)) {
+        if ((start < 0) || (end < 0) || (start > size)
+            || (end > size) || (size == 0)) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         } else {
@@ -337,7 +337,7 @@ public final class List {
                         l.removeAll(a);
                     }
                 break;
-                case "subList": 
+                case "subList":
                     if (tokens.length != 2) {
                         break;
                     }
