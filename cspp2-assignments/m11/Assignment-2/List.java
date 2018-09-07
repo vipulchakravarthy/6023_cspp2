@@ -82,6 +82,9 @@ public class List<E> {
      * The method returns void (nothing)
      */
     public void remove(int index) {
+        if (index == 0 && size == 0) {
+            System.out.println("Invalid Position Exception");
+        }
         if (index >= 0 && index < size) {
             for (int i = index; i < size-1; i++) {
                 list[i] = list[i+1];
