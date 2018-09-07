@@ -254,9 +254,7 @@ public class List {
     * the simpler.
     */
     public void clear() {
-    	for (int i = 0; i < size; i++) {
-    		remove(i);
-    	}
+	  removeAll(list);
     }
 
     public static void main(String[] args) {
