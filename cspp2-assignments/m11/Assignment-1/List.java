@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 /**Implement all the methods mentioned to build a ListADT
 */
-public class List { 
+public final class List { 
     /**
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
@@ -55,7 +55,7 @@ public class List {
     // again, don't initialize it here
     // variable initialization should be done in the constructor
 
-    /*
+    /**
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
      */
@@ -72,13 +72,12 @@ public class List {
         // That is the initial value to use for size.
     	size = 0;
     }
-    
-    /*
+    /**
      * The add method does what the name suggests. Add an int item to the list.
      * The assumption is to store the item at the end of the list What is the
      * end of the list? Is it the same as the end of the array? Think about how
      * you can use the size variable to add item to the list.
-     *
+     *@param item int
      * The method returns void (nothing)
      */
     public void add(int item) {
@@ -86,12 +85,12 @@ public class List {
     
     }
 
-    /*
+    /**
      * The size method returns the value of the size. The purpose of the method
      * is to announce the size of the list to the objects outside the list
      *
      * The method returns an int. Empty list should return 0.
-     *
+     *@return size
      */
     public int size() {
         return size;
@@ -119,8 +118,7 @@ public class List {
     		size--;
     	}
     }
-
-    /*
+    /**
      * Get method has to return the items that is at the index position passed
      * as an argument to the method. If the item doesn't exist then return a -1
      * to indicate that there is no element at that index. How can an element
@@ -128,6 +126,8 @@ public class List {
      * the number of items in the list then that would mean the item doesn't
      * exist. How do we check if the position is greater than the number of
      * items in the list? Would size variable be useful?
+     * @param index int
+     * @return list[i] int
      */
     public int get(int index) {
     	for (int i = 0; i < size; i++) {
@@ -138,7 +138,7 @@ public class List {
         return -1;
     }
 
-    /*
+    /**
      * What happens when you print an object using println? Java provides a
      * method named toString that is internally invoked when an object variable
      * is used in println. For example: List l = new List();
@@ -150,6 +150,7 @@ public class List {
      * the string [1,2,3] Caution: The array may be having other elements
      * Example: [1,2,3,0,0,0,0,0,0,0] toString should only return the items in
      * the list and not all the elements of the array.
+     * @param str string
      */
     public String toString() {
     	if (size == 0) {
@@ -164,10 +165,14 @@ public class List {
         return str;
 
     } 
-    /*
-     * Contains return true if the list has the item passed as an argument to
-     * the method So, iterate through the list and return true if the item
+    /**
+     * Contains return true if the list has the item passed
+     * as an argument to.
+     * the method So, iterate through the list and return
+     * true if the item
      * exists and otherwise false
+     * @param item
+     * @return boolean
      */
     public boolean contains(int item) {
         for (int element: list) {
@@ -177,9 +182,11 @@ public class List {
         }
         return false;
     }
-    /*
+    /**
      * Returns the index of the first occurrence of the specified element in
      * this list, or -1 if this list does not contain the element.
+     * @param item int
+     * @return index
      */
     public int indexOf(int item) {
     	for (int i = 0; i < size; i++) {
@@ -189,8 +196,9 @@ public class List {
     	}
         return -1;
     }
-    /*
-    Inserts all the elements of specified int array to the end of list    
+    /**
+    *Inserts all the elements of specified int array to the end of list.
+    *@param newArray int[]    
     */
     public void addAll(int[] newArray) {
     	int j = 0;
@@ -239,6 +247,8 @@ public class List {
     /**
     *Returns a boolean indicating whether the parameter i.e a List object is.
     *exactly matching with the given list or not.
+    *@param listOne List
+    *@return boolean
     */
     public boolean equals(List listOne) {
     	// int flag = 0;
@@ -255,24 +265,28 @@ public class List {
     /**
     * Removes all the elements from list.
     * Think about this case and make the method
-    * the simpler.
+    * the simpler. 
     */
     public void clear() {
     	size = 0;
     	}
-
-    public static void main(String[] args) {
+        /** the main method is to get the inputs from user.
+         * @param args String[]
+        */
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
         // code to read the test cases input file
-        Scanner stdin = new Scanner(new BufferedInputStream(System.in));
+        Scanner stdin = new Scanner(new BufferedInputStream
+            (System.in));
         // check if there is one more line to process
         while (stdin.hasNext()) {
             // read the line
             String line = stdin.nextLine();
             // split the line using space
             String[] tokens = line.split(" ");
-            // based on the list operation invoke the corresponding method
+            // based on the list operation invoke the corres
+            //ponding method
             switch (tokens[0]) {
                 case "add":
                     if (tokens.length == 2){
