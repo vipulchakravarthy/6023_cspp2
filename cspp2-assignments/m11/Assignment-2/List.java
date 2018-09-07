@@ -203,7 +203,7 @@ public class List<E> {
       i.e a List object is exactly matching with the given list or not.
      */
     public boolean equals(List<E> listdata) {
-      return  this.toString().equals(listdata.toString());
+    return this.toString().equals(listdata.toString()); 
     }
     /*Removes all the elements from list*/
     public void clear() {
