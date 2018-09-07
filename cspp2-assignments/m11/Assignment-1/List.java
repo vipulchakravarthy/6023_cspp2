@@ -73,7 +73,7 @@ public final class List {
      *@param item int
      * The method returns void (nothing)
      */
-    public void add(int item) {
+    public void add(final int item) {
     list[size++] = item; 
     }
     /**
@@ -100,10 +100,10 @@ public final class List {
      * [1,3,0,0,0,0,0,0,0,0] The method returns void (nothing)
      *
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         if (index >= 0 && index < size) {
             for (int i = index; i <= size; i++) {
-                list[i] = list[i+1];
+                list[i] = list[i + 1];
             }
             size--;
         }
@@ -119,7 +119,7 @@ public final class List {
      * @param index int
      * @return list[i] int
      */
-    public int get(int index) {
+    public int get(final int index) {
         for (int i = 0; i < size; i++) {
             if (i == index) {
                 return list[i];
@@ -163,7 +163,7 @@ public final class List {
      * @param item
      * @return boolean
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         for (int element: list) {
             if (element == item) {
                 return true;
@@ -177,7 +177,7 @@ public final class List {
      * @param item int
      * @return index
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
             if (list[i] == item) {
                 return i;
@@ -189,7 +189,7 @@ public final class List {
     *Inserts all the elements of specified int array to the end of list.
     *@param newArray int[]    
     */
-    public void addAll(int[] newArray) {
+    public void addAll(final int[] newArray) {
         int j = 0;
         for (int i = size; i < size + newArray.length; i++) {
             list[i] = newArray[j];
@@ -202,7 +202,7 @@ public final class List {
     *array.
     *@param newArray    
     */
-    public void removeAll(int[] newArray) {
+    public void removeAll(final int[] newArray) {
     // for (int i = 0; i < size ; i++) {
     for (int i = 0; i < newArray.length; i++) {
         //     if (list[i] == newArray[j]) {
@@ -223,9 +223,9 @@ public final class List {
     *@param end integer
     *@return resultList
     */
-    public List subList(int start, int end) {
+    public List subList(final int start, final int end) {
         List resultList = new List();
-        if ((start < 0) || (end < 0) || (start > size) || (end > size) || (size == 0)){
+        if ((start < 0) || (end < 0) || (start > size) || (end > size) || (size == 0)) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         } else {
@@ -241,7 +241,7 @@ public final class List {
     *@param listOne List
     *@return boolean
     */
-    public boolean equals(List listOne) {
+    public boolean equals(final List listOne) {
         // int flag = 0;
         // for (int i = 0; i < size; i++) {
         //  if (contains(listOne.get(i))) {
