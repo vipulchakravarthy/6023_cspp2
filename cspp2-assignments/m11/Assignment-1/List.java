@@ -1,5 +1,6 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
+import java.util.Arrays;
 /**Implement all the methods mentioned to build a ListADT
 */
 public class List { 
@@ -199,9 +200,10 @@ public class List {
         }
         size = size + newArray.length;
     }
-    /*
-     Removes all of its elements that are contained in the specified int 
-     array.    
+    /**
+    *Removes all of its elements that are contained in the specified int 
+    *array.
+    *@param newArray    
     */
     public void removeAll(int[] newArray) {
     for (int i = 0; i < size ; i++) {
@@ -212,16 +214,19 @@ public class List {
     	}
     }
     }
-    /*
-    Returns a list object containing elements, including startIndex and
-    excluding endIndex. The first parameter indicates the startIndex and the
-    second parameter indicates the endIndex. Returns null and print 
-    "Index Out of Bounds Exception" if any of values start and end are negative
-    and also if start is greater than end.
+    /**
+    *Returns a list object containing elements, including startIndex and
+    *excluding endIndex. The first parameter indicates the startIndex and the
+    *second parameter indicates the endIndex. Returns null and print 
+    *"Index Out of Bounds Exception" if any of values start and end are negative
+    *and also if start is greater than end.
+    *@param start integer
+    *@param end integer
+    *@return resultList
     */
     public List subList(int start, int end) {
     	List resultList = new List();
-    	if ((start < 0) || (end < 0) || (start > size) || (end > size) || (size == 0) ){
+    	if ((start < 0) || (end < 0) || (start > size) || (end > size) || (size == 0)){
     		System.out.println("Index Out of Bounds Exception");
     		return null;
     	} else {
@@ -231,24 +236,24 @@ public class List {
     		return resultList;
     	}
     }
-    /*
-    Returns a boolean indicating whether the parameter i.e a List object is
-    exactly matching with the given list or not.
+    /**
+    *Returns a boolean indicating whether the parameter i.e a List object is.
+    *exactly matching with the given list or not.
     */
     public boolean equals(List listOne) {
-    	int flag = 0;
-    	for (int i = 0; i < size; i++) {
-    		if (contains(listOne.get(i))) {
-    			flag++;
-    		}
-    	}
-    	if (flag == size) {
-    		return true;
-    	}
-    return false;
+    	// int flag = 0;
+    	// for (int i = 0; i < size; i++) {
+    	// 	if (contains(listOne.get(i))) {
+    	// 		flag++;
+    	// 	}
+    	// }
+    	// if (flag == size) {
+    	// 	return true;
+    	// }
+    return this.toString().equals(listOne.toString());
     }
-    /*
-    * Removes all the elements from list
+    /**
+    * Removes all the elements from list.
     * Think about this case and make the method
     * the simpler.
     */
@@ -259,7 +264,6 @@ public class List {
     public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
-
         // code to read the test cases input file
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         // check if there is one more line to process
@@ -312,7 +316,7 @@ public class List {
                         String[] t1 = tokens[1].split(",");
                         int[] temp = new int[t1.length];
                         for(int i = 0; i < temp.length; i++) {
-                            temp[i]=Integer.parseInt(t1[i]);
+                            temp[i] = Integer.parseInt(t1[i]);
                         }
                         l.addAll(temp);
                     }
