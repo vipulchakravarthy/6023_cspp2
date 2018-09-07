@@ -140,19 +140,14 @@ public class List<E> {
         str += list[i] + "]";
         return str;
     }
-    /*
+    /**
      * Contains return true if the list has
      * the item passed as an argument to the method
      * So, iterate through the list and return true if
      * the item exists and otherwise false
      */
     public boolean contains(E item) {
-        for (int i = 0; i < size; i++) {
-            if (list[i].equals(item)) {
-                return true;
-            }
-        }
-        return false;
+        return indexOf(item) != -1;
     }
     /*
      * Returns the index of the first occurrence
