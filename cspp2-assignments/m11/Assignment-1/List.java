@@ -217,8 +217,8 @@ public final class List {
     *@param newArray    
     */
     public void removeAll(int[] newArray) {
-    for (int i = 0; i < size ; i++) {
-        // for (int j = newArray.length; j >= 0; j--) {
+    // for (int i = 0; i < size ; i++) {
+    for (int i = 0; i < newArray.length; i++) {
         //     if (list[i] == newArray[j]) {
         int index = indexOf(newArray[i]);
         while (index != -1) {
