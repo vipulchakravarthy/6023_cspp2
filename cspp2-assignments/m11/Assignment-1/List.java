@@ -60,7 +60,7 @@ public class List {
      * some default values.
      */
     public List() {
-    	list = new int[10];
+    	list = new int[20];
         // what are the two variables to be initialized here? think about the
         // private variables described above. What should be the default values?
         // In the case of the list, it should be empty but it should be
@@ -255,7 +255,7 @@ public class List {
     */
     public void clear() {
     	for (int i = 0; i < size; i++) {
-    		remove(0);
+    		remove(i);
     	}
     }
 
