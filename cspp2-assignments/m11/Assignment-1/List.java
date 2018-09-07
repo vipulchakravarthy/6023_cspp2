@@ -1,11 +1,9 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-import java.util.Arrays;
-
-public class List {
-    //Implement all the methods mentioned to build a ListADT
-
-    /*
+/**Implement all the methods mentioned to build a ListADT
+*/
+public class List { 
+    /**
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
      * An array would be good. Right?
@@ -114,7 +112,7 @@ public class List {
      */
     public void remove(int index) {
     	if (index >= 0 && index < size) {
-    		for (int i = index; i < size-1; i++) {
+    		for (int i = index; i < size; i++) {
     			list[i] = list[i+1];
     		}
     		size--;
@@ -206,7 +204,7 @@ public class List {
      array.    
     */
     public void removeAll(int[] newArray) {
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size ; i++) {
     	for (int j = 0; j < newArray.length; j++) {
     		if (list[i] == newArray[j]) {
     			remove(i);
@@ -223,7 +221,7 @@ public class List {
     */
     public List subList(int start, int end) {
     	List resultList = new List();
-    	if ((start < 0) || (end < 0) || (start > size) || (end > size)) {
+    	if ((start < 0) || (end < 0) || (start > size) || (end > size) || (size == 0) ){
     		System.out.println("Index Out of Bounds Exception");
     		return null;
     	} else {
