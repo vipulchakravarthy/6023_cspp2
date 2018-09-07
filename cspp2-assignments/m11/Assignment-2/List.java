@@ -148,7 +148,7 @@ public class List<E> {
      */
     public boolean contains(E item) {
         for (E element: list) {
-            if (element == item) {
+            if (element.equals(item)) {
                 return true;
             }
         }
