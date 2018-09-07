@@ -1,6 +1,6 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-import java.util.Arrays;
+// import java.util.Arrays;
 /**Implement all the methods mentioned to build a ListADT.
 */
 public final class List {
@@ -50,29 +50,19 @@ public final class List {
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
+     *
      */
-
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
-
     /**
-     * The purpose of the constructor is to initialize the class variables with
+     * The purpose of the constructor is to initialize.
+     * the class variables with
      * some default values.
      */
     public List() {
         final int thirty = 30;
         list = new int[thirty];
-        // what are the two variables to be initialized here? think about the
-        // private variables described above. What should be the default values?
-        // In the case of the list, it should be empty but it should be
-        // initialized with an array size like 10
-
-        // Think about the initial value for size.
-        // How many items do we have in the list when you create it?
-        // An empty list has how many items?
-        // That is the initial value to use for size.
         size = 0;
     }
     /**
@@ -84,21 +74,18 @@ public final class List {
      * The method returns void (nothing)
      */
     public void add(int item) {
-    list[size++] = item;
-    
+    list[size++] = item; 
     }
-
     /**
-     * The size method returns the value of the size. The purpose of the method
+     * The size method returns the value of the size.
+     * The purpose of the method
      * is to announce the size of the list to the objects outside the list
-     *
      * The method returns an int. Empty list should return 0.
      *@return size
      */
     public int size() {
         return size;
     }
-
     /**
      * The remove method does what the name suggests. Removes an int item,
      * specified by the index argument, from the list It also does an additional
@@ -166,7 +153,6 @@ public final class List {
         }
         str += list[i] + "]";
         return str;
-
     } 
     /**
      * Contains return true if the list has the item passed
@@ -294,7 +280,7 @@ public final class List {
             //ponding method
             switch (tokens[0]) {
                 case "add":
-                    if (tokens.length == 2){
+                    if (tokens.length == 2) {
                         String[] t = tokens[1].split(",");
                         if (t.length == 1) {
                             l.add(Integer.parseInt(tokens[1]));
@@ -344,18 +330,22 @@ public final class List {
                     if (tokens.length == 2) {
                         String[] t2 = tokens[1].split(",");
                         int[] a = new int[t2.length];
-                        for(int i = 0; i < t2.length; i++)
+                        for(int i = 0; i < t2.length; i++) {
                             a[i] = Integer.parseInt(t2[i]);
+                        }
                         l.removeAll(a);
                     }
                 break;
                 case "subList": {
-                    if (tokens.length != 2) break;
+                    if (tokens.length != 2) {
+                        break;
+                    }
                     String[] arrstring3 = tokens[1].split(",");
                     List object = l.subList(Integer.parseInt(arrstring3[0]),
                             Integer.parseInt(arrstring3[1]));
-                    if (object != null) 
+                    if (object != null) {
                         System.out.println(object);
+                    }
                     break;
                 }
                 case "equals":
