@@ -199,7 +199,7 @@ public class List {
         	list[i] = newArray[j];
         	j++;
         }
-        size += newArray.length;
+        size = size + newArray.length;
     }
     /*
      Removes all of its elements that are contained in the specified int 
@@ -209,7 +209,7 @@ public class List {
     for (int i = 0; i < size; i++) {
     	for (int j = 0; j < newArray.length; j++) {
     		if (list[i] == newArray[j]) {
-    		remove(i);
+    			remove(i);
     		}
     	}
     }
@@ -227,7 +227,7 @@ public class List {
     		System.out.println("Index Out of Bounds Exception");
     		return null;
     	} else {
-    		for (int i = start; i < end;i++) {
+    		for (int i = start; i < end; i++) {
     			   resultList.add(list[i]);
     		}
     		return resultList;
