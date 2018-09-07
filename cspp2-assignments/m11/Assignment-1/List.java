@@ -1,9 +1,9 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-/**Implement all the methods mentioned to build a ListADT
+/**Implement all the methods mentioned to build a ListADT.
 */
-public final class List { 
+public final class List {
     /**
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
@@ -26,6 +26,8 @@ public final class List {
      *
     */
     private int[] list;
+    /** the size varaible is declared with private specifier.
+    */
     private int size;
     // declare a private int[]
     // don't create the array yet using new
@@ -60,7 +62,8 @@ public final class List {
      * some default values.
      */
     public List() {
-    	list = new int[30];
+        final int thirty = 30;
+        list = new int[thirty];
         // what are the two variables to be initialized here? think about the
         // private variables described above. What should be the default values?
         // In the case of the list, it should be empty but it should be
@@ -70,7 +73,7 @@ public final class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-    	size = 0;
+        size = 0;
     }
     /**
      * The add method does what the name suggests. Add an int item to the list.
@@ -96,7 +99,7 @@ public final class List {
         return size;
     }
 
-    /*
+    /**
      * The remove method does what the name suggests. Removes an int item,
      * specified by the index argument, from the list It also does an additional
      * step. Think about what happens when an item is removed from the middle of
@@ -111,12 +114,12 @@ public final class List {
      *
      */
     public void remove(int index) {
-    	if (index >= 0 && index < size) {
-    		for (int i = index; i <= size; i++) {
-    			list[i] = list[i+1];
-    		}
-    		size--;
-    	}
+        if (index >= 0 && index < size) {
+            for (int i = index; i <= size; i++) {
+                list[i] = list[i+1];
+            }
+            size--;
+        }
     }
     /**
      * Get method has to return the items that is at the index position passed
@@ -130,11 +133,11 @@ public final class List {
      * @return list[i] int
      */
     public int get(int index) {
-    	for (int i = 0; i < size; i++) {
-    		if (i == index) {
-    			return list[i];
-    		}
-    	}
+        for (int i = 0; i < size; i++) {
+            if (i == index) {
+                return list[i];
+            }
+        }
         return -1;
     }
 
@@ -153,13 +156,13 @@ public final class List {
      * @param str string
      */
     public String toString() {
-    	if (size == 0) {
-    		return "[]";
-    	}
+        if (size == 0) {
+            return "[]";
+        }
         String str = "[";
         int i = 0;
         for (i = 0; i < size-1; i++) {
-        	str += list[i] + ",";
+            str += list[i] + ",";
         }
         str += list[i] + "]";
         return str;
@@ -176,9 +179,9 @@ public final class List {
      */
     public boolean contains(int item) {
         for (int element: list) {
-        	if (element == item) {
-        		return true;
-        	}
+            if (element == item) {
+                return true;
+            }
         }
         return false;
     }
@@ -189,11 +192,11 @@ public final class List {
      * @return index
      */
     public int indexOf(int item) {
-    	for (int i = 0; i < size; i++) {
-    		if (list[i] == item) {
-    			return i;
-    		}
-    	}
+        for (int i = 0; i < size; i++) {
+            if (list[i] == item) {
+                return i;
+            }
+        }
         return -1;
     }
     /**
@@ -201,10 +204,10 @@ public final class List {
     *@param newArray int[]    
     */
     public void addAll(int[] newArray) {
-    	int j = 0;
-    	for (int i = size; i < size + newArray.length; i++) {
-        	list[i] = newArray[j];
-        	j++;
+        int j = 0;
+        for (int i = size; i < size + newArray.length; i++) {
+            list[i] = newArray[j];
+            j++;
         }
         size = size + newArray.length;
     }
@@ -215,12 +218,14 @@ public final class List {
     */
     public void removeAll(int[] newArray) {
     for (int i = 0; i < size ; i++) {
-    	for (int j = 0; j < newArray.length; j++) {
-    		if (list[i] == newArray[j]) {
-    			remove(i);
-    		}
-    	}
-    }
+        // for (int j = newArray.length; j >= 0; j--) {
+        //     if (list[i] == newArray[j]) {
+        int index = indexOf(newArray[i]);
+        while (index != -1) {
+             remove(index);
+             index = indexOf(newArray[i]);
+            }
+        }
     }
     /**
     *Returns a list object containing elements, including startIndex and
@@ -233,16 +238,16 @@ public final class List {
     *@return resultList
     */
     public List subList(int start, int end) {
-    	List resultList = new List();
-    	if ((start < 0) || (end < 0) || (start > size) || (end > size) || (size == 0)){
-    		System.out.println("Index Out of Bounds Exception");
-    		return null;
-    	} else {
-    		for (int i = start; i < end; i++) {
-    			   resultList.add(list[i]);
-    		}
-    		return resultList;
-    	}
+        List resultList = new List();
+        if ((start < 0) || (end < 0) || (start > size) || (end > size) || (size == 0)){
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        } else {
+            for (int i = start; i < end; i++) {
+                   resultList.add(list[i]);
+            }
+            return resultList;
+        }
     }
     /**
     *Returns a boolean indicating whether the parameter i.e a List object is.
@@ -251,15 +256,15 @@ public final class List {
     *@return boolean
     */
     public boolean equals(List listOne) {
-    	// int flag = 0;
-    	// for (int i = 0; i < size; i++) {
-    	// 	if (contains(listOne.get(i))) {
-    	// 		flag++;
-    	// 	}
-    	// }
-    	// if (flag == size) {
-    	// 	return true;
-    	// }
+        // int flag = 0;
+        // for (int i = 0; i < size; i++) {
+        //  if (contains(listOne.get(i))) {
+        //      flag++;
+        //  }
+        // }
+        // if (flag == size) {
+        //  return true;
+        // }
     return this.toString().equals(listOne.toString());
     }
     /**
@@ -268,8 +273,8 @@ public final class List {
     * the simpler. 
     */
     public void clear() {
-    	size = 0;
-    	}
+        size = 0;
+        }
         /** the main method is to get the inputs from user.
          * @param args String[]
         */
