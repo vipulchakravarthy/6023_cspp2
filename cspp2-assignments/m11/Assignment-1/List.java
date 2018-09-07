@@ -1,5 +1,6 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class List {
     //Implement all the methods mentioned to build a ListADT
@@ -60,7 +61,7 @@ public class List {
      * some default values.
      */
     public List() {
-    	list = new int[20];
+    	list = new int[30];
         // what are the two variables to be initialized here? think about the
         // private variables described above. What should be the default values?
         // In the case of the list, it should be empty but it should be
@@ -254,11 +255,8 @@ public class List {
     * the simpler.
     */
     public void clear() {
-    	for (int i = 0; i < size; i++) {
-    		remove(0);
+    	size = 0;
     	}
-
-    }
 
     public static void main(String[] args) {
         // create an object of the list to invoke methods on it
