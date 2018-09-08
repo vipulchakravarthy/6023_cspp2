@@ -3,21 +3,22 @@ import java.util.Scanner;
 import java.util.Arrays;
 /**
  * Class for set.
- * @author :vipul chakravarthy
+ * @author :vipul chakravarthy.
  */
 class Set {
 	/** the list is declared with the private.
-	*access specifier
+	*access specifier.
 	*/
 	private int[] list;
 	/** the size is declared to get.
 	*number of elements in array
 	*/
 	private int size;
-	/**this is a constructor
+	/**this is a constructor.
 	*/
 	public Set() {
-		list = new int[10];
+        final int ten = 10;
+		list = new int[ten];
 		size = 0;
 	}
 	/** this method gives the size of.
@@ -59,7 +60,8 @@ class Set {
 	 *@param newArray int
 	*/
 	public void add(final int[] newArray) {
-		if (size + newArray.length > 10) {
+        final int tenDecimal = 10;
+		if (size + newArray.length > tenDecimal) {
 			resize();
 		}
 		for (int element: newArray) {
@@ -74,10 +76,10 @@ class Set {
 			return "{}";
 		}
 		String str = "{";
-		for (int i = 0; i < size-1; i++) {
+		for (int i = 0; i < size - 1; i++) {
 			str += list[i] + ", ";
 		}
-		str += list[size-1] + "}";
+		str += list[size - 1] + "}";
 		return str;
 	}
 	/** the method is to give the intesection.
@@ -110,6 +112,9 @@ class Set {
 		}
 		return resultSet;
 	}
+    public int get(int index) {
+        return list[index];
+    }
 	/** the method is to return an array with.
 	* the cartesian product of two sets
 	*@param otherSet Set
@@ -120,6 +125,18 @@ class Set {
 		if (size == 0 || otherSet.size() == 0) {
 			return null;
 		}
+        for (int i = 0; i < size * otherSet.size(); i++) {
+            for (int j = 0; j < size; j++) {
+                for (int k = 0; k < 2; k++){
+                    if (k == 0) {
+                    output[i][k] += list[j];
+                    }
+                    if (k == 1) {
+                        output[i][k] += otherSet.get(j);
+                    }
+                }
+            }
+        }
         return output;
 }
 }
