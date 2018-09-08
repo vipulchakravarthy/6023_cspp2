@@ -16,7 +16,7 @@ final class Set {
     private int size;
     /**this is a constructor.
     */
-    public Set() {
+    Set() {
         final int ten = 10;
         list = new int[ten];
         size = 0;
