@@ -112,9 +112,9 @@ final class Set {
         }
         return resultSet;
     }
-    // public int get(int index, Set otherSet) {
-    //     return otherSet[index];
-    // }
+    public int get(int index) {
+        return list[index];
+    }
     /** the method is to return an array with.
     * the cartesian product of two sets
     *@param otherSet Set
@@ -134,7 +134,7 @@ final class Set {
                     output[i][k] += list[j];
                     }
                     if (k == 1) {
-                        output[i][k] += list[j];
+                        output[i][k] += otherSet.get(j);
                     }
                 }
             }
