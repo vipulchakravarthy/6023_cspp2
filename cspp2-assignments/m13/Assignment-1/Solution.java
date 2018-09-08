@@ -5,7 +5,7 @@ import java.util.Arrays;
  * Class for set.
  * @author :vipul chakravarthy.
  */
-class Set {
+final class Set {
     /** the list is declared with the private.
     *access specifier.
     */
