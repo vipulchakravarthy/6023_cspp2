@@ -112,7 +112,11 @@ final class Set {
         }
         return resultSet;
     }
-    public int get(int index) {
+    /** to get the element of set.
+    *@param index int
+    *@return element
+    */
+    public int get(final int index) {
         return list[index];
     }
     /** the method is to return an array with.
@@ -122,6 +126,7 @@ final class Set {
     */
     public int[][] cartesianProduct(final Set otherSet) {
         System.out.println(otherSet);
+        System.out.println(list);
         final int fifteen = 15;
         int[][] output = new int[fifteen][2];
         if (size == 0 || otherSet.size() == 0) {
@@ -131,14 +136,13 @@ final class Set {
             for (int j = 0; j < size; j++) {
                 for (int k = 0; k < 2; k++) {
                     if (k == 0) {
-                    output[i][k] += list[j];
+                    output[i][k] = list[j];
                     }
-                    if (k == 1) {
-                        output[i][k] += otherSet.get(j);
+                    // if (k == 1) {
+                    //     output[i][k] = otherSet.get(j);
                     }
                 }
             }
-        }
         return output;
 }
 }
