@@ -31,7 +31,7 @@ class Set {
 	/** this is to resize the set
 	*/
 	private void resize() {
-		list = Arrays.copyOf(list, 2*list.length);
+		list = Arrays.copyOf(list, 2 * list.length);
 	}
 	/** the method is check the element is present.
 	*or not
@@ -39,8 +39,8 @@ class Set {
 	 *@return boolean
 	*/
 	public boolean contains(final int item) {
-		for(int element: list) {
-			if(element == item) {
+		for (int element: list) {
+			if (element == item) {
 				return true;
 			}
 		}
@@ -51,8 +51,8 @@ class Set {
 	*@param item int
 	*/
 	public void add(final int item) {
-		if (contains(item) == false) {
-				list[size++] = item;
+		if (!contains(item)) {
+				list[size ++] = item;
 			}
 	}
 	/** the methos is to add an array.
@@ -97,7 +97,7 @@ class Set {
 		}
 		return resultSet;
 	}
-	/** this method to perform retainAll on sets
+	/** this method to perform retainAll on sets.
 	*@param newArray int[]
 	*@return resultSet Set
 	*/
@@ -112,27 +112,28 @@ class Set {
 		}
 		return resultSet;
 	}
-    public int get(int index) {
-        return list[index];
-    }
+    // public int get(int index, Set otherSet) {
+    //     return otherSet[index];
+    // }
 	/** the method is to return an array with.
 	* the cartesian product of two sets
 	*@param otherSet Set
 	@return output int[][]
 	*/
 	public int[][] cartesianProduct(final Set otherSet) {
+        System.out.println(otherSet.toString());
 		int[][] output = new int[15][2];
 		if (size == 0 || otherSet.size() == 0) {
 			return null;
 		}
         for (int i = 0; i < size * otherSet.size(); i++) {
             for (int j = 0; j < size; j++) {
-                for (int k = 0; k < 2; k++){
+                for (int k = 0; k < 2; k++) {
                     if (k == 0) {
                     output[i][k] += list[j];
                     }
                     if (k == 1) {
-                        output[i][k] += otherSet.get(j);
+                        output[i][k] += list[j];
                     }
                 }
             }
