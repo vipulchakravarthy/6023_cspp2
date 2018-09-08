@@ -68,13 +68,8 @@ class Set {
 	}
 	public Set retainAll(int[] newArray) {
 		Set resultSet = new Set();
-	    // if (size == 0 || newArray.length == 0) {
-	    // 	size = 0;
-	    // 	resultSet = "{}";
-	    // 	return resultSet;
-	    // }
+	for (int j = 0; j < size; j++) {
 		for (int i = 0; i < newArray.length; i++) {
-			for (int j = 0; j < size; j++) {
 				if (newArray[i] == list[j]) {
 					resultSet.add(list[j]);
 				}
