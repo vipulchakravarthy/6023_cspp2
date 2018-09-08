@@ -10,7 +10,7 @@ class Set {
 	private int[] list;
 	private int size;
 	public Set() {
-		list = new int[20];
+		list = new int[10];
 		size = 0;
 	}
 	public int size() {
@@ -28,11 +28,9 @@ class Set {
 		return false;
 	}
 	public void add(int item) {
-		for (int element: list) {
-			if (element != item) {
+		if (contains(item) == false) {
 				list[size++] = item;
 			}
-		}
 	}
 	public void add(int[] newArray) {
 		if (size + newArray.length > 10) {
