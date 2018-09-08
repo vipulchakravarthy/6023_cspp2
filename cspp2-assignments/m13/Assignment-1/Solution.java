@@ -6,127 +6,127 @@ import java.util.Arrays;
  * @author :vipul chakravarthy.
  */
 class Set {
-	/** the list is declared with the private.
-	*access specifier.
-	*/
-	private int[] list;
-	/** the size is declared to get.
-	*number of elements in array
-	*/
-	private int size;
-	/**this is a constructor.
-	*/
-	public Set() {
+    /** the list is declared with the private.
+    *access specifier.
+    */
+    private int[] list;
+    /** the size is declared to get.
+    *number of elements in array
+    */
+    private int size;
+    /**this is a constructor.
+    */
+    public Set() {
         final int ten = 10;
-		list = new int[ten];
-		size = 0;
-	}
-	/** this method gives the size of.
-	*the set
-	*@return size int
-	*/
-	public int size() {
-		return size;
-	}
-	/** this is to resize the set
-	*/
-	private void resize() {
-		list = Arrays.copyOf(list, 2 * list.length);
-	}
-	/** the method is check the element is present.
-	*or not
-	 *@param item int
-	 *@return boolean
-	*/
-	public boolean contains(final int item) {
-		for (int element: list) {
-			if (element == item) {
-				return true;
-			}
-		}
-		return false;
-	}
-	/** the method is to add the item.
-	*to the set.
-	*@param item int
-	*/
-	public void add(final int item) {
-		if (!contains(item)) {
-				list[size++] = item;
-			}
-	}
-	/** the methos is to add an array.
-	*to the set
-	 *@param newArray int
-	*/
-	public void add(final int[] newArray) {
+        list = new int[ten];
+        size = 0;
+    }
+    /** this method gives the size of.
+    *the set
+    *@return size int
+    */
+    public int size() {
+        return size;
+    }
+    /** this is to resize the set.
+    */
+    private void resize() {
+        list = Arrays.copyOf(list, 2 * list.length);
+    }
+    /** the method is check the element is present.
+    *or not
+     *@param item int
+     *@return boolean
+    */
+    public boolean contains(final int item) {
+        for (int element: list) {
+            if (element == item) {
+                return true;
+            }
+        }
+        return false;
+    }
+    /** the method is to add the item.
+    *to the set.
+    *@param item int
+    */
+    public void add(final int item) {
+        if (!contains(item)) {
+                list[size++] = item;
+            }
+    }
+    /** the methos is to add an array.
+    *to the set
+     *@param newArray int
+    */
+    public void add(final int[] newArray) {
         final int tenDecimal = 10;
-		if (size + newArray.length > tenDecimal) {
-			resize();
-		}
-		for (int element: newArray) {
-			add(element);
-		}
-	}
-	/** the method is to print the  set.
-	*@return str String
-	*/
-	public String toString() {
-		if (size == 0) {
-			return "{}";
-		}
-		String str = "{";
-		for (int i = 0; i < size - 1; i++) {
-			str += list[i] + ", ";
-		}
-		str += list[size - 1] + "}";
-		return str;
-	}
-	/** the method is to give the intesection.
-	*@param newSet Set
-	*@return resultSet Set
-	*/
-	public Set intersection(final Set newSet) {
-		Set resultSet = new Set();
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < newSet.size(); j++) {
-				if (newSet.contains(list[i])) {
-					resultSet.add(list[i]);
-				}
-			}
-		}
-		return resultSet;
-	}
-	/** this method to perform retainAll on sets.
-	*@param newArray int[]
-	*@return resultSet Set
-	*/
-	public Set retainAll(final int[] newArray) {
-		Set resultSet = new Set();
-	for (int j = 0; j < size; j++) {
-		for (int i = 0; i < newArray.length; i++) {
-				if (newArray[i] == list[j]) {
-					resultSet.add(list[j]);
-				}
-			}
-		}
-		return resultSet;
-	}
+        if (size + newArray.length > tenDecimal) {
+            resize();
+        }
+        for (int element: newArray) {
+            add(element);
+        }
+    }
+    /** the method is to print the  set.
+    *@return str String
+    */
+    public String toString() {
+        if (size == 0) {
+            return "{}";
+        }
+        String str = "{";
+        for (int i = 0; i < size - 1; i++) {
+            str += list[i] + ", ";
+        }
+        str += list[size - 1] + "}";
+        return str;
+    }
+    /** the method is to give the intesection.
+    *@param newSet Set
+    *@return resultSet Set
+    */
+    public Set intersection(final Set newSet) {
+        Set resultSet = new Set();
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < newSet.size(); j++) {
+                if (newSet.contains(list[i])) {
+                    resultSet.add(list[i]);
+                }
+            }
+        }
+        return resultSet;
+    }
+    /** this method to perform retainAll on sets.
+    *@param newArray int[]
+    *@return resultSet Set
+    */
+    public Set retainAll(final int[] newArray) {
+        Set resultSet = new Set();
+    for (int j = 0; j < size; j++) {
+        for (int i = 0; i < newArray.length; i++) {
+                if (newArray[i] == list[j]) {
+                    resultSet.add(list[j]);
+                }
+            }
+        }
+        return resultSet;
+    }
     // public int get(int index, Set otherSet) {
     //     return otherSet[index];
     // }
-	/** the method is to return an array with.
-	* the cartesian product of two sets
-	*@param otherSet Set
-	@return output int[][]
-	*/
-	public int[][] cartesianProduct(final Set otherSet) {
+    /** the method is to return an array with.
+    * the cartesian product of two sets
+    *@param otherSet Set
+    @return output int[][]
+    */
+    public int[][] cartesianProduct(final Set otherSet) {
         System.out.println(otherSet);
         final int fifteen = 15;
-		int[][] output = new int[fifteen][2];
-		if (size == 0 || otherSet.size() == 0) {
-			return null;
-		}
+        int[][] output = new int[fifteen][2];
+        if (size == 0 || otherSet.size() == 0) {
+            return null;
+        }
         for (int i = 0; i < size * otherSet.size(); i++) {
             for (int j = 0; j < size; j++) {
                 for (int k = 0; k < 2; k++) {
