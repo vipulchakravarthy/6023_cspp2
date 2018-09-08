@@ -125,27 +125,20 @@ final class Set {
     @return output int[][]
     */
     public int[][] cartesianProduct(final Set otherSet) {
-        System.out.println(otherSet);
-        System.out.println(list);
         final int fifteen = 15;
         int[][] output = new int[fifteen][2];
         if (size == 0 || otherSet.size() == 0) {
             return null;
         }
         for (int i = 0; i < size * otherSet.size(); i++) {
-            for (int j = 0; j < size; j++) {
-                for (int k = 0; k < 2; k++) {
-                    if (k == 0) {
-                    output[i][k] = list[j];
-                    }
-                    // if (k == 1) {
-                    //     output[i][k] = otherSet.get(j);
+            for (int j = 0; j < size ; j++) {
+                    output[i][0] = list[j];
                     }
                 }
-            }
         return output;
 }
 }
+
 /**
  * Solution class for code-eval.
  */
