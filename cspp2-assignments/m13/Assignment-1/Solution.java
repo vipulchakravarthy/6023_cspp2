@@ -52,7 +52,7 @@ class Set {
 	*/
 	public void add(final int item) {
 		if (!contains(item)) {
-				list[size ++] = item;
+				list[size++] = item;
 			}
 	}
 	/** the methos is to add an array.
@@ -121,8 +121,9 @@ class Set {
 	@return output int[][]
 	*/
 	public int[][] cartesianProduct(final Set otherSet) {
-        System.out.println(otherSet.toString());
-		int[][] output = new int[15][2];
+        System.out.println(otherSet);
+        final int fifteen = 15;
+		int[][] output = new int[fifteen][2];
 		if (size == 0 || otherSet.size() == 0) {
 			return null;
 		}
