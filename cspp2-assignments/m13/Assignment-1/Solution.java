@@ -131,7 +131,7 @@ final class Set {
             return null;
         }
         for (int i = 0; i < size * otherSet.size(); i++) {
-            for (int j = 0; j < size ; j++) {
+            for (int j = 0; j < size; j++) {
                     output[i][0] = list[j];
                     }
                 }
