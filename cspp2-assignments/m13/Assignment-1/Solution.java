@@ -1,25 +1,43 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-
 /**
  * Class for set.
- * @author :
+ * @author :vipul chakravarthy
  */
 class Set {
+	/** the list is declared with the private.
+	*access specifier
+	*/
 	private int[] list;
+	/** the size is declared to get.
+	*number of elements in array
+	*/
 	private int size;
+	/**this is a constructor
+	*/
 	public Set() {
 		list = new int[10];
 		size = 0;
 	}
+	/** this method gives the size of.
+	*the set
+	*@return size int
+	*/
 	public int size() {
 		return size;
 	}
+	/** this is to resize the set
+	*/
 	private void resize() {
 		list = Arrays.copyOf(list, 2*list.length);
 	}
-	public boolean contains(int item) {
+	/** the method is check the element is present.
+	*or not
+	 *@param item int
+	 *@return boolean
+	*/
+	public boolean contains(final int item) {
 		for(int element: list) {
 			if(element == item) {
 				return true;
@@ -27,12 +45,20 @@ class Set {
 		}
 		return false;
 	}
-	public void add(int item) {
+	/** the method is to add the item.
+	*to the set.
+	*@param item int
+	*/
+	public void add(final int item) {
 		if (contains(item) == false) {
 				list[size++] = item;
 			}
 	}
-	public void add(int[] newArray) {
+	/** the methos is to add an array.
+	*to the set
+	 *@param newArray int
+	*/
+	public void add(final int[] newArray) {
 		if (size + newArray.length > 10) {
 			resize();
 		}
@@ -40,6 +66,9 @@ class Set {
 			add(element);
 		}
 	}
+	/** the method is to print the  set.
+	*@return str String
+	*/
 	public String toString() {
 		if (size == 0) {
 			return "{}";
@@ -51,12 +80,12 @@ class Set {
 		str += list[size-1] + "}";
 		return str;
 	}
-	public Set intersection(Set newSet) {
+	/** the method is to give the intesection.
+	*@param newSet Set
+	*@return resultSet Set
+	*/
+	public Set intersection(final Set newSet) {
 		Set resultSet = new Set();
-		// if (size == 0 || newSet.length == 0) {
-		// 	resultSet = "{}";
-		// 	return resultSet;
-		// }
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < newSet.size(); j++) {
 				if (newSet.contains(list[i])) {
@@ -66,7 +95,11 @@ class Set {
 		}
 		return resultSet;
 	}
-	public Set retainAll(int[] newArray) {
+	/** this method to perform retainAll on sets
+	*@param newArray int[]
+	*@return resultSet Set
+	*/
+	public Set retainAll(final int[] newArray) {
 		Set resultSet = new Set();
 	for (int j = 0; j < size; j++) {
 		for (int i = 0; i < newArray.length; i++) {
@@ -77,17 +110,19 @@ class Set {
 		}
 		return resultSet;
 	}
-// 	public void cartesianProduct(int[] otherSet) {
-// 		// int[][] output = new int[15][2];
-// 		if (size == 0 || otherSet.length == 0) {
-// 			System.out.println("null");
-// 		}
-// 		for (int i = 0; i < size; i++) {
-//           for (int j = 0; j < otherSet.length ; j++) {
-//             System.out.print("["+ list[i]+", "+ otherSet[j]+"], ");
-// 				}
-// 			}
-// 		}
+	/** the method is to return an array with.
+	* the cartesian product of two sets
+	*@param otherSet Set
+	@return output int[][]
+	*/
+	public int[][] cartesianProduct(final Set otherSet) {
+		int[][] output = new int[15][2];
+		if (size == 0 || otherSet.size() == 0) {
+			System.out.println("null");
+			return null;
+		}
+        return output;
+}
 }
 /**
  * Solution class for code-eval.
@@ -176,7 +211,7 @@ public final class Solution {
                 s.add(intArray);
                 intArray = intArray(tokens[2]);
                 t.add(intArray);
-                // System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
+                System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
                 break;
                 default:
                 break;
