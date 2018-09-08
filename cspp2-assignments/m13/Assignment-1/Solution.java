@@ -118,7 +118,6 @@ class Set {
 	public int[][] cartesianProduct(final Set otherSet) {
 		int[][] output = new int[15][2];
 		if (size == 0 || otherSet.size() == 0) {
-			System.out.println("null");
 			return null;
 		}
         return output;
