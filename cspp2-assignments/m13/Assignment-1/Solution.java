@@ -134,7 +134,6 @@ final class Set {
             for (int j = 0; j < size; j++) {
                 for (int k = 0; k < 2; k++) {
                     output[i][0] = list[j];
-                    output[i][1] = list[i];
                     }
                 }
              }
