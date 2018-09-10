@@ -38,6 +38,9 @@ class SortedSet {
  }
 
 	public void addAll(final int[] newArray) {
+		if (size + newArray.length > 10) {
+			resize();
+		}
 		for (int i = 0; i < newArray.length; i++) {
 			add(newArray[i]);
 		}
@@ -76,7 +79,7 @@ class SortedSet {
 		String str = "{";
 		int i = 0;
 		for ( i = 0; i < size - 1; i++) {
-			str += list[i] + ",";
+			str += list[i] + ", ";
 		}
 		str += list[i] + "}";
 		return str;
@@ -115,7 +118,7 @@ public class Solution {
 				String str = "{";
 				int i;
 				for ( i = 0; i < array.length - 1; i++) {
-					str += array[i] + ",";
+					str += array[i] + ", ";
 				}
 				str += array[i] + "}";
 				System.out.println(str);
@@ -125,7 +128,7 @@ public class Solution {
 				String strOne = "{";
 				int j;
 				for ( j = 0; j < arrayOne.length - 1; j++) {
-					strOne += arrayOne[j] + ",";
+					strOne += arrayOne[j] + ", ";
 				}
 				strOne += arrayOne[j] + "}";
 				System.out.println(strOne);
