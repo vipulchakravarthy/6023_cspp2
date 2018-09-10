@@ -102,8 +102,9 @@ class SortedSet {
         int[] temp = Arrays.copyOfRange(resultSet, 0, count);
         return temp;
         }
-    /** Returns​ ​ a ​ ​ view​ ​ of​ ​ the​ ​ portion​. ​
-     *of​ ​ this​ ​ set​ ​ whose​ ​ elements​ ​ are strictly​
+    /**Returns​ a ​view​ of​ the​ portion​. ​
+     *of​ ​ this​ ​ set​ ​ whose​ elements​ are
+     *strictly​
      *less​ ​ than​ ​ toElement.
      *@param item int
      *@return temp int[]
@@ -111,7 +112,7 @@ class SortedSet {
     public int[] headSet(final int item) {
             return subSet(list[0], item);
         }
-    /**the method is to give the last element in set
+    /**the method is to give the last element in set.
     *@return last element of set
     */
     public int last() {
@@ -136,7 +137,7 @@ class SortedSet {
 /** this is the solution class which contains.
  * main method
  */
-public final class Solution {
+final class Solution {
     /** the empty constructor for the class.
     */
     Solution() {
@@ -181,7 +182,7 @@ public final class Solution {
                     Integer.parseInt(t1[0]), Integer.parseInt(t1[1]));
                 String str = "{";
                 int i;
-                for ( i = 0; i < array.length - 1; i++) {
+                for (i = 0; i < array.length - 1; i++) {
                     str += array[i] + ", ";
                 }
                 str += array[i] + "}";
@@ -192,8 +193,7 @@ public final class Solution {
             if (Integer.parseInt(tokens[1]) <= setObj.get(0)) {
                 System.out.println("{}");
                 break;
-                }
-            else {
+                } else {
                 int[] arrayOne = setObj.headSet(
                     Integer.parseInt(tokens[1]));
                 String strOne = "{";
