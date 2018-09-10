@@ -9,6 +9,9 @@ class SortedSet {
 		list = new int[10];
 		size = 0;
 	}
+	public int size() {
+		return size;
+	}
 	public int get(int index) {
 		for (int i = 0; i < size; i++) {
 			if (i == index) {
@@ -109,7 +112,11 @@ public class Solution {
 				break;
 			case "subSet":
 				String[] t1 = tokens[1].split(",");
-				if ((Integer.parseInt(t1[1])) < (Integer.parseInt(t1[0]))) {
+				if (setObj.size() == 0) {
+					System.out.println("{}");
+					break;
+				}
+				else if ((Integer.parseInt(t1[1])) < (Integer.parseInt(t1[0]))) {
 					System.out.println("Invalid Arguments to Subset Exception");
 				}
 				else {
@@ -139,6 +146,11 @@ public class Solution {
 			}
 				break;
 			case "last":
+				if (setObj.size() == 0) {
+					System.out.println("Set Empty Exception");
+					System.out.println("-1");
+					break;
+				}
 				System.out.println(setObj.last());
 				break;
 			default: break;
