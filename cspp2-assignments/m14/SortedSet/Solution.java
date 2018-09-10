@@ -11,13 +11,16 @@ class SortedSet {
     */
     private int size;
     /** the below is constructor.
+     *@param items int[]
     */
-    SortedSet(int[] items) {
-         final int ten = 10;
+    SortedSet(final int[] items) {
+        final int ten = 10;
         list = new int[ten];
         size = 0;
         addAll(items);
     }
+    /** the constructor for the class.
+    */
     SortedSet() {
         final int ten = 10;
         list = new int[ten];
