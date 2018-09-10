@@ -12,6 +12,12 @@ class SortedSet {
     private int size;
     /** the below is constructor.
     */
+    SortedSet(int[] items) {
+         final int ten = 10;
+        list = new int[ten];
+        size = 0;
+        addAll(items);
+    }
     SortedSet() {
         final int ten = 10;
         list = new int[ten];
