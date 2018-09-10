@@ -137,10 +137,10 @@ class SortedSet {
 /** this is the solution class which contains.
  * main method
  */
-final class Solution {
+public final class Solution {
     /** the empty constructor for the class.
     */
-    Solution() {
+    private Solution() {
     }
     /** the main method is to take the.
     *input from user.
