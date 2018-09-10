@@ -112,12 +112,13 @@ public class Solution {
 				break;
 			case "subSet":
 				String[] t1 = tokens[1].split(",");
-				if (setObj.size() == 0) {
-					System.out.println("{}");
+				if ((Integer.parseInt(t1[1])) < (Integer.parseInt(t1[0]))) {
+					System.out.println("Invalid Arguments to Subset Exception");
 					break;
 				}
-				else if ((Integer.parseInt(t1[1])) < (Integer.parseInt(t1[0]))) {
-					System.out.println("Invalid Arguments to Subset Exception");
+				else if (setObj.size() == 0) {
+					System.out.println("{}");
+					break;
 				}
 				else {
 				int[] array = setObj.subSet(Integer.parseInt(t1[0]), Integer.parseInt(t1[1]));
@@ -131,8 +132,9 @@ public class Solution {
 			    }
 				break;
 			case "headSet":
-			if (Integer.parseInt(tokens[1]) < setObj.get(0)) {
+			if (Integer.parseInt(tokens[1]) <= setObj.get(0)) {
 				System.out.println("{}");
+				break;
 				}
 			else {
 				int[] arrayOne = setObj.headSet(Integer.parseInt(tokens[1]));
