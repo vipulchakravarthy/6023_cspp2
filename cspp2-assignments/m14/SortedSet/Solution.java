@@ -9,10 +9,10 @@ class SortedSet {
 		list = new int[10];
 		size = 0;
 	}
-	public int get(int item) {
+	public int get(int index) {
 		for (int i = 0; i < size; i++) {
-			if (list[i] == item) {
-				return i;
+			if (i == index) {
+				return list[i];
 			}
 		}
 		return -1;
@@ -50,10 +50,6 @@ class SortedSet {
 	public int[] subSet(final int elementOne, final int elementTwo) {
 		int[] resultSet = new int[10];
 		int count = 0;
-		if (elementTwo < elementOne) {
-			System.out.println("Invalid Arguments to Subset Exception");
-			return null;
-		}
 		for (int i = 0; i < size; i++) {
 			if (list[i] >= elementOne && list[i] < elementTwo) {
 				resultSet[count] = list[i];
@@ -65,9 +61,8 @@ class SortedSet {
 		}
 
 	public int[] headSet(final int item) {
-		return subSet(list[0], item);
-	}
-
+			return subSet(list[0], item);
+		}
 	public int last() {
 		return list[size-1];
 	}
@@ -114,6 +109,10 @@ public class Solution {
 				break;
 			case "subSet":
 				String[] t1 = tokens[1].split(",");
+				if ((Integer.parseInt(t1[1])) < (Integer.parseInt(t1[0]))) {
+					System.out.println("Invalid Arguments to Subset Exception");
+				}
+				else {
 				int[] array = setObj.subSet(Integer.parseInt(t1[0]), Integer.parseInt(t1[1]));
 				String str = "{";
 				int i;
@@ -122,8 +121,13 @@ public class Solution {
 				}
 				str += array[i] + "}";
 				System.out.println(str);
+			    }
 				break;
 			case "headSet":
+			if (Integer.parseInt(tokens[1]) < setObj.get(0)) {
+				System.out.println("{}");
+				}
+			else {
 				int[] arrayOne = setObj.headSet(Integer.parseInt(tokens[1]));
 				String strOne = "{";
 				int j;
@@ -132,6 +136,7 @@ public class Solution {
 				}
 				strOne += arrayOne[j] + "}";
 				System.out.println(strOne);
+			}
 				break;
 			case "last":
 				System.out.println(setObj.last());
