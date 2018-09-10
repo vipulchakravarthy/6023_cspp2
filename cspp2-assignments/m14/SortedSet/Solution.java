@@ -39,7 +39,7 @@ class SortedSet {
         }
         return -1;
     }
-    /**the method is to resize the list
+    /**the method is to resize the list.
     */
     private void resize() {
         list = Arrays.copyOf(list, 2 * list.length);
@@ -57,7 +57,7 @@ class SortedSet {
         }
     return false;
 }
-/**the method is to add an element
+/**the method is to add an element.
 *@param item int
 */
  public void add(final int item) {
@@ -81,11 +81,12 @@ class SortedSet {
         }
         Arrays.sort(list, 0, size);
         }
-    /** Returns​ ​ a ​ ​ view​ ​ of​ ​ the​ ​ portion​ ​ of​ .
-     * this​ ​ set whose​ ​ elements​ ​ range​ ​ from​ ​ fromElement,​
+    /** Returns​ a​ view ​of​ the​ portion​ ​of​ .
+     * this​ ​ set whose​ ​ elements​ ​ range​ ​ from​ ​
+     * fromElement,​
      *  inclusive,​ ​ to​ ​ toElement,​ ​ exclusive.
      *@param elementOne int
-     *@param elementTwo
+     *@param elementTwo int
      *@return temp
      */
     public int[] subSet(final int elementOne, final int elementTwo) {
@@ -114,7 +115,7 @@ class SortedSet {
     *@return last element of set
     */
     public int last() {
-        return list[size-1];
+        return list[size - 1];
     }
     /** this method is to print the set.
     *@return str String
@@ -125,7 +126,7 @@ class SortedSet {
         }
         String str = "{";
         int i = 0;
-        for ( i = 0; i < size - 1; i++) {
+        for (i = 0; i < size - 1; i++) {
             str += list[i] + ", ";
         }
         str += list[i] + "}";
@@ -148,7 +149,7 @@ public final class Solution {
     SortedSet setObj = new SortedSet();
     Scanner sc = new Scanner(new
         BufferedInputStream(System.in));
-    while(sc.hasNext()) {
+    while (sc.hasNext()) {
         String line = sc.nextLine();
         String[] tokens  = line.split(" ");
         switch (tokens[0]) {
@@ -172,12 +173,10 @@ public final class Solution {
                     System.out.println(
                         "Invalid Arguments to Subset Exception");
                     break;
-                }
-                else if (setObj.size() == 0) {
+                } else if (setObj.size() == 0) {
                     System.out.println("{}");
                     break;
-                }
-                else {
+                } else {
                 int[] array = setObj.subSet(
                     Integer.parseInt(t1[0]), Integer.parseInt(t1[1]));
                 String str = "{";
@@ -199,7 +198,7 @@ public final class Solution {
                     Integer.parseInt(tokens[1]));
                 String strOne = "{";
                 int j;
-                for ( j = 0; j < arrayOne.length - 1; j++) {
+                for (j = 0; j < arrayOne.length - 1; j++) {
                     strOne += arrayOne[j] + ", ";
                 }
                 strOne += arrayOne[j] + "}";
