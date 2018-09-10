@@ -1,17 +1,35 @@
 import java.util.Scanner;
 import java.io.BufferedInputStream;
 import java.util.Arrays;
+/**the below class is to perform the set operation.
+*/
 class SortedSet {
+	/**the list is the array created with private specifier.
+	*/
 	private int[] list;
+	/**the size is an array variable.
+	*/
 	private int size;
-
+	/** the below is constructor.
+	*/
 	SortedSet() {
 		list = new int[10];
 		size = 0;
 	}
+	/**
+	 * the method is to determine the size of.
+	 *an array.
+	 *@return size int
+	 */
 	public int size() {
 		return size;
 	}
+	/**
+	 * the method is to get the element at index.
+	 * @param      index  int
+	 *
+	 * @return  element at that index
+	 */
 	public int get(int index) {
 		for (int i = 0; i < size; i++) {
 			if (i == index) {
@@ -20,9 +38,16 @@ class SortedSet {
 		}
 		return -1;
 	}
+	/**the method is to resize the list
+	*/
     private void resize() {
         list = Arrays.copyOf(list, 2 * list.length);
     }
+    /**the method is to give whether the.
+    *element is present or not.
+    *@param item int
+    *@return boolean
+    */
     public boolean contains(final int item) {
         for (int element: list) {
             if (element == item) {
@@ -31,6 +56,9 @@ class SortedSet {
         }
     return false;
 }
+/**the method is to add an element
+*@param item int
+*/
  public void add(final int item) {
         if (size == list.length) {
             resize();
@@ -39,7 +67,9 @@ class SortedSet {
            list[size++] = item;
         }
  }
-
+	/** the method is to add array to set.
+	*@param newArray int[]
+	*/
 	public void addAll(final int[] newArray) {
 		if (size + newArray.length > 10) {
 			resize();
@@ -49,7 +79,13 @@ class SortedSet {
 		}
 		Arrays.sort(list, 0, size);
 		}
-
+	/** Returns​ ​ a ​ ​ view​ ​ of​ ​ the​ ​ portion​ ​ of​ .
+	 * this​ ​ set whose​ ​ elements​ ​ range​ ​ from​ ​ fromElement,​
+	 *  inclusive,​ ​ to​ ​ toElement,​ ​ exclusive.
+	 *@param elementOne int
+	 *@param elementTwo
+	 *@return temp
+	 */
 	public int[] subSet(final int elementOne, final int elementTwo) {
 		int[] resultSet = new int[10];
 		int count = 0;
@@ -62,14 +98,24 @@ class SortedSet {
 		int[] temp = Arrays.copyOfRange(resultSet, 0, count);
 		return temp;
 		}
-
+	/** Returns​ ​ a ​ ​ view​ ​ of​ ​ the​ ​ portion​. ​
+	 *of​ ​ this​ ​ set​ ​ whose​ ​ elements​ ​ are strictly​
+	 *less​ ​ than​ ​ toElement.
+	 *@param item int
+	 *@return temp int[]
+	 */
 	public int[] headSet(final int item) {
 			return subSet(list[0], item);
 		}
+	/**the method is to give the last element in set
+	*@return last element of set
+	*/
 	public int last() {
 		return list[size-1];
 	}
-
+	/** this method is to print the set.
+	*@return str String
+	*/
 	public String print() {
 		if (size == 0) {
 			return "{}";
@@ -83,16 +129,22 @@ class SortedSet {
 		return str;
 		}
 }
-
+/** this is the solution class which contains.
+ * main method
+ */
 public class Solution {
 	/** the empty constructor for the class.
 	*/
 	Solution() {
-
 	}
+	/** the main method is to take the.
+	*input from user.
+	*@param args String[]
+	*/
 	public static void main(String[] args) {
 	SortedSet setObj = new SortedSet();
-	Scanner sc = new Scanner(new BufferedInputStream(System.in));
+	Scanner sc = new Scanner(new
+		BufferedInputStream(System.in));
 	while(sc.hasNext()) {
 		String line = sc.nextLine();
 		String[] tokens  = line.split(" ");
@@ -112,8 +164,10 @@ public class Solution {
 				break;
 			case "subSet":
 				String[] t1 = tokens[1].split(",");
-				if ((Integer.parseInt(t1[1])) < (Integer.parseInt(t1[0]))) {
-					System.out.println("Invalid Arguments to Subset Exception");
+				if ((Integer.parseInt(t1[1])) < (
+					Integer.parseInt(t1[0]))) {
+					System.out.println(
+						"Invalid Arguments to Subset Exception");
 					break;
 				}
 				else if (setObj.size() == 0) {
@@ -121,7 +175,8 @@ public class Solution {
 					break;
 				}
 				else {
-				int[] array = setObj.subSet(Integer.parseInt(t1[0]), Integer.parseInt(t1[1]));
+				int[] array = setObj.subSet(
+					Integer.parseInt(t1[0]), Integer.parseInt(t1[1]));
 				String str = "{";
 				int i;
 				for ( i = 0; i < array.length - 1; i++) {
@@ -137,7 +192,8 @@ public class Solution {
 				break;
 				}
 			else {
-				int[] arrayOne = setObj.headSet(Integer.parseInt(tokens[1]));
+				int[] arrayOne = setObj.headSet(
+					Integer.parseInt(tokens[1]));
 				String strOne = "{";
 				int j;
 				for ( j = 0; j < arrayOne.length - 1; j++) {
