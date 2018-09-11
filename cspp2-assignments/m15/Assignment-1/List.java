@@ -218,6 +218,10 @@ public final class List extends Exception {
     *@param newArray int[]
     */
     public void addAll(final int[] newArray) {
+        final int ten = 10;
+        if (size + newArray.length > ten) {
+            resize();
+        }
         int j = 0;
         for (int i = size; i < size + newArray.length; i++) {
             list[i] = newArray[j];
