@@ -240,11 +240,7 @@ public final class Solution extends Exception {
             case "subSet":
                 String[] t1 = tokens[1].split(",");
                 try {
-                    if (setObj.size() == 0) {
-                        System.out.println("{}");
-                        break;
-                    }
-                    else if ((Integer.parseInt(t1[1])) < (
+                     if ((Integer.parseInt(t1[1])) < (
                         Integer.parseInt(t1[0]))) {
                         throw new Exception(
                         "Invalid Arguments to Subset Exception");
