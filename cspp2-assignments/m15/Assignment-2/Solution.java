@@ -76,7 +76,20 @@ class SortedSet {
         if (!contains(item)) {
            list[size++] = item;
         }
- }
+    }
+     /** the methos is to add an array.
+    *to the set
+     *@param newArray int
+    */
+    public void add(final int[] newArray) {
+        final int tenDecimal = 10;
+        if (size + newArray.length > tenDecimal) {
+            resize();
+        }
+        for (int element: newArray) {
+            add(element);
+        }
+    }
     /** the method is to add array to set.
     *@param newArray int[]
     */
@@ -127,6 +140,34 @@ class SortedSet {
     public int last() {
         return list[size - 1];
     }
+    /**
+     * Finds the intersection of the two sets.
+     * @param  other as set 2.
+     * @return the result that contains the common
+     * elements of the two sets.
+     */
+    public SortedSet intersection(SortedSet other) {
+        SortedSet result = new SortedSet();
+        for (int i = 0; i < this.size; i++) {
+            if (other.contains(this.get(i))) {
+                result.add(this.get(i));
+            }
+        }
+        return result;
+    }
+    /**
+     * retains all the elements from the set.
+     * @param  arr is a form of set2.
+     * @return the set that contains all the elements
+     * of this set.
+     */
+    public SortedSet retainAll(final int[] arr) {
+        SortedSet other = new SortedSet();
+        for (int item : arr) {
+            other.add(item);
+        }
+        return intersection(other);
+    }
     /** this method is to print the set.
     *@return str String
     */
@@ -151,6 +192,25 @@ public final class Solution extends Exception {
     */
     private Solution() {
     }
+    /**
+     * helper function to convert string input to int array.
+     *
+     * @param      s     { string input from test case file }
+     *
+     * @return     { int array from the given string }
+     */
+    public static int[] intArray(final String s) {
+        String input = s;
+        if (input.equals("[]")) {
+            return new int[0];
+        }
+        if (s.contains("[")) {
+            input = s.substring(1, s.length() - 1);
+        }
+        return Arrays.stream(input.split(","))
+                            .mapToInt(Integer::parseInt)
+                            .toArray();
+    }
     /** the main method is to take the.
     *input from user.
     *@param args String[]
@@ -162,6 +222,7 @@ public final class Solution extends Exception {
     while (sc.hasNext()) {
         String line = sc.nextLine();
         String[] tokens  = line.split(" ");
+        int[] intArray = intArray(tokens[1]);
         switch (tokens[0]) {
             case "print":
                 System.out.println(setObj.print());
@@ -238,6 +299,21 @@ public final class Solution extends Exception {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
+            case "intersection":
+                SortedSet s = new SortedSet();
+                SortedSet t = new SortedSet();
+                s.add(intArray);
+                intArray = intArray(tokens[2]);
+                t.add(intArray);
+                System.out.println(s.intersection(t));
+                break;
+            case "retainAll":
+                s = new SortedSet();
+                intArray = intArray(tokens[1]);
+                s.add(intArray);
+                intArray = intArray(tokens[2]);
+                System.out.println(s.retainAll(intArray));
+                break;
             default: break;
         }
     }
