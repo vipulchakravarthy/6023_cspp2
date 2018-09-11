@@ -315,14 +315,14 @@ public final class Solution extends Exception {
             s.add(intArray);
             intArray = intArray(tokens[2]);
             t.add(intArray);
-            System.out.println(s.intersection(t));
+            System.out.println(s.intersection(t).print());
             break;
             case "retainAll":
             s = new SortedSet();
             intArray = intArray(tokens[1]);
             s.add(intArray);
             intArray = intArray(tokens[2]);
-            System.out.println(s.retainAll(intArray));
+            System.out.println(s.retainAll(intArray).print());
             break;
 
             default: break;
