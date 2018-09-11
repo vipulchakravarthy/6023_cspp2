@@ -179,26 +179,27 @@ public final class Solution extends Exception {
             case "subSet":
                 String[] t1 = tokens[1].split(",");
                 try {
-                    if ((Integer.parseInt(t1[1])) < (
+                    if (setObj.size() == 0) {
+                        System.out.println("{}");
+                        break;
+                    }
+                    else if ((Integer.parseInt(t1[1])) < (
                         Integer.parseInt(t1[0]))) {
                         throw new Exception(
                         "Invalid Arguments to Subset Exception");
-                } else if (setObj.size() == 0) {
-                    System.out.println("{}");
-                    break;
-                } else {
-                int[] array = setObj.subSet(
+                    } else {
+                    int[] array = setObj.subSet(
                     Integer.parseInt(t1[0]), Integer.parseInt(t1[1]));
-                String str = "{";
-                int i;
-                for (i = 0; i < array.length - 1; i++) {
-                    str += array[i] + ", ";
-                }
-                str += array[i] + "}";
-                System.out.println(str);
-                break;
-                }
-            } catch (Exception e) {
+                    String str = "{";
+                    int i;
+                    for (i = 0; i < array.length - 1; i++) {
+                        str += array[i] + ", ";
+                    }
+                    str += array[i] + "}";
+                    System.out.println(str);
+                    break;
+                    }
+                } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
             case "headSet":
