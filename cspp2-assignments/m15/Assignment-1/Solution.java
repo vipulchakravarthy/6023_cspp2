@@ -39,7 +39,7 @@ class Set {
 
 	public void remove(int index) {
 		try {
-			for (int i = index; i < size; i++) {
+			for (int i = index; i <= size; i++) {
 				list[i] = list[i + 1];
 			}
 			size--;
