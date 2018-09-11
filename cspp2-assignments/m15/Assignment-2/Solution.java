@@ -148,7 +148,7 @@ class SortedSet {
      * @return the result that contains the common
      * elements of the two sets.
      */
-    public SortedSet intersection(SortedSet other) {
+    public SortedSet intersection(final SortedSet other) {
         SortedSet result = new SortedSet();
         for (int i = 0; i < this.size; i++) {
             if (other.contains(this.get(i))) {
@@ -282,7 +282,8 @@ public final class Solution extends Exception {
                     }
                     } catch (Exception e) {
                 System.out.println(e.getMessage());
-            }break;
+            }
+            break;
             case "last":
             try {
                 if (setObj.size() == 0) {
