@@ -111,7 +111,7 @@ public final class List extends Exception {
                 }
                 size--;
             } else {
-                throw new Exception("Invalid Position Exception​");
+                throw new Exception("Invalid Position Exception");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
