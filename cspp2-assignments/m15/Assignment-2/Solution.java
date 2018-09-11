@@ -244,6 +244,10 @@ public final class Solution extends Exception {
                         Integer.parseInt(t1[0]))) {
                         throw new Exception(
                         "Invalid Arguments to Subset Exception");
+                    }
+                    if ((setObj.size() == 0)) {
+                        System.out.println("{}");
+                        break;
                     } else {
                     int[] array = setObj.subSet(
                     Integer.parseInt(t1[0]), Integer.parseInt(t1[1]));
