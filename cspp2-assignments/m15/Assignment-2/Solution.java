@@ -264,27 +264,22 @@ public final class Solution extends Exception {
                 System.out.println(e.getMessage());
             }
             case "headSet":
-            try {
-            if (setObj.size() == 0) {
-                    throw new Exception("Set Empty Exception");
-            } else {
-                if (Integer.parseInt(tokens[1]) <= setObj.get(0)) {
-                    System.out.println("{}");
-                    break;
-                } else {
-                int[] arrayOne = setObj.headSet(
-                    Integer.parseInt(tokens[1]));
-                String strOne = "{";
-                int j;
-                for (j = 0; j < arrayOne.length - 1; j++) {
-                    strOne += arrayOne[j] + ", ";
-                }
-                strOne += arrayOne[j] + "}";
-                System.out.println(strOne);
-                break;
-                }
-            }
-            } catch (Exception e) {
+                try {
+                    if (Integer.parseInt(tokens[1]) <= setObj.get(0)) {
+                        throw new Exception("Set Empty Exception");
+                    } else {
+                        int[] arrayOne = setObj.headSet(
+                        Integer.parseInt(tokens[1]));
+                        String strOne = "{";
+                        int j;
+                        for (j = 0; j < arrayOne.length - 1; j++) {
+                        strOne += arrayOne[j] + ", ";
+                        }
+                        strOne += arrayOne[j] + "}";
+                        System.out.println(strOne);
+                        break;
+                    }
+                    } catch (Exception e) {
                 System.out.println(e.getMessage());
                 break;
             }
