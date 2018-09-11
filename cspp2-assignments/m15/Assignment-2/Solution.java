@@ -76,6 +76,19 @@ class SortedSet {
         if (!contains(item)) {
            list[size++] = item;
         }
+ }
+    /** the methos is to add an array.
+    *to the set
+     *@param newArray int
+    */
+    public void add(final int[] newArray) {
+        final int tenDecimal = 10;
+        if (size + newArray.length > tenDecimal) {
+            resize();
+        }
+        for (int element: newArray) {
+            add(element);
+        }
     }
     /** the method is to add array to set.
     *@param newArray int[]
@@ -179,7 +192,7 @@ public final class Solution extends Exception {
     */
     private Solution() {
     }
-    /**
+   /**
      * helper function to convert string input to int array.
      *
      * @param      s     { string input from test case file }
@@ -204,12 +217,12 @@ public final class Solution extends Exception {
     */
     public static void main(final String[] args) {
     SortedSet setObj = new SortedSet();
+    SortedSet s = new SortedSet();
     Scanner sc = new Scanner(new
         BufferedInputStream(System.in));
     while (sc.hasNext()) {
         String line = sc.nextLine();
         String[] tokens  = line.split(" ");
-        int[] intArray = intArray(tokens[1]);
         switch (tokens[0]) {
             case "print":
                 System.out.println(setObj.print());
@@ -286,21 +299,32 @@ public final class Solution extends Exception {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
+            break;
+            case "add":
+            int[] intArray = intArray(tokens[1]);
+            if (intArray.length == 1) {
+                s.add(intArray[0]);
+            } else {
+                s.add(intArray);
+            }
+            break;
             case "intersection":
-                SortedSet s = new SortedSet();
-                SortedSet t = new SortedSet();
-                s.addAll(intArray);
-                intArray = intArray(tokens[2]);
-                t.addAll(intArray);
-                System.out.println(s.intersection(t));
-                break;
+            s = new SortedSet();
+            SortedSet t = new SortedSet();
+            intArray = intArray(tokens[1]);
+            s.add(intArray);
+            intArray = intArray(tokens[2]);
+            t.add(intArray);
+            System.out.println(s.intersection(t));
+            break;
             case "retainAll":
-                s = new SortedSet();
-                intArray = intArray(tokens[1]);
-                s.addAll(intArray);
-                intArray = intArray(tokens[2]);
-                System.out.println(s.retainAll(intArray));
-                break;
+            s = new SortedSet();
+            intArray = intArray(tokens[1]);
+            s.add(intArray);
+            intArray = intArray(tokens[2]);
+            System.out.println(s.retainAll(intArray));
+            break;
+
             default: break;
         }
     }
