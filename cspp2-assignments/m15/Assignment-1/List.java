@@ -86,6 +86,9 @@ public final class List extends Exception {
     public int size() {
         return size;
     }
+    /**
+     * the method is to resize the list.
+     */
      public void resize() {
         list = Arrays.copyOf(list, 2 * list.length);
      }
