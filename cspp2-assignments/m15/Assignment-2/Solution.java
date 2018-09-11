@@ -76,6 +76,7 @@ class SortedSet {
         if (!contains(item)) {
            list[size++] = item;
         }
+        Arrays.sort(list, 0, size);
  }
     /** the methos is to add an array.
     *to the set
@@ -89,6 +90,7 @@ class SortedSet {
         for (int element: newArray) {
             add(element);
         }
+        Arrays.sort(list, 0, size);
     }
     /** the method is to add array to set.
     *@param newArray int[]
