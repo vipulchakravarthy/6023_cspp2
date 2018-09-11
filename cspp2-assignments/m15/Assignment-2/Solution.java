@@ -77,19 +77,6 @@ class SortedSet {
            list[size++] = item;
         }
     }
-     /** the methos is to add an array.
-    *to the set
-     *@param newArray int
-    */
-    public void add(final int[] newArray) {
-        final int tenDecimal = 10;
-        if (size + newArray.length > tenDecimal) {
-            resize();
-        }
-        for (int element: newArray) {
-            add(element);
-        }
-    }
     /** the method is to add array to set.
     *@param newArray int[]
     */
@@ -302,15 +289,15 @@ public final class Solution extends Exception {
             case "intersection":
                 SortedSet s = new SortedSet();
                 SortedSet t = new SortedSet();
-                s.add(intArray);
+                s.addAll(intArray);
                 intArray = intArray(tokens[2]);
-                t.add(intArray);
+                t.addAll(intArray);
                 System.out.println(s.intersection(t));
                 break;
             case "retainAll":
                 s = new SortedSet();
                 intArray = intArray(tokens[1]);
-                s.add(intArray);
+                s.addAll(intArray);
                 intArray = intArray(tokens[2]);
                 System.out.println(s.retainAll(intArray));
                 break;
