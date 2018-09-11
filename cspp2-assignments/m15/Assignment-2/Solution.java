@@ -254,11 +254,11 @@ public final class Solution extends Exception {
                     }
                     str += array[i] + "}";
                     System.out.println(str);
-                    break;
                     }
                 } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
+            break;
             case "headSet":
                 try {
                     if (Integer.parseInt(tokens[1]) <= setObj.get(0)) {
@@ -273,19 +273,16 @@ public final class Solution extends Exception {
                         }
                         strOne += arrayOne[j] + "}";
                         System.out.println(strOne);
-                        break;
                     }
                     } catch (Exception e) {
                 System.out.println(e.getMessage());
-                break;
-            }
+            }break;
             case "last":
             try {
                 if (setObj.size() == 0) {
                     throw new Exception("Set Empty Exception");
                 } else {
                 System.out.println(setObj.last());
-                break;
                 }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
