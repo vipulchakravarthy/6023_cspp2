@@ -20,8 +20,8 @@ class Show {
     /**
      * this is a Show constructor.
      * @param      movie  The movie
-     * @param      time   The timeDate
-     * @param      seats  The seat
+     * @param      timeDate   The timeDate
+     * @param      seat  The seat
      */
     Show(final String movie, final String timeDate,
      final String[] seat) {
@@ -157,10 +157,10 @@ class  BookYourShow {
     public void printTicket(final String movieName,
         final String time, final String mobileNumber) {
         for (int i = 0; i < reservedTickets.size(); i++) {
-            if ((mobileNumber + " " + movieName +
-                " " + time).equals(reservedTickets.get(i))) {
-                System.out.println(mobileNumber + " " +
-                 movieName + " " + time);
+            if ((mobileNumber + " " + movieName
+                +" " + time).equals(reservedTickets.get(i))) {
+                System.out.println(mobileNumber + " "
+                + movieName + " " + time);
                 return;
             }
         }
