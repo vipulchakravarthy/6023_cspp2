@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 class Show {
 	private String movieName;
 	private String time;
@@ -20,6 +21,9 @@ class Show {
 	public void setSeats(int index, String text) {
 		seats[index] = text;
 	}
+	public String toString() {
+		return this.movieName +","+this.time;
+	}
 }
 class  BookYourShow {
 	List<Show> movieDetails = new List<Show>();
@@ -38,30 +42,36 @@ class  BookYourShow {
 		}
 		return null;
 	}
-	public String bookAShow(String movieName, String time, Patron obj, String[] seats) {
+	public void bookAShow(String movieName, String time, Patron obj, String[] seats) {
 		Show movieData = getAShow(movieName, time);
-		for (int i = 0; i < movieData.getSeats().length; i++) {
-			for (int j = 0; j < seats.length; j++) {
-				if (seats[j].equals(movieData.getSeats()[i])) {
-					movieData.setSeats(i, "N/A");
-					reservedTickets.add(obj.getMobileNumber()+" "+movieName+" "+time);
+		if (movieData != null) {
+			for (int i = 0; i < movieData.getSeats().length; i++) {
+				for (int j = 0; j < seats.length; j++) {
+					if (seats[j].equals(movieData.getSeats()[i])) {
+						movieData.setSeats(i, "N/A");
+						reservedTickets.add(obj.getMobileNumber()+" "+movieName+" "+time);
+					}
 				}
 			}
+		} else {
+			System.out.println("No show");
 		}
-		return "";
 	}
 	public void printTicket(String movieName, String time, String mobileNumber) {
 		for (int i = 0; i < reservedTickets.size(); i++) {
 			if ((mobileNumber+" "+movieName+" "+time).equals(reservedTickets.get(i))) {
 				System.out.println(mobileNumber+" "+movieName+" "+time);
-				break;
+				return;
 			}
 		}
+		System.out.println("Invalid");
+		return;
 	}
 
 	public void showAll() {
 		for (int i = 0; i < movieDetails.size(); i++) {
-			System.out.println(movieDetails.get(i).toString());
+			System.out.println(movieDetails.get(i).toString()+","+
+				Arrays.toString(movieDetails.get(i).getSeats()).replace(" ",""));
 		}
 	}
 }
