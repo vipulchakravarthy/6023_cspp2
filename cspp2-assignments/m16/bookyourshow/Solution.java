@@ -158,7 +158,7 @@ class  BookYourShow {
         final String time, final String mobileNumber) {
         for (int i = 0; i < reservedTickets.size(); i++) {
             if ((mobileNumber + " " + movieName
-                +" " + time).equals(reservedTickets.get(i))) {
+                + " " + time).equals(reservedTickets.get(i))) {
                 System.out.println(mobileNumber + " "
                 + movieName + " " + time);
                 return;
