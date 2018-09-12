@@ -23,11 +23,11 @@ class Show {
 	 * @param      time   The time
 	 * @param      seats  The seats
 	 */
-	public Show(final String movie, final String time,
-	 final String[] seats) {
+	public Show(final String movie, final String timeDate,
+	 final String[] seat) {
 		this.movieName = movie;
-		this.time = time;
-		this.seats = seats;
+		this.time = timeDate;
+		this.seats = seat;
 	}
 	/**this method gives the movie name.
 	*@return movieName which is the
@@ -133,7 +133,7 @@ class  BookYourShow {
 				if (seats[j].equals(movieData.getSeats()[i])) {
 					movieData.setSeats(i, "N/A");
 					reservedTickets.add(
-						obj.getMobileNumber() + " " + movieName + " " + time);
+					obj.getMobileNumber() + " " + movieName + " " + time);
 				}
 			}
 		}
@@ -153,8 +153,10 @@ class  BookYourShow {
 	public void printTicket(final String movieName,
 		final String time, final String mobileNumber) {
 		for (int i = 0; i < reservedTickets.size(); i++) {
-			if ((mobileNumber + " " + movieName + " " + time).equals(reservedTickets.get(i))) {
-				System.out.println(mobileNumber + " " + movieName + " " + time);
+			if ((mobileNumber + " " + movieName +
+				" " + time).equals(reservedTickets.get(i))) {
+				System.out.println(mobileNumber + " " +
+				 movieName + " " + time);
 				return;
 			}
 		}
@@ -167,8 +169,10 @@ class  BookYourShow {
 	 */
 	public void showAll() {
 		for (int i = 0; i < movieDetails.size(); i++) {
-			System.out.println(movieDetails.get(i).toString() + "," +
-				Arrays.toString(movieDetails.get(i).getSeats()).replace(" ",""));
+			System.out.println(
+				movieDetails.get(i).toString() + ","
+				+ Arrays.toString(movieDetails.get(i)
+					.getSeats()).replace(" ", ""));
 		}
 	}
 }
@@ -193,7 +197,7 @@ class Patron {
 	 * @param      mobile the mobile number
 	 * of user
 	 */
-	public Patron(final String user, final String mobile) {
+	Patron(final String user, final String mobile) {
 		this.name = user;
 		this.mobileNumber = mobile;
 	}
