@@ -25,7 +25,7 @@ class Item {
 		return Float.parseFloat(price);
 	}
 	public void setQuantity(int entity) {
-		quantity -= entity;
+		this.quantity -= entity;
 	}
 }
 
@@ -49,13 +49,18 @@ class ShoppingCart {
 				&& item.getQuantity() <= catalogObj.get(i).getQuantity()) {
 		        cartObj.add(item);
 		        catalogObj.get(i).setQuantity(item.getQuantity());
+		        return;
 			}
 	    }
 	}
 	public void removeFromCart(Item item) {
 		for (int i = 0; i < cartObj.size(); i++) {
 			if (item.getProduct().equals(cartObj.get(i).getProduct())) {
+				if (cartObj.get(i).getQuantity() == item.getQuantity()) {
+					cartObj.remove(i);
+				} else {
 				cartObj.get(i).setQuantity(item.getQuantity());
+				}
 			}
 		}
 	}
@@ -104,7 +109,7 @@ class ShoppingCart {
 		if (code.equals("IND50")) {
 			discount = 50;
 		} else {
-			discount = 0;
+			System.out.println("Invalid coupon");
 		}
 	}
 
@@ -113,11 +118,11 @@ class ShoppingCart {
 		for (int i = 0; i < cartObj.size(); i++) {
 			for (int j = 0; j < catalogObj.size(); j++) {
 				if (cartObj.get(i).getProduct().equals(catalogObj.get(j).getProduct())) {
-				System.out.println(cartObj.get(i).getProduct()+"   "+cartObj.get(i).getQuantity() + " " + catalogObj.get(j).getPrice());
+				System.out.println(cartObj.get(i).getProduct() + " "+ cartObj.get(i).getQuantity() + " " + catalogObj.get(j).getPrice());
 				}
 			}
 		}
-		System.out.println("total: "+ getTotalAmount());
+		System.out.println("Total: "+ getTotalAmount());
 		System.out.println("Disc%: " + (getTotalAmount() * (discount/100)));
 		System.out.println("Tax: "+ (getTotalAmount() * 0.15));
 		System.out.println("Payable amount: "+ getPayableAmount());
