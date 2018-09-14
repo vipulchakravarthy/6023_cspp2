@@ -86,12 +86,11 @@ class ShoppingCart {
 	}
 
 	public float getPayableAmount() {
-		float tax = (getTotalAmount() * (15/100));
-		float total = 0;
-		total = getTotalAmount() + tax;
-		float discountAmount = (total * (discount/100));
-		float payableAmount = total - discountAmount;
-		return payableAmount;
+		float discountAmount = (getTotalAmount() * (discount/100));
+		float payableAmount = getTotalAmount() - discountAmount;
+		float tax = (payableAmount * (15/100));
+		float total =  (payableAmount + tax);
+		return total;
 	}
 
 	public void applyCoupon(String code) {
@@ -119,7 +118,8 @@ class ShoppingCart {
 			}
 		}
 		System.out.println("totalAmount: "+ getTotalAmount());
-		System.out.println("Disc%: " + discount);
+		System.out.println("total: "+ getTotalAmount());
+		System.out.println("Disc%: " + (getTotalAmount() * (discount/100)));
 		System.out.println("Tax: "+ (getTotalAmount() * 0.15));
 		System.out.println("Payable amount: "+ getPayableAmount());
 	}
