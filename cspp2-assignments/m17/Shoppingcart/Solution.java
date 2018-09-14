@@ -33,7 +33,6 @@ class ShoppingCart {
 	private List<Item>catalogObj;
 	private List<Item>cartObj;
 	private float discount;
-	private float tax;
 
 	public ShoppingCart() {
 		catalogObj = new List<Item>();
@@ -92,13 +91,13 @@ class ShoppingCart {
 	}
 
 	public float getPayableAmount() {
-		float total = getTotalAmount();
-		float discountAmount = total * (discount / 100);
-		total -= discountAmount;
-		tax = total * (15/100);
-		total += tax;
+		float tax = ((getTotalAmount()/100) * 15);
+		float payableAmount = getTotalAmount() + tax;
+		float discountAmount = ((payableAmount / 100) * discount);
+		float total = payableAmount - discountAmount;
 		return total;
 	}
+
 	public void applyCoupon(String code) {
 		if (code.equals("IND10")) {
 			discount = 10;
@@ -125,11 +124,10 @@ class ShoppingCart {
 		}
 		System.out.println("Total:"+ getTotalAmount());
 		System.out.println("Disc%:" + (getTotalAmount() * (discount/100)));
-		System.out.println("Tax:"+ tax);
+		System.out.println("Tax:"+ (getTotalAmount() * 0.15));
 		System.out.println("Payable amount: "+ getPayableAmount());
 	}
 }
-
 class Solution {
 	Solution() {
 
