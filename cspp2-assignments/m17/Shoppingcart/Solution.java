@@ -164,7 +164,7 @@ class Solution {
 				System.out.println("totalAmount: " + shopObj.getTotalAmount());
 				break;
 			case "payableAmount":
-				System.out.println("payable amount: " + shopObj.getPayableAmount());
+				System.out.println("Payable amount: " + shopObj.getPayableAmount());
 				break;
 			case "print":
 				shopObj.printInvoice();
