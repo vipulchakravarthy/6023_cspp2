@@ -91,7 +91,7 @@ class ShoppingCart {
 		System.out.println(discountAmount);
 		float payableAmount = getTotalAmount() - discountAmount;
 		System.out.println(payableAmount+ "hi");
-		float tax = (payableAmount * (15/100));
+		float tax = (payableAmount/100) * (15);
 		System.out.println(tax);
 		float total =  (payableAmount + tax);
 		System.out.println(total);
