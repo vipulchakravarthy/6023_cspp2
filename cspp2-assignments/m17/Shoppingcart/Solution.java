@@ -161,7 +161,7 @@ class Solution {
 				shopObj.showCart();
 				break;
 			case "totalAmount":
-				System.out.println("totalAmount:" + shopObj.getTotalAmount());
+				System.out.println("totalAmount: " + shopObj.getTotalAmount());
 				break;
 			case "payableAmount":
 				System.out.println("payable amount: " + shopObj.getPayableAmount());
