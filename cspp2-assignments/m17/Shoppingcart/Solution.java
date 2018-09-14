@@ -91,10 +91,10 @@ class ShoppingCart {
 	}
 
 	public float getPayableAmount() {
-		float discountAmount = (getTotalAmount() * (discount/100));
-		float payableAmount = getTotalAmount() - discountAmount;
-		float tax = (payableAmount/100) * (15);
-		float total =  (payableAmount + tax);
+		float tax = ((getTotalAmount()/100) * 15);
+		float payableAmount = getTotalAmount() + tax;
+		float discountAmount = ((payableAmount / 100) * discount);
+		float total = payableAmount - discountAmount;
 		return total;
 	}
 
