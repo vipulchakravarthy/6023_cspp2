@@ -37,6 +37,7 @@ class ShoppingCart {
 	private List<Item>cartObj;
 	private float discount;
 	private float tax;
+	private int flag = 0;
 	public ShoppingCart() {
 		catalogObj = new List<Item>();
 		cartObj = new List<Item>();
@@ -104,18 +105,23 @@ class ShoppingCart {
 	}
 
 	public void applyCoupon(String code) {
-		if (code.equals("IND10")) {
+		if (code.equals("IND10") && flag == 0) {
 			discount = 10;
-		} else if (code.equals("IND20")) {
+			flag = 1;
+		} else if (code.equals("IND20") && flag == 0) {
 			discount = 20;
-		} else if (code.equals("IND30")) {
+			flag = 1;
+		} else if (code.equals("IND30") && flag == 0) {
 			discount = 30;
+			flag = 1;
 		}
-		else if (code.equals("IND50")) {
+		else if (code.equals("IND50")&& flag == 0) {
 			discount = 50;
-		} else {
+			flag = 1;
+		} else if (flag == 0) {
 			System.out.println("Invalid coupon");
 		}
+		return;
 	}
 
 	public void printInvoice() {
