@@ -96,6 +96,7 @@ class ShoppingCart {
 		float discountAmount = total * (discount / 100);
 		total -= discountAmount;
 		tax = total * (15/100);
+		total += tax;
 		return total;
 	}
 	public void applyCoupon(String code) {
