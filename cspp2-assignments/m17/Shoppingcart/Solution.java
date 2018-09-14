@@ -113,7 +113,7 @@ class ShoppingCart {
 		for (int i = 0; i < cartObj.size(); i++) {
 			for (int j = 0; j < catalogObj.size(); j++) {
 				if (cartObj.get(i).getProduct().equals(catalogObj.get(j).getProduct())) {
-				System.out.println(cartObj.get(i).getProduct()+"   "+cartObj.get(i).getQuantity()+" "+catalogObj.get(i).getPrice());
+				System.out.println(cartObj.get(i).getProduct()+"   "+cartObj.get(i).getQuantity() + " " + catalogObj.get(j).getPrice());
 				}
 			}
 		}
