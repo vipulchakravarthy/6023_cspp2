@@ -78,7 +78,7 @@ class ShoppingCart {
 		for (int i = 0; i < cartObj.size(); i++) {
 			for (int j = 0; j < catalogObj.size(); j++) {
 				if (cartObj.get(i).getProduct().equals(catalogObj.get(j).getProduct())) {
-					net += cartObj.get(i).getQuantity() * catalogObj.get(i).getPrice();
+					net += cartObj.get(i).getQuantity() * catalogObj.get(j).getPrice();
 				}
 			}
 		}
