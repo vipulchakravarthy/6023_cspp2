@@ -122,9 +122,9 @@ class ShoppingCart {
 				}
 			}
 		}
-		System.out.println("Total: "+ getTotalAmount());
-		System.out.println("Disc%: " + (getTotalAmount() * (discount/100)));
-		System.out.println("Tax: "+ (getTotalAmount() * 0.15));
+		System.out.println("Total:"+ getTotalAmount());
+		System.out.println("Disc%:" + (getTotalAmount() * (discount/100)));
+		System.out.println("Tax:"+ (getTotalAmount() * 0.15));
 		System.out.println("Payable amount: "+ getPayableAmount());
 	}
 }
@@ -161,10 +161,10 @@ class Solution {
 				shopObj.showCart();
 				break;
 			case "totalAmount":
-				System.out.println("totalAmount: " + shopObj.getTotalAmount());
+				System.out.println("totalAmount:" + shopObj.getTotalAmount());
 				break;
 			case "payableAmount":
-				System.out.println("payableAmount: " + shopObj.getPayableAmount());
+				System.out.println("payable amount: " + shopObj.getPayableAmount());
 				break;
 			case "print":
 				shopObj.printInvoice();
