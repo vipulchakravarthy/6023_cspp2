@@ -48,15 +48,22 @@ class ShoppingCart {
 		catalogObj.add(itemObj);
 	}
 	public void addToCart(Item item) {
+		// int index = cartObj.indexOf(item.getProduct());
+		// if (index == -1) {
 		for (int i = 0; i < catalogObj.size(); i++) {
 			if (item.getProduct().equals(catalogObj.get(i).getProduct())
 				&& item.getQuantity() <= catalogObj.get(i).getQuantity()) {
 					cartObj.add(item);
 			        catalogObj.get(i).setQuantity(item.getQuantity());
 			        return;
-			     	}
-				}
-	    	}
+			}
+		}
+		}
+		// else {
+		// 	cartObj.(item.getProduct()).incrementQuantity(item.getQuantity());
+		// 	catalogObj.get(i).setQuantity(item.getQuantity());
+		// 	return;
+
 	public void removeFromCart(Item item) {
 		for (int i = 0; i < cartObj.size(); i++) {
 			if (item.getProduct().equals(cartObj.get(i).getProduct())) {
