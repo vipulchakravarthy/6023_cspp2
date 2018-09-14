@@ -87,9 +87,12 @@ class ShoppingCart {
 
 	public float getPayableAmount() {
 		float discountAmount = (getTotalAmount() * (discount/100));
+		System.out.println(discount);
+		System.out.println(discountAmount);
 		float payableAmount = getTotalAmount() - discountAmount;
 		float tax = (payableAmount * (15/100));
 		float total =  (payableAmount + tax);
+		System.out.println(total);
 		return total;
 	}
 
@@ -157,10 +160,10 @@ class Solution {
 				shopObj.showCart();
 				break;
 			case "totalAmount":
-				System.out.println(shopObj.getTotalAmount());
+				System.out.println("totalAmount: " + shopObj.getTotalAmount());
 				break;
 			case "payableAmount":
-				System.out.println(shopObj.getPayableAmount());
+				System.out.println("payableAmount: " + shopObj.getPayableAmount());
 				break;
 			case "print":
 				shopObj.printInvoice();
