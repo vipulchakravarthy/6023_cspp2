@@ -48,20 +48,14 @@ class ShoppingCart {
 	}
 	public void addToCart(Item item) {
 		for (int i = 0; i < catalogObj.size(); i++) {
-			for (int j = 0; j <= cartObj.size(); j++) {
 			if (item.getProduct().equals(catalogObj.get(i).getProduct())
 				&& item.getQuantity() <= catalogObj.get(i).getQuantity()) {
-				if (item.getProduct().equals(cartObj.get(i).getProduct())) {
-					cartObj.get(i).incrementQuantity(item.getQuantity());
-				} else {
 					cartObj.add(item);
 			        catalogObj.get(i).setQuantity(item.getQuantity());
 			        return;
 			     	}
 				}
 	    	}
-		}
-	}
 	public void removeFromCart(Item item) {
 		for (int i = 0; i < cartObj.size(); i++) {
 			if (item.getProduct().equals(cartObj.get(i).getProduct())) {
