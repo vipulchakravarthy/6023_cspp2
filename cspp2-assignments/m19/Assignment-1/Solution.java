@@ -71,9 +71,13 @@ public final class Solution {
         		String[] tokens = line.split(":");
         		if (tokens.length == 5) {
         		String[] answers = tokens[1].split(",");
-        		if (Integer.parseInt(tokens[2]) > 4 ) {
+        		if (Integer.parseInt(tokens[2]) > 4 && answers.length == 4) {
         			System.out.println("Error! Correct answer choice number is out of range for question text 1");
         			return;
+				}
+				if (answers.length < 4) {
+					System.out.println("trick question  does not have enough answer choices");
+					return;
 				}
         		questionObj = new Quiz(tokens[0], answers, tokens[2],
         		tokens[3],tokens[4]);
