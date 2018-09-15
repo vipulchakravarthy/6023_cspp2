@@ -119,8 +119,8 @@ public final class Solution {
        for (int i = 0; i < quizObj.size(); i++) {
        	System.out.println(quizObj.get(i).getQuestion()+"("+quizObj.get(i).getMarks()+")");
        	String[] options = quizObj.get(i).getOptions();
-       	System.out.println(options[0] + "        " + options[1] + "        "
-       		+ options[2] + "        " + options[3] +"\n");
+       	System.out.println(options[0] + "\t" + options[1] + "\t"
+       		+ options[2] + "\t" + options[3] +"\n");
        	 }
 
        String[] response = new String[answerCount];
