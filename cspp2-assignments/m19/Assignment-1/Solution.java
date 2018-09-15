@@ -71,6 +71,10 @@ public final class Solution {
         		String[] tokens = line.split(":");
         		if (tokens.length == 5) {
         		String[] answers = tokens[1].split(",");
+        		if (tokens[0] == null) {
+        			System.out.println("Error! Malformed question");
+        			return;
+        		}
         		if (Integer.parseInt(tokens[2]) > 4 && answers.length == 4) {
         			System.out.println("Error! Correct answer choice number is out of range for question text 1");
         			return;
