@@ -69,10 +69,15 @@ public final class Solution {
         	for (int i = 0; i < questionCount; i++) {
         		String line = s.nextLine();
         		String[] tokens = line.split(":");
+        		if (tokens.length == 5) {
         		String[] answers = tokens[1].split(",");
         		questionObj = new Quiz(tokens[0], answers, tokens[2],
         		tokens[3],tokens[4]);
         		quizObj.add(questionObj);
+        		} else {
+        			System.out.println("Error! Malformed question");
+        			return;
+        		}
         	}
         System.out.println(questionCount + " are added to the quiz");
     	} else {
@@ -94,8 +99,8 @@ public final class Solution {
        for (int i = 0; i < quizObj.size(); i++) {
        	System.out.println(quizObj.get(i).getQuestion()+"("+quizObj.get(i).getMarks()+")");
        	String[] options = quizObj.get(i).getOptions();
-       	System.out.println(options[0] + "         " + options[1] + "         "
-       		+ options[2] + "         " + options[3] +"\n");
+       	System.out.println(options[0] + "        " + options[1] + "        "
+       		+ options[2] + "        " + options[3] +"\n");
        	 }
 
        String[] response = new String[answerCount];
