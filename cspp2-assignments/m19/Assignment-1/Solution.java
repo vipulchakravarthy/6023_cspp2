@@ -65,16 +65,19 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-
-        for (int i = 0; i < questionCount; i++) {
-        	String line = s.nextLine();
-        	String[] tokens = line.split(":");
-        	String[] answers = tokens[1].split(",");
-        	questionObj = new Quiz(tokens[0], answers, tokens[2],
+    	if (questionCount > 0) {
+        	for (int i = 0; i < questionCount; i++) {
+        		String line = s.nextLine();
+        		String[] tokens = line.split(":");
+        		String[] answers = tokens[1].split(",");
+        		questionObj = new Quiz(tokens[0], answers, tokens[2],
         		tokens[3],tokens[4]);
-        	quizObj.add(questionObj);
-        }
+        		quizObj.add(questionObj);
+        	}
         System.out.println(questionCount + " are added to the quiz");
+    	} else {
+    		System.out.println("Quiz does not have questions");
+    	}
     }
 
     /**
