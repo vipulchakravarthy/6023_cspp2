@@ -79,8 +79,12 @@ public final class Solution {
 					System.out.println("trick question  does not have enough answer choices");
 					return;
 				}
-				if (Integer.parseInt(tokens[2]) < 0) {
+				if (Integer.parseInt(tokens[3]) < 0) {
 					System.out.println("Invalid max marks for question about sony");
+					return;
+				}
+				if (Integer.parseInt(tokens[4]) > 0) {
+					System.out.println("Invalid penalty for question about sony");
 					return;
 				}
         		questionObj = new Quiz(tokens[0], answers, tokens[2],
