@@ -75,8 +75,12 @@ public final class Solution {
         			System.out.println("Error! Correct answer choice number is out of range for question text 1");
         			return;
 				}
-				if (answers.length < 4) {
+				if (answers.length < 2) {
 					System.out.println("trick question  does not have enough answer choices");
+					return;
+				}
+				if (Integer.parseInt(tokens[2]) < 0) {
+					System.out.println("Invalid max marks for question about sony");
 					return;
 				}
         		questionObj = new Quiz(tokens[0], answers, tokens[2],
