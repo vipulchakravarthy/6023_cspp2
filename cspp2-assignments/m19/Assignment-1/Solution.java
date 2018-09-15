@@ -112,6 +112,7 @@ public final class Solution {
      * @param      quiz     The quiz object
      */
     public static void displayScore(final Quiz quiz) {
+    	if (quizObj.size() > 0) {
     	int score = 0;
     	for (int i = 0; i < quizObj.size(); i++) {
     		System.out.println(quizObj.get(i).getQuestion());
@@ -126,7 +127,10 @@ public final class Solution {
     		}
     }
     System.out.println("Total Score: " + score);
-    }
+    } else {
+    	return;
+}
+}
 }
 class Quiz {
 	private String  question;
