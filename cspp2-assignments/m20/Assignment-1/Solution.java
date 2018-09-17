@@ -57,13 +57,13 @@ class Question {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean evaluateResponse(final String choice) {
-        if ( choice.equals(correctAnswer)) {
-            return true;
-        } else {
-        return false;
-        }
-    }
+    // public boolean evaluateResponse(final String choice) {
+    //     if ( choice.equals(getcorrectAnswer())) {
+    //         return true;
+    //     } else {
+    //     return false;
+    //     }
+    // }
     /**
      * Gets the correct answer.
      *
@@ -88,6 +88,15 @@ class Question {
     public String[] getChoice() {
         return choices ;
     }
+    public int getIndex(String item) {
+        String[] answers = getChoice();
+        for (int i = 0; i < answers.length; i++) {
+            if (answers[i] == item) {
+                return i;
+            }
+        }
+        return -1;
+    }
     /**
      * Gets the maximum marks.
      *
@@ -110,16 +119,15 @@ class Question {
      * @param      answer  The answer
      */
     public void setResponse(final String answer) {
-        String[] answers = answer.split(" ");
-        response = answers[1];
+        response = answer;
     }
     /**
      * Gets the response.
      *
      * @return     The response.
      */
-    public int getResponse() {
-        return Integer.parseInt(response);
+    public String getResponse() {
+        return response;
     }
     /**
      * Returns a string representation of the object.
@@ -324,7 +332,8 @@ public final class Solution {
         int score = 0;
         for (int i = 0; i < quiz.size(); i++) {
             System.out.println(quiz.getQuestion(i).getQuestionText());
-            if (quiz.getQuestion(i).getCorrectAnswer() == (quiz.getQuestion(i).getResponse())) {
+            String[] values = quiz.getQuestion(i).getChoice();
+            if (values[(quiz.getQuestion(i).getCorrectAnswer()) - 1].equals(quiz.getQuestion(i).getResponse())) {
                 System.out.println(" Correct Answer! - Marks Awarded: "
                     + quiz.getQuestion(i).getMaxMarks() );
                 score += quiz.getQuestion(i).getMaxMarks();
