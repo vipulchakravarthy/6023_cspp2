@@ -179,10 +179,13 @@ class Quiz {
         String s = "";
         return s;
     }
+    /**
+     * this method gives the size of quiz object.
+     * @return size of the quiz object
+     */
     public int size() {
         return size;
     }
-
 }
 /**
  * Solution class for code-eval.
@@ -266,13 +269,14 @@ public final class Solution {
                     return;
                 }
                 if (choices.length < 2) {
-                    System.out.println("trick question  does not have enough answer choices");
+                System.out.println(
+                "trick question  does not have enough answer choices");
                     return;
                 }
                 if (Integer.parseInt(tokens[2]) > four && choices.length == four) {
-                    System.out.println(
-                        "Error! Correct answer choice number is out of range for question text 1");
-                    return;
+                System.out.println(
+                "Error! Correct answer choice number is out of range for question text 1");
+                return;
                 }
                 if (Integer.parseInt(tokens[three]) < 0) {
                     System.out.println("Invalid max marks for question about sony");
