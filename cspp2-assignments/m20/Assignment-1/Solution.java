@@ -57,9 +57,12 @@ class Question {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean evaluateResponse(final String choice) {
-        return false;
-    }
+    // public boolean evaluateResponse(final String choice) {
+    //     if ( response.equals(correctAnswer)) {
+    //         return true;
+    //     } else {
+    //     return false;
+    //     }
     /**
      * Gets the correct answer.
      *
@@ -114,8 +117,8 @@ class Question {
      *
      * @return     The response.
      */
-    public String getResponse() {
-        return response;
+    public int getResponse() {
+        return Integer.parseInt(response);
     }
     /**
      * Returns a string representation of the object.
@@ -251,7 +254,7 @@ public final class Solution {
                 String line = scan.nextLine();
                 String[] tokens = line.split(":");
                 String[] choices = tokens[1].split(",");
-                if (tokens[0].length() == 0) {
+                if (tokens[0].length() == 0 || tokens[4].length() == 0) {
                     System.out.println("Error! Malformed question");
                     return;
                 }
@@ -310,6 +313,23 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report using quiz object.
-
+    if (quiz.size() > 0) {
+        int score = 0;
+        for (int i = 0; i < quiz.size(); i++) {
+            System.out.println(quiz.getQuestion(i).getQuestionText());
+            if (quiz.getQuestion(i).getCorrectAnswer() == (quiz.getQuestion(i).getResponse())) {
+                System.out.println(" Correct Answer! - Marks Awarded: "
+                    + quiz.getQuestion(i).getMaxMarks() );
+                score += quiz.getQuestion(i).getMaxMarks();
+            } else {
+                System.out.println(" Wrong Answer! - Penalty: "
+                    + quiz.getQuestion(i).getPenalty());
+                score += quiz.getQuestion(i).getPenalty();
+            }
+        }
+    System.out.println("Total Score: " + score);
+    } else {
+        return;
     }
+}
 }
