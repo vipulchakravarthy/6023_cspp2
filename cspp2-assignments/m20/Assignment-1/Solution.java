@@ -276,14 +276,14 @@ public final class Solution {
                 }
                 if (choices.length < 2) {
                 System.out.println(
-                "trick question  does not have"
+                "trick question  does not have "
                 + "enough answer choices");
                     return;
                 }
                 if (Integer.parseInt(tokens[2])
                     > four && choices.length == four) {
                 System.out.println(
-                "Error! Correct answer choice number"
+                "Error! Correct answer choice number "
                 + "is out of range for question text 1");
                 return;
                 }
@@ -293,7 +293,7 @@ public final class Solution {
                     return;
                 }
                 if (Integer.parseInt(tokens[four]) > 0) {
-                    System.out.println("Invalid penalty"
+                    System.out.println("Invalid penalty "
                         + "for question about sony");
                     return;
                 }
