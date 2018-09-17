@@ -270,12 +270,15 @@ public final class Solution {
                 }
                 if (choices.length < 2) {
                 System.out.println(
-                "trick question  does not have enough answer choices");
+                "trick question  does not have"
+                + "enough answer choices");
                     return;
                 }
-                if (Integer.parseInt(tokens[2]) > four && choices.length == four) {
+                if (Integer.parseInt(tokens[2])
+                    > four && choices.length == four) {
                 System.out.println(
-                "Error! Correct answer choice number is out of range for question text 1");
+                "Error! Correct answer choice number"
+                + "is out of range for question text 1");
                 return;
                 }
                 if (Integer.parseInt(tokens[three]) < 0) {
