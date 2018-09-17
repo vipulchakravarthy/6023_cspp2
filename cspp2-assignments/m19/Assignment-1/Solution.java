@@ -71,7 +71,7 @@ public final class Solution {
         		String[] tokens = line.split(":");
         		if (tokens.length == 5) {
         		String[] answers = tokens[1].split(",");
-        		if (tokens[0] == "") {
+        		if (tokens[0].length() == 0) {
         			System.out.println("Error! Malformed question");
         			return;
         		}
@@ -94,9 +94,6 @@ public final class Solution {
         		questionObj = new Quiz(tokens[0], answers, tokens[2],
         		tokens[3],tokens[4]);
         		quizObj.add(questionObj);
-        		} else {
-        			System.out.println("Error! Malformed question");
-        			return;
         		}
         	}
         System.out.println(questionCount + " are added to the quiz");
