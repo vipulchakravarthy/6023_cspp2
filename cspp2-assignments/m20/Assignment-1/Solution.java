@@ -246,15 +246,40 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        for (int i = 0; i < q; i++) {
-            String line = scan.nextLine();
-            String[] tokens = line.split(":");
-            String[] choices = tokens[1].split(",");
-            questionObj = new Question(tokens[0], choices, Integer.parseInt(tokens[2]),
-                Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
-            quiz.addQuestion(questionObj);
+        if (q > 0) {
+            for (int i = 0; i < q; i++) {
+                String line = scan.nextLine();
+                String[] tokens = line.split(":");
+                String[] choices = tokens[1].split(",");
+                if (tokens[0].length() == 0) {
+                    System.out.println("Error! Malformed question");
+                    return;
+                }
+                if (choices.length < 2) {
+                    System.out.println("trick question  does not have enough answer choices");
+                    return;
+                }
+                if (Integer.parseInt(tokens[2]) > 4 && choices.length == 4) {
+                    System.out.println("Error! Correct answer choice number is out of range for question text 1");
+                    return;
+                }
+                if (Integer.parseInt(tokens[3]) < 0 ) {
+                    System.out.println("Invalid max marks for question about sony");
+                    return;
+                }
+                if (Integer.parseInt(tokens[4]) > 0) {
+                    System.out.println("Invalid penalty for question about sony");
+                    return;
+                }
+                questionObj = new Question(tokens[0], choices, Integer.parseInt(tokens[2]),
+                    Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
+                quiz.addQuestion(questionObj);
+            }
+            System.out.println(q + " are added to the quiz");
+            return;
+        } else {
+            System.out.println("Quiz does not have questions");
         }
-        System.out.println(q + " are added to the quiz");
     }
     /**
      * Starts a quiz.
