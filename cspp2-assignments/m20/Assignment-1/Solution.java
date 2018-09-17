@@ -88,14 +88,6 @@ class Question {
     public String[] getChoice() {
         return choices ;
     }
-    public int getIndex(String item) {
-        for (int i = 0; i < choices.length; i++) {
-            if (item.equals(choices[i])) {
-                return i;
-            }
-        }
-        return -1;
-    }
     /**
      * Gets the maximum marks.
      *
@@ -337,16 +329,9 @@ public final class Solution {
                     + quiz.getQuestion(i).getMaxMarks() );
                 score += quiz.getQuestion(i).getMaxMarks();
             } else {
-                String[] values = quiz.getQuestion(i).getChoice();
-                if (quiz.getQuestion(i).getCorrectAnswer() == (quiz.getQuestion(i).getIndex(values[0]) + 1)) {
-                    System.out.println(" Correct Answer! - Marks Awarded: "
-                        + quiz.getQuestion(i).getMaxMarks() );
-                    score += quiz.getQuestion(i).getMaxMarks();
-                } else {
-                    System.out.println(" Wrong Answer! - Penalty: "
-                        + quiz.getQuestion(i).getPenalty());
-                    score += quiz.getQuestion(i).getPenalty();
-                }
+                System.out.println(" Wrong Answer! - Penalty: "
+                    + quiz.getQuestion(i).getPenalty());
+                score += quiz.getQuestion(i).getPenalty();
             }
         }
         System.out.println("Total Score: " + score);
