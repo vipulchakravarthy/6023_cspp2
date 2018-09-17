@@ -282,15 +282,18 @@ public final class Solution {
                 return;
                 }
                 if (Integer.parseInt(tokens[three]) < 0) {
-                    System.out.println("Invalid max marks for question about sony");
+                    System.out.println("Invalid max"
+                        + " marks for question about sony");
                     return;
                 }
                 if (Integer.parseInt(tokens[four]) > 0) {
-                    System.out.println("Invalid penalty for question about sony");
+                    System.out.println("Invalid penalty"
+                        + "for question about sony");
                     return;
                 }
-                questionObj = new Question(tokens[0], choices, Integer.parseInt(tokens[2]),
-                    Integer.parseInt(tokens[three]), Integer.parseInt(tokens[four]));
+                questionObj = new Question(tokens[0], choices,
+                    Integer.parseInt(tokens[2]), Integer.parseInt(
+                        tokens[three]), Integer.parseInt(tokens[four]));
                 quiz.addQuestion(questionObj);
             }
             System.out.println(q + " are added to the quiz");
