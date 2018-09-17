@@ -299,7 +299,7 @@ public final class Solution {
         String[] options = questionObj.getChoice();
         for (int i = 0; i < quiz.size(); i++) {
             System.out.println(quiz.getQuestion(i).getQuestionText() + "(" + quiz.getQuestion(i).getMaxMarks() + ")");
-            System.out.println(options[0] + "\t" + options[1] + "\t" + options[2] + "\t" + options[3]);
+            System.out.println(options[0] + "\t" + options[1] + "\t" + options[2] + "\t" + options[3] + "\n");
         }
         for (int j = 0; j < q; j ++) {
             String line = scan.nextLine();
