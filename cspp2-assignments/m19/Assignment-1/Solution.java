@@ -71,7 +71,8 @@ public final class Solution {
         		String[] tokens = line.split(":");
         		if (tokens.length == 5) {
         		String[] answers = tokens[1].split(",");
-        		if (tokens[0].length() == 0) {
+        		if (tokens[0].length() == 0 || tokens[3].length() == 0
+                    || tokens[1].length() == 0 || tokens[2].length() == 0 || tokens[4].length() == 0) {
         			System.out.println("Error! Malformed question");
         			return;
         		}
