@@ -263,7 +263,7 @@ public final class Solution {
                 String line = scan.nextLine();
                 String[] tokens = line.split(":");
                 String[] choices = tokens[1].split(",");
-                if (tokens[0].length() == 0 || tokens[4].length() == 0) {
+                if (tokens[0].length() == 0 || tokens.length < 5) {
                     System.out.println("Error! Malformed question");
                     return;
                 }
@@ -312,7 +312,7 @@ public final class Solution {
             if ( options.length > 2) {
             System.out.println(options[0] + "\t" + options[1] + "\t" + options[2] + "\t" + options[3] + "\n");
             } else if (options.length == 2) {
-                System.out.println(options[0] + "\t" + options[1]);
+                System.out.println(options[0] + "\t" + options[1] + "\n");
             }
         }
         for (int j = 0; j < q; j ++) {
