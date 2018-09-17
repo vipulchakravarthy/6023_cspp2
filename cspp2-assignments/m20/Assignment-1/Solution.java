@@ -296,6 +296,7 @@ public final class Solution {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
+        if ( quiz.size() > 0) {
         for (int i = 0; i < quiz.size(); i++) {
             System.out.println(quiz.getQuestion(i).getQuestionText() + "(" + quiz.getQuestion(i).getMaxMarks() + ")");
             String[] options = quiz.getQuestion(i).getChoice();
@@ -305,6 +306,7 @@ public final class Solution {
             String line = scan.nextLine();
             quiz.getQuestion(j).setResponse(line);
         }
+    }
     }
     /**
      * Displays the score report.
@@ -327,7 +329,7 @@ public final class Solution {
                 score += quiz.getQuestion(i).getPenalty();
             }
         }
-    System.out.println("Total Score: " + score);
+        System.out.println("Total Score: " + score);
     } else {
         return;
     }
