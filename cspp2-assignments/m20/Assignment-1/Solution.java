@@ -191,9 +191,10 @@ public final class Solution {
      /**
      * Constructs the object.
      */
-     public static Question questionObj;
+    public static Question questionObj;
     private Solution() {
         // leave this blank
+        questionObj = new Question();
     }
     /**
      * main function to execute test cases.
