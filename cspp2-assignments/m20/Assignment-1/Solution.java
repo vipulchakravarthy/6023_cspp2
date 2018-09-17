@@ -297,9 +297,9 @@ public final class Solution {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
-        String[] options = questionObj.getChoice();
         for (int i = 0; i < quiz.size(); i++) {
             System.out.println(quiz.getQuestion(i).getQuestionText() + "(" + quiz.getQuestion(i).getMaxMarks() + ")");
+            String[] options = quiz.getQuestion(i).getChoice();
             System.out.println(options[0] + "\t" + options[1] + "\t" + options[2] + "\t" + options[3] + "\n");
         }
         for (int j = 0; j < q; j ++) {
