@@ -86,16 +86,7 @@ class Question {
      * @return     The choice.
      */
     public String[] getChoice() {
-        return choices ;
-    }
-    public int getIndex(String item) {
-        String[] answers = getChoice();
-        for (int i = 0; i < answers.length; i++) {
-            if (answers[i] == item) {
-                return i;
-            }
-        }
-        return -1;
+        return choices;
     }
     /**
      * Gets the maximum marks.
