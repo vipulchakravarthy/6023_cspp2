@@ -194,7 +194,6 @@ public final class Solution {
     public static Question questionObj;
     private Solution() {
         // leave this blank
-        questionObj = new Question();
     }
     /**
      * main function to execute test cases.
