@@ -274,7 +274,7 @@ public final class Solution {
                         "Error! Correct answer choice number is out of range for question text 1");
                     return;
                 }
-                if (Integer.parseInt(tokens[three]) < 0 ) {
+                if (Integer.parseInt(tokens[three]) < 0) {
                     System.out.println("Invalid max marks for question about sony");
                     return;
                 }
@@ -305,19 +305,19 @@ public final class Solution {
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
         final int three = 3;
-        if ( quiz.size() > 0) {
+        if (quiz.size() > 0) {
         for (int i = 0; i < quiz.size(); i++) {
             System.out.println(quiz.getQuestion(i).getQuestionText()
                 + "(" + quiz.getQuestion(i).getMaxMarks() + ")");
             String[] options = quiz.getQuestion(i).getChoice();
-            if ( options.length > 2) {
+            if (options.length > 2) {
             System.out.println(options[0] + "\t" + options[1]
                 + "\t" + options[2] + "\t" + options[three] + "\n");
             } else if (options.length == 2) {
                 System.out.println(options[0] + "\t" + options[1] + "\n");
             }
         }
-        for (int j = 0; j < q; j ++) {
+        for (int j = 0; j < q; j++) {
             String line = scan.nextLine();
             quiz.getQuestion(j).setResponse(line);
         }
@@ -338,7 +338,7 @@ public final class Solution {
             if (values[(quiz.getQuestion(i).getCorrectAnswer()) - 1]
                 .equals(quiz.getQuestion(i).getResponse())) {
                 System.out.println(" Correct Answer! - Marks Awarded: "
-                    + quiz.getQuestion(i).getMaxMarks() );
+                    + quiz.getQuestion(i).getMaxMarks());
                 score += quiz.getQuestion(i).getMaxMarks();
             } else {
                 System.out.println(" Wrong Answer! - Penalty: "
