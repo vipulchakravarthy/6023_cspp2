@@ -300,7 +300,11 @@ public final class Solution {
         for (int i = 0; i < quiz.size(); i++) {
             System.out.println(quiz.getQuestion(i).getQuestionText() + "(" + quiz.getQuestion(i).getMaxMarks() + ")");
             String[] options = quiz.getQuestion(i).getChoice();
+            if ( options.length > 2) {
             System.out.println(options[0] + "\t" + options[1] + "\t" + options[2] + "\t" + options[3] + "\n");
+            } else if (options.length == 2) {
+                System.out.println(options[0] + "\t" + options[1]);
+            }
         }
         for (int j = 0; j < q; j ++) {
             String line = scan.nextLine();
