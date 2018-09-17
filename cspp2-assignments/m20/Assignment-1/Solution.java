@@ -138,7 +138,7 @@ class Quiz {
     /**
      * { var_description }.
      */
-    private Question[] questions;
+    private Question[] questions ;
     /**
      * { var_description }.
      */
@@ -147,7 +147,7 @@ class Quiz {
      * Constructs the object.
      */
     Quiz() {
-
+        questions = new Question[onehundred];
     }
     /**
      * Adds a question.
