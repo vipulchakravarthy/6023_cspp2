@@ -4,27 +4,28 @@ import java.util.Scanner;
  */
 class Question {
     /**
-     * { var_description }.
+     *this variable is to store.
+     *question text
      */
     private String questionText;
     /**
-     * { var_description }.
+     * variable is to store options.
      */
     private String[] choices;
     /**
-     * { var_description }.
+     *variable is to store correct answer.
      */
     private int correctAnswer;
     /**
-     * { var_description }.
+     * to store maximum marks of a question.
      */
     private int maxMarks;
     /**
-     * { var_description }.
+     *to give the penalty for wrong answer.
      */
     private int penalty;
     /**
-     * { var_description }.
+     *to store response of the user.
      */
     private String response;
     /**
@@ -50,13 +51,13 @@ class Question {
         this.penalty = penalty1;
         this.maxMarks = maxMarks1;
     }
-    /**
-     * { function_description }.
-     *
-     * @param      choice  The choice
-     *
-     * @return     { description_of_the_return_value }
-     */
+    // /**
+    //  * { function_description }.
+    //  *
+    //  * @param      choice  The choice
+    //  *
+    //  * @return     { description_of_the_return_value }
+    //  */
     // public boolean evaluateResponse(final String choice) {
     //     if ( choice.equals(getcorrectAnswer())) {
     //         return true;
@@ -83,7 +84,7 @@ class Question {
     /**
      * Gets the choice.
      *
-     * @return     The choice.
+     * @return     The choices array.
      */
     public String[] getChoice() {
         return choices;
@@ -91,7 +92,7 @@ class Question {
     /**
      * Gets the maximum marks.
      *
-     * @return     The maximum marks.
+     * @return     The maximum marks awarded.
      */
     public int getMaxMarks() {
         return maxMarks;
@@ -115,7 +116,7 @@ class Question {
     /**
      * Gets the response.
      *
-     * @return     The response.
+     * @return     The response of user.
      */
     public String getResponse() {
         return response;
@@ -135,15 +136,15 @@ class Question {
  */
 class Quiz {
     /**
-     * { var_description }.
+     * to declare a array size with a variable.
      */
     private final int onehundred = 100;
     /**
-     * { var_description }.
+     *questions array to store all questions.
      */
     private Question[] questions;
     /**
-     * { var_description }.
+     *to store the size of array.
      */
     private int size;
     /**
@@ -156,6 +157,7 @@ class Quiz {
      * Adds a question.
      *
      * @param      q     The question
+     * to be added to questions array
      */
     public void addQuestion(final Question q) {
         questions[size++] = q;
@@ -165,7 +167,8 @@ class Quiz {
      *
      * @param      index  The index
      *
-     * @return     The question.
+     * @return     The question at that
+     * index.
      */
     public Question getQuestion(final int index) {
         return questions[index];
@@ -246,9 +249,12 @@ public final class Solution {
     /**
      * Loads questions.
      *
-     * @param      scan       The scan
-     * @param      quiz       The quiz
+     * @param      scan       The scan obj to
+     * take the input from the user
+     * @param      quiz       The quiz obj to
+     * access all the methods.
      * @param      q          The question count
+     * it gives the number of questions to load
      *
      */
     public static void loadQuestions(final Scanner scan,
@@ -305,9 +311,12 @@ public final class Solution {
     /**
      * Starts a quiz.
      *
-     * @param      scan  The scan
-     * @param      quiz  The quiz
+     * @param      scan  The scan object to scan
+     * input from user
+     * @param      quiz  The quiz obj to
+     * access all the methods.
      * @param      q     The answer count
+     * number of answers given by user
      */
     public static void startQuiz(final Scanner scan,
         final Quiz quiz, final int q) {
@@ -336,7 +345,8 @@ public final class Solution {
     /**
      * Displays the score report.
      *
-     * @param      quiz     The quiz object
+     * @param      quiz     The quiz object to
+     * access all the methods.
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report using quiz object.
