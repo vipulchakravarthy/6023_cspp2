@@ -92,7 +92,6 @@ public class Solution {
 					System.out.print(fileMatrix[i][j] + "\t\t");
 			}
 		}
-		System.out.println(Collections.max(values));
 	} catch (NoSuchElementException e){
 		System.out.println("empty directory");
 	}
