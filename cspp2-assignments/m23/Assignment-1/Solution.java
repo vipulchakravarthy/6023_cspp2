@@ -82,7 +82,7 @@ public class Solution {
 		for (int i = 0; i < length - 1; i++) {
 			System.out.print("\t" +fileList[i].getName() + "\t" );
 		}
-		System.out.print(fileList[length - 1].getName());
+		System.out.println(fileList[length - 1].getName());
 		for (int i = 0; i < length; i++) {
 			System.out.print(fileList[i].getName() + "\t");
 			for (int j = 0; j < length; j++) {
