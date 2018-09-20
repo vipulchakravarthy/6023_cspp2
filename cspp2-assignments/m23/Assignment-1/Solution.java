@@ -66,6 +66,7 @@ public class Solution {
 
 	}
 	public static void main(String[] args) {
+		try  {
 		Scanner scan = new Scanner(System.in);
 		String input = scan.nextLine();
 		File files = new File(input);
@@ -87,6 +88,9 @@ public class Solution {
 			}
 			System.out.println();
 		}
+	} catch (NoSuchElementException e){
+		System.out.println("empty directory");
+	}
 		// String textOne = scan.nextLine().toLowerCase();
 		// String textTwo = scan.nextLine().toLowerCase();
 
