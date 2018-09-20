@@ -91,6 +91,7 @@ public class Solution {
 			for (int j = 0; j < length; j++) {
 					System.out.print(fileMatrix[i][j] + "\t\t");
 			}
+			System.out.println();
 		}
 	} catch (NoSuchElementException e){
 		System.out.println("empty directory");
