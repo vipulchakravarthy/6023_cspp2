@@ -83,8 +83,9 @@ public class Solution {
 		}
 		for (int i = 0; i < length; i++) {
 			for (int j = 0; j < length; j++) {
-					System.out.println(fileMatrix[i][j] + "\t\t");
+					System.out.print(fileMatrix[i][j] + "\t\t");
 			}
+			System.out.println();
 		}
 		// String textOne = scan.nextLine().toLowerCase();
 		// String textTwo = scan.nextLine().toLowerCase();
