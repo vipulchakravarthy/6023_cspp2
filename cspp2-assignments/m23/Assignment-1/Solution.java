@@ -79,6 +79,7 @@ public class Solution {
 				fileMatrix[i][j] = obj.similarity(obj.toText(fileList[i]), obj.toText(fileList[j]));
 			}
 		}
+		System.out.print("      \t");
 		for (int i = 0; i < length - 1; i++) {
 			System.out.print("\t" +fileList[i].getName() + "\t" );
 		}
