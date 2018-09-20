@@ -57,8 +57,8 @@ class Data {
 			sumTwo += mapTwo.get(word) * mapTwo.get(word);
 		}
 		denominator = Math.sqrt(sumOne) * Math.sqrt(sumTwo);
-		double documentDistance = ((numerator / denominator) * 100D) / 100D;
-		return (int)(documentDistance * 100);
+		double documentDistance = ((numerator / denominator) * 100);
+		return (int)(documentDistance);
 	}
 }
 public class Solution {
@@ -91,8 +91,8 @@ public class Solution {
 			for (int j = 0; j < length; j++) {
 					System.out.print(fileMatrix[i][j] + "\t\t");
 			}
-			System.out.println(Collections.max(values));
 		}
+		System.out.println(Collections.max(values));
 	} catch (NoSuchElementException e){
 		System.out.println("empty directory");
 	}
