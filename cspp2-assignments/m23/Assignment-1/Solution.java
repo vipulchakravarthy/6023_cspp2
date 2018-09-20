@@ -83,8 +83,9 @@ public class Solution {
 			}
 		}
 		for (int i = 0; i < length; i++) {
+			System.out.print(fileList[i].toString() + "\t");
 			for (int j = 0; j < length; j++) {
-					System.out.print(fileList[i].toString() + fileMatrix[i][j] + "\t\t");
+					System.out.print(fileMatrix[i][j] + "\t\t");
 			}
 			System.out.println();
 		}
