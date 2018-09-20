@@ -72,9 +72,6 @@ public class Solution {
 		File files = new File(input);
 		Data obj = new Data();
 		File[] fileList = files.listFiles();
-		for (File name: fileList) {
-					obj.toText(name);
-		}
 		int length = fileList.length;
 		int[][] fileMatrix = new int[length][length];
 		for (int i = 0; i < length; i++) {
@@ -83,7 +80,7 @@ public class Solution {
 			}
 		}
 		for (int i = 0; i < length; i++) {
-			System.out.print(fileList[i].toString() + "\t");
+			System.out.print(fileList[i].getName() + "\t");
 			for (int j = 0; j < length; j++) {
 					System.out.print(fileMatrix[i][j] + "\t\t");
 			}
