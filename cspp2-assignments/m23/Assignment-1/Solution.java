@@ -74,9 +74,11 @@ public class Solution {
 		File[] fileList = files.listFiles();
 		int length = fileList.length;
 		int[][] fileMatrix = new int[length][length];
+		ArrayList<Integer> values = new ArrayList<Integer>();
 		for (int i = 0; i < length; i++) {
 			for (int j = 0; j < length; j++) {
 				fileMatrix[i][j] = obj.similarity(obj.toText(fileList[i]), obj.toText(fileList[j]));
+				values.add(fileMatrix[i][j]);
 			}
 		}
 		System.out.print("      \t");
@@ -89,7 +91,7 @@ public class Solution {
 			for (int j = 0; j < length; j++) {
 					System.out.print(fileMatrix[i][j] + "\t\t");
 			}
-			System.out.println();
+			System.out.println(Collections.max(values));
 		}
 	} catch (NoSuchElementException e){
 		System.out.println("empty directory");
