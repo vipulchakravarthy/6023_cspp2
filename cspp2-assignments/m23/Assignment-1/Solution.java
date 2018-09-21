@@ -22,7 +22,7 @@ class Data {
 	}
 	public Map remove(String text) {
 		text = text.toLowerCase();
-		text = text.replaceAll("[^a-zA-Z ]", "");
+		text = text.replaceAll("[^0-9_]", "");
 		String[] words = text.split(" ");
 		Map<String, Integer> map = new HashMap<>();
 		for (String element : words) {
@@ -59,7 +59,9 @@ class Data {
 			sumTwo += mapTwo.get(word) * mapTwo.get(word);
 		}
 		denominator = Math.sqrt(sumOne) * Math.sqrt(sumTwo);
+		// double documentDistance = ((numerator / denominator) * 100);
 		double documentDistance = ((numerator / denominator) * 100);
+		System.out.println(documentDistance);
 		return (int)(documentDistance);
 	}
 }
