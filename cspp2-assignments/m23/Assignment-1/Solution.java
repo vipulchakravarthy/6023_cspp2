@@ -22,7 +22,7 @@ class Data {
 	}
 	public Map remove(String text) {
 		text = text.toLowerCase();
-		text = text.replaceAll("[0-9_]", "");
+		text = text.replaceAll("[0-9_!@#$%^&?]", "");
 		String[] words = text.split(" ");
 		Map<String, Integer> map = new HashMap<>();
 		for (String element : words) {
