@@ -73,6 +73,8 @@ public class Solution {
 		Data obj = new Data();
 		File[] fileList = files.listFiles();
 		int length = fileList.length;
+		int maxValue = 0;
+		String result = "";
 		int[][] fileMatrix = new int[length][length];
 		Map<Integer, List<String>> valuesMap = new HashMap<>();
 		for (int i = 0; i < length; i++) {
@@ -81,6 +83,10 @@ public class Solution {
 					fileMatrix[i][j] = 100;
 				} else {
 				fileMatrix[i][j] = obj.similarity(obj.toText(fileList[i]), obj.toText(fileList[j]));
+				if (maxValue < fileMatrix[i][j] && i != j) {
+					maxValue = fileMatrix[i][j];
+					result = "Maximum similarity is between" + fileList[i] + "and" + fileList[j];
+				}
 				}
 				// if (fileMatrix[i][j] != 100) {
 				// List<String> fileNames = new ArrayList<String>();
@@ -101,8 +107,7 @@ public class Solution {
 			}
 			System.out.println();
 		}
-		// int maxValue = Collections.max(valuesMap.keys());
-		// System.out.println(valuesMap.get(maxValue));
+	 System.out.println(valuesMap.get(result));
 	} catch (NoSuchElementException e){
 		System.out.println("empty directory");
 	}
