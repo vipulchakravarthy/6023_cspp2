@@ -26,12 +26,14 @@ class Data {
 		String[] words = text.split(" ");
 		Map<String, Integer> map = new HashMap<>();
 		for (String element : words) {
-			if (!(map.containsKey(element))) {
+		 if (element.length() > 0) {
+ 			if (!(map.containsKey(element))) {
 				map.put(element, 1);
 			} else {
 				map.put(element, map.get(element) + 1);
 			}
 		}
+	}
 		return map;
 	}
 
