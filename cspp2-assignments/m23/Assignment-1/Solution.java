@@ -74,11 +74,15 @@ public class Solution {
 		File[] fileList = files.listFiles();
 		int length = fileList.length;
 		int[][] fileMatrix = new int[length][length];
-		ArrayList<Integer> values = new ArrayList<Integer>();
+		Map<Integer, List<String>> valuesMap = new HashMap<>();
 		for (int i = 0; i < length; i++) {
 			for (int j = 0; j < length; j++) {
 				fileMatrix[i][j] = obj.similarity(obj.toText(fileList[i]), obj.toText(fileList[j]));
-				values.add(fileMatrix[i][j]);
+				// if (fileMatrix[i][j] != 100) {
+				// List<String> fileNames = new ArrayList<String>();
+				// fileNames.add(fileList[i].getName(), fileList[j].getName());
+				// valuesMap.put(fileMatrix[i][j], fileNames);
+ 			// 	}
 			}
 		}
 		System.out.print("      \t");
@@ -93,17 +97,11 @@ public class Solution {
 			}
 			System.out.println();
 		}
+		// int maxValue = Collections.max(valuesMap.keys());
+		// System.out.println(valuesMap.get(maxValue));
 	} catch (NoSuchElementException e){
 		System.out.println("empty directory");
 	}
-		// String textOne = scan.nextLine().toLowerCase();
-		// String textTwo = scan.nextLine().toLowerCase();
-
-
-		// System.out.println(mapOne);
-		// System.out.println(mapTwo);
-		// obj.similarity(mapOne, mapTwo);
-
 	}
 }
 
