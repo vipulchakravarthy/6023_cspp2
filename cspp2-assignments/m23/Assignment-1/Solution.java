@@ -85,14 +85,9 @@ public class Solution {
 					fileMatrix[i][j] = obj.similarity(obj.toText(fileList[i]), obj.toText(fileList[j]));
 					if (maxValue < fileMatrix[i][j]) {
 						maxValue = fileMatrix[i][j];
-						result = "Maximum similarity is between" + fileList[i] + "and" + fileList[j];
+						result = "Maximum similarity is between " + fileList[i].getName() + " and " + fileList[j].getName();
 					}
 				}
-				// if (fileMatrix[i][j] != 100) {
-				// List<String> fileNames = new ArrayList<String>();
-				// fileNames.add(fileList[i].getName(), fileList[j].getName());
-				// valuesMap.put(fileMatrix[i][j], fileNames);
- 			// 	}
 			}
 		}
 		System.out.print("      \t");
