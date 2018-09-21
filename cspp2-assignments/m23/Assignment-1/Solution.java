@@ -77,7 +77,11 @@ public class Solution {
 		Map<Integer, List<String>> valuesMap = new HashMap<>();
 		for (int i = 0; i < length; i++) {
 			for (int j = 0; j < length; j++) {
+				if (i == j) {
+					fileMatrix[i][j] = 100;
+				} else {
 				fileMatrix[i][j] = obj.similarity(obj.toText(fileList[i]), obj.toText(fileList[j]));
+				}
 				// if (fileMatrix[i][j] != 100) {
 				// List<String> fileNames = new ArrayList<String>();
 				// fileNames.add(fileList[i].getName(), fileList[j].getName());
