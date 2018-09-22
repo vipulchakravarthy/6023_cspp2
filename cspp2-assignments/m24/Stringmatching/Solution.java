@@ -1,10 +1,9 @@
-import java.util.*;
-import java.io.*;
-import java.lang.*;
-// import java.util.Map;
-// import java.util.HashMap;
-// import java.lang.*;
-// import java.io.File;
+import java.util.Scanner;
+import java.io.FileReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.NoSuchElementException;
+
 /**this class is to maintain.
 *complete details of two files.
 */
@@ -33,30 +32,6 @@ class Data {
             System.out.println("No file");
         }
         return str;
-    }
-    /**
-     * to remove the unwanted characters.
-     *
-     * @param      text  The text
-     *
-     * @return map which contains
-     * frequency of words.
-     */
-    public Map remove(final String text) {
-        text.toLowerCase();
-        text.replaceAll("[0-9_]", "");
-        String[] words = text.split(" ");
-        Map<String, Integer> map = new HashMap<>();
-        for (String element : words) {
-         if (element.length() > 0) {
-            if (!(map.containsKey(element))) {
-                map.put(element, 1);
-            } else {
-                map.put(element, map.get(element) + 1);
-            }
-        }
-    }
-        return map;
     }
     /**this method is to give the.
      *document distance.
