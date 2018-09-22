@@ -94,7 +94,11 @@ class Todoist {
  * Class for todoist main.
  */
 class TodoistMain {
+    /** this is an empty contructor.
+    */
+    TodoistMain() {
 
+    }
     /**
      * Starts a test.
      */
@@ -186,7 +190,7 @@ class TodoistMain {
         boolean urgent = tokens[five].equals("y");
         String status = tokens[six];
         if (status.equals("todo") || status.equals("done")) {
-            ;
+            String a = "";
         } else {
             throw new Exception("Invalid status dud");
         }
