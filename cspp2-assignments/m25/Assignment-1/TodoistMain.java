@@ -169,6 +169,6 @@ class Task {
 		return warning;
 	}
 	public String toString() {
-		return this.title + ", " + this.assignedTo + ", " + this.timeToComplete + ", " + getImportant() + " ," + getUrgent() + ", " + this.status;
+		return this.title + ", " + this.assignedTo + ", " + this.timeToComplete + ", " + getImportant() + ", " + getUrgent() + ", " + this.status;
 	}
 }
