@@ -46,7 +46,7 @@ class Data {
         double totalLength = lengthOne + lengthTwo;
         int max = 0;
         double lcs = 0;
-        int hundred = 100;
+        final int hundred = 100;
         int[][] array = new int[lengthOne][lengthTwo];
         for (int i = 0; i < lengthOne; i++) {
             for (int j = 0; j < lengthTwo; j++) {
@@ -55,7 +55,8 @@ class Data {
                         array[i][j] = 1;
                     } else {
                         array[i][j] = array[i - 1][j - 1] + 1;
-                    } if (max < array[i][j]) {
+                    }
+                    if (max < array[i][j]) {
                         max = array[i][j];
                     }
                 }
@@ -114,7 +115,8 @@ public final class Solution {
         for (int i = 0; i < length; i++) {
             System.out.print(fileList[i].getName() + "\t");
             for (int j = 0; j < length; j++) {
-                    System.out.print(String.format("%.1f",fileMatrix[i][j]) + "\t\t");
+                    System.out.print(
+                        String.format("%.1f", fileMatrix[i][j]) + "\t\t");
             }
             System.out.println();
         }
