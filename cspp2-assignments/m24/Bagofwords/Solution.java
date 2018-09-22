@@ -1,5 +1,12 @@
-import java.util.*;
-import java.io.*;
+import java.util.Scanner;
+import java.io.FileReader;
+import java.util.Map;
+import java.util.HashMap;
+import java.io.File;
+import java.lang.Throwable;
+import java.lang.Exception;
+import java.io.FileNotFoundException;
+import java.util.NoSuchElementException;
 /**this class is to maintain.
 *complete details of two files.
 */
@@ -65,7 +72,7 @@ class Data {
         double denominator = 1;
         double sumOne = 0;
         double sumTwo = 0;
-        int hundred = 100;
+        final int hundred = 100;
         Map<String, Integer> mapOne = remove(textOne);
         Map<String, Integer> mapTwo = remove(textTwo);
         for (String element: mapOne.keySet()) {
@@ -110,11 +117,9 @@ public final class Solution {
         File[] fileList = files.listFiles();
         int length = fileList.length;
         int maxValue = 0;
-        int hundred = 100;
+        final int hundred = 100;
         String result = "";
         int[][] fileMatrix = new int[length][length];
-        Map<Integer, List<String>> valuesMap
-        = new HashMap<>();
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
                 if (i == j) {
