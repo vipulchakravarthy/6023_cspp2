@@ -51,7 +51,7 @@ class Todoist {
         for (int i = 0; i < taskObj.size(); i++) {
             for (int j = 0; j < count; j++) {
             if (name.equals(taskObj.get(i).getAssignedTo())) {
-                if ("todo".equals(taskObj.get(i).getStatus()) && ("Important".equals(taskObj.get(i).getImportant())) && ("Urgent".equals(taskObj.get(i).getUrgent()))) {
+                if ("todo".equals(taskObj.get(i).getStatus()) && ("Important".equals(taskObj.get(i).getImportant())) && ("Not Urgent".equals(taskObj.get(i).getUrgent()))) {
                     array.add(taskObj.get(i).toString());
                 }
                 }
