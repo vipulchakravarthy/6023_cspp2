@@ -65,6 +65,7 @@ class Data {
         double denominator = 1;
         double sumOne = 0;
         double sumTwo = 0;
+        int hundred = 100;
         Map<String, Integer> mapOne = remove(textOne);
         Map<String, Integer> mapTwo = remove(textTwo);
         for (String element: mapOne.keySet()) {
@@ -83,13 +84,13 @@ class Data {
         }
         denominator = Math.sqrt(sumOne) * Math.sqrt(sumTwo);
         double documentDistance = (
-            (numerator / denominator) * 100);
+            (numerator / denominator) * hundred);
         return (int) (documentDistance);
     }
 }
 /** this is the solution class.
 */
-public class Solution {
+public final class Solution {
     /** an empty constructor.
     */
     private Solution() {
@@ -109,6 +110,7 @@ public class Solution {
         File[] fileList = files.listFiles();
         int length = fileList.length;
         int maxValue = 0;
+        int hundred = 100;
         String result = "";
         int[][] fileMatrix = new int[length][length];
         Map<Integer, List<String>> valuesMap
@@ -116,7 +118,7 @@ public class Solution {
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
                 if (i == j) {
-                    fileMatrix[i][j] = 100;
+                    fileMatrix[i][j] = hundred;
                 } else {
                     fileMatrix[i][j] = obj.similarity(
                         obj.toText(fileList[i]), obj.toText(fileList[j]));
