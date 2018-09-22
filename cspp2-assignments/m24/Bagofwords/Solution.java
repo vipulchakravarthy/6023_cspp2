@@ -2,8 +2,15 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 class Data {
+	/** this is an empty constructor
+	*/
 	Data() {
 	}
+	/**this method is to convert the.
+	*file document text to string
+	*@param file File
+	*@return str returns string of that text.
+	*/
 	public static String toText(File file) {
 		String str = "";
 		try {
@@ -20,6 +27,14 @@ class Data {
 		}
 		return str;
 	}
+	/**
+	 * to remove the unwanted characters.
+	 *
+	 * @param      text  The text
+	 *
+	 * @return map which contains
+	 * frequency of words.
+	 */
 	public Map remove(String text) {
 		text = text.toLowerCase();
 		text = text.replaceAll("[0-9_]", "");
@@ -36,8 +51,14 @@ class Data {
 	}
 		return map;
 	}
+	/**this method is to give the.
+	 *document distance.
+	 *@param String textOne
+	 *@param String textTwo
+	 *@return document distance
+	 */
 
-	public int similarity(String textOne, String textTwo) {
+	public int similarity(final String textOne, final String textTwo) {
 		double numerator = 0;
 		double denominator = 1;
 		double sumOne = 0;
@@ -59,14 +80,24 @@ class Data {
 			sumTwo += mapTwo.get(word) * mapTwo.get(word);
 		}
 		denominator = Math.sqrt(sumOne) * Math.sqrt(sumTwo);
-		double documentDistance = ((numerator / denominator) * 100);
+		double documentDistance = (
+			(numerator / denominator) * 100);
 		return (int)(documentDistance);
 	}
 }
+/** this is the solution class.
+*/
 public class Solution {
+	/** an empty constructor.
+	*/
 	Solution() {
 
 	}
+	/**
+	 * this is main method.
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(String[] args) {
 		try  {
 		Scanner scan = new Scanner(System.in);
@@ -78,16 +109,19 @@ public class Solution {
 		int maxValue = 0;
 		String result = "";
 		int[][] fileMatrix = new int[length][length];
-		Map<Integer, List<String>> valuesMap = new HashMap<>();
+		Map<Integer, List<String>> valuesMap
+		= new HashMap<>();
 		for (int i = 0; i < length; i++) {
 			for (int j = 0; j < length; j++) {
 				if (i == j) {
 					fileMatrix[i][j] = 100;
 				} else {
-					fileMatrix[i][j] = obj.similarity(obj.toText(fileList[i]), obj.toText(fileList[j]));
+					fileMatrix[i][j] = obj.similarity(
+						obj.toText(fileList[i]), obj.toText(fileList[j]));
 					if (maxValue < fileMatrix[i][j]) {
 						maxValue = fileMatrix[i][j];
-						result = "Maximum similarity is between " + fileList[i].getName() + " and " + fileList[j].getName();
+						result = "Maximum similarity is between "
+						+ fileList[i].getName() + " and " + fileList[j].getName();
 					}
 				}
 			}
