@@ -18,7 +18,7 @@ class Data {
         try {
             Scanner input = new Scanner(new FileReader(file));
             StringBuilder text = new StringBuilder();
-            while(input.hasNext()) {
+            while (input.hasNext()) {
                 text.append(input.next());
                 text.append(" ");
             }
@@ -65,8 +65,8 @@ class Data {
         double denominator = 1;
         double sumOne = 0;
         double sumTwo = 0;
-        Map <String, Integer> mapOne = remove(textOne);
-        Map <String, Integer> mapTwo = remove(textTwo);
+        Map<String, Integer> mapOne = remove(textOne);
+        Map<String, Integer> mapTwo = remove(textTwo);
         for (String element: mapOne.keySet()) {
             for (String item: mapTwo.keySet()) {
                 if (element.equals(item)) {
@@ -84,7 +84,7 @@ class Data {
         denominator = Math.sqrt(sumOne) * Math.sqrt(sumTwo);
         double documentDistance = (
             (numerator / denominator) * 100);
-        return (int)(documentDistance);
+        return (int) (documentDistance);
     }
 }
 /** this is the solution class.
@@ -92,7 +92,7 @@ class Data {
 public class Solution {
     /** an empty constructor.
     */
-    Solution() {
+    private Solution() {
 
     }
     /**
@@ -123,14 +123,15 @@ public class Solution {
                     if (maxValue < fileMatrix[i][j]) {
                         maxValue = fileMatrix[i][j];
                         result = "Maximum similarity is between "
-                        + fileList[i].getName() + " and " + fileList[j].getName();
+                        + fileList[i].getName() + " and "
+                        + fileList[j].getName();
                     }
                 }
             }
         }
         System.out.print("      \t");
         for (int i = 0; i < length - 1; i++) {
-            System.out.print("\t" +fileList[i].getName());
+            System.out.print("\t" + fileList[i].getName());
         }
         System.out.println("\t" + fileList[length - 1].getName());
         for (int i = 0; i < length; i++) {
@@ -141,7 +142,7 @@ public class Solution {
             System.out.println();
         }
      System.out.println(result);
-    } catch (NoSuchElementException e){
+    } catch (NoSuchElementException e) {
         System.out.println("empty directory");
     }
     }
