@@ -29,9 +29,9 @@ class Todoist {
 	public List getNextTask(String name, int count) {
 		List<String> array = new List<String>();
 		for (int i = 0; i < taskObj.size(); i++) {
+			for (int j = 0; j < count; j++) {
 			if (name.equals(taskObj.get(i).getAssignedTo())) {
 				if ("todo".equals(taskObj.get(i).getStatus())) {
-					for (int j = 0; j < count; j++) {
 					array.add(taskObj.get(i).toString());
 				}
 				}
