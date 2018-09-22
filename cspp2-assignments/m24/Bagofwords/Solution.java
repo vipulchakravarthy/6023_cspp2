@@ -37,9 +37,9 @@ class Data {
      * @return map which contains
      * frequency of words.
      */
-    public Map remove(String text) {
-        text = text.toLowerCase();
-        text = text.replaceAll("[0-9_]", "");
+    public Map remove(final String text) {
+        text.toLowerCase();
+        text.replaceAll("[0-9_]", "");
         String[] words = text.split(" ");
         Map<String, Integer> map = new HashMap<>();
         for (String element : words) {
