@@ -93,7 +93,7 @@ class Todoist {
 /**
  * Class for todoist main.
  */
-public class TodoistMain {
+class TodoistMain {
     /** this is an empty contructor.
     */
     private TodoistMain() {
