@@ -30,8 +30,10 @@ class Todoist {
 		List<String> array = new List<String>();
 		for (int i = 0; i < taskObj.size(); i++) {
 			if (name.equals(taskObj.get(i).getAssignedTo())) {
-				for (int j = 0; j < count; j++) {
+				if ("todo".equals(taskObj.get(i).getStatus())) {
+					for (int j = 0; j < count; j++) {
 					array.add(taskObj.get(i).toString());
+				}
 				}
 			}
 		}
