@@ -93,7 +93,7 @@ class Todoist {
 /**
  * Class for todoist main.
  */
-public class TodoistMain {
+class TodoistMain {
 
     /**
      * Starts a test.
@@ -185,7 +185,8 @@ public class TodoistMain {
         boolean important = tokens[four].equals("y");
         boolean urgent = tokens[five].equals("y");
         String status = tokens[six];
-        if (status.equals("todo") || status.equals("done")){
+        if (status.equals("todo") || status.equals("done")) {
+            ;
         } else {
             throw new Exception("Invalid status dud");
         }
