@@ -171,10 +171,10 @@ class Task {
 		return this.assignedTo;
 	}
 	public int getTime() {
-		return timeToComplete;
+		return this.timeToComplete;
 	}
 	public String getStatus() {
-		return status;
+		return this.status;
 	}
 	public String getImportant() {
 		if (this.important == true) {
