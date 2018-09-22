@@ -12,14 +12,14 @@ class Todoist {
 	public void addTask(final Task task) {
 		taskObj.add(task);
 	}
-	public String getNextTask(String name) {
+	public Task getNextTask(String name) {
 		for (int i = 0; i < taskObj.size(); i++) {
 			if (name.equals(taskObj.get(i).getAssignedTo())) {
 				if ("todo".equals(taskObj.get(i).getStatus())) {
 					if (("Important".equals(taskObj.get(i).getImportant())) && "Not Urgent".equals(taskObj.get(i).getUrgent())) {
-						return taskObj.get(i).toString();
+						return taskObj.get(i);
 					} else if (("Important".equals(taskObj.get(i).getImportant())) && "Urgent".equals(taskObj.get(i).getUrgent())) {
-						return taskObj.get(i).toString();
+						return taskObj.get(i);
 					}
 				}
 			}
@@ -178,17 +178,17 @@ class Task {
 	}
 	public String getImportant() {
 		if (this.important == true) {
-			message += "Important";
+			message = "Important";
 		} else {
-			message += "Not Important";
+			message = "Not Important";
 		}
 		return message;
 	}
 	public String getUrgent() {
 		if (this.urgent == true) {
-			warning += "Urgent";
+			warning = "Urgent";
 		} else {
-			warning += "Not Urgent";
+			warning = "Not Urgent";
 		}
 		return warning;
 	}
