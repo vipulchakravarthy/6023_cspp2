@@ -178,19 +178,19 @@ class Task {
 	}
 	public String getImportant() {
 		if (this.important == true) {
-			message = "Important";
+			this.message = "Important";
 		} else {
-			message = "Not Important";
+			this.message = "Not Important";
 		}
-		return message;
+		return this.message;
 	}
 	public String getUrgent() {
 		if (this.urgent == true) {
-			warning = "Urgent";
+			this.warning = "Urgent";
 		} else {
-			warning = "Not Urgent";
+			this.warning = "Not Urgent";
 		}
-		return warning;
+		return this.warning;
 	}
 	public String toString() {
 		return this.title + ", " + this.assignedTo + ", " + this.timeToComplete + ", " + getImportant() + ", " + getUrgent() + ", " + this.status;
