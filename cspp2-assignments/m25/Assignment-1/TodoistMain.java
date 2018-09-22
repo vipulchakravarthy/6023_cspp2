@@ -59,7 +59,7 @@ public class TodoistMain {
                     System.out.println(todo);
                 break;
                 case "get-next":
-                    System.out.println(todo.getNextTask(tokens[1]));
+                    System.out.println(todo.getNextTask(tokens[1]).toString());
                 break;
                 // case "get-next-n":
                 //     int n = Integer.parseInt(tokens[2]);
