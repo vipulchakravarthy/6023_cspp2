@@ -3,8 +3,6 @@ import java.io.FileReader;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.File;
-import java.lang.Throwable;
-import java.lang.Exception;
 import java.io.FileNotFoundException;
 import java.util.NoSuchElementException;
 /**this class is to maintain.
