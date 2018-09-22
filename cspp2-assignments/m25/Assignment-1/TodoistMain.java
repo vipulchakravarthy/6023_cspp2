@@ -96,7 +96,7 @@ class Todoist {
 public class TodoistMain {
     /** this is an empty contructor.
     */
-    TodoistMain() {
+    private TodoistMain() {
 
     }
     /**
