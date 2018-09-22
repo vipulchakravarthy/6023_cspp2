@@ -65,12 +65,12 @@ class Data {
      *@return document distance
      */
 
-    public int stringMatching(final String textOne, final String textTwo) {
+    public double stringMatching(final String textOne, final String textTwo) {
         int lengthOne = textOne.length();
         int lengthTwo = textTwo.length();
-        int totalLength = lengthOne + lengthTwo;
+        double totalLength = lengthOne + lengthTwo;
         int max = 0;
-        int lcs = 0;
+        double lcs = 0;
         int hundred = 100;
         int[][] array = new int[lengthOne][lengthTwo];
         for (int i = 0; i < lengthOne; i++) {
@@ -111,10 +111,10 @@ public final class Solution {
         Data obj = new Data();
         File[] fileList = files.listFiles();
         int length = fileList.length;
-        int maxValue = 0;
+        double maxValue = 0;
         final int hundred = 100;
         String result = "";
-        int[][] fileMatrix = new int[length][length];
+        double[][] fileMatrix = new double[length][length];
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
                 if (i == j) {
@@ -145,7 +145,7 @@ public final class Solution {
         }
      System.out.println(result);
     } catch (NoSuchElementException e) {
-        System.out.println("empty directory");
+        System.out.println("Empty Directory");
     }
     }
 }
