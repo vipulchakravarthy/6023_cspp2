@@ -19,7 +19,7 @@ public class List<E> {
     //Constructor
     public List() {
         // Create a variable of the type Object[]
-        list = ((E[])new Object[10]);//Object is the base class for all the classes
+        list = ((E[])new Object[30]);//Object is the base class for all the classes
         size = 0;
     }
     //Overloaded Constructor
@@ -43,7 +43,7 @@ public class List<E> {
     /*Inserts all the elements of specified int
     array to the end of list*/
     public void addAll(E[] items) {
-        if ((size() + items.length) > 10) {
+        if ((size() + items.length) > 30) {
             resize();
         }
         int j = 0;
