@@ -31,7 +31,7 @@ class Todoist {
             if (name.equals(taskObj.get(i).getAssignedTo())) {
                 if ("todo".equals(taskObj.get(i).getStatus())) {
                     if (("Important".equals(taskObj.get(i).getImportant()))
-                        &&"Urgent".equals(taskObj.get(i).getUrgent())) {
+                        && "Urgent".equals(taskObj.get(i).getUrgent())) {
                         return taskObj.get(i);
                     } else if (("Important".equals(
                         taskObj.get(i).getImportant()))
@@ -246,12 +246,12 @@ class Task {
     /**
      * overloaded constructor to initialize variables.
      *
-     * @param      title           The title
-     * @param      assignedTo      The assigned to
-     * @param      timeToComplete  The time to complete
-     * @param      important       The important
-     * @param      urgent          The urgent
-     * @param      status          The status
+     * @param      task           The title
+     * @param      assigned      The assigned to
+     * @param      time  The time to complete
+     * @param      importantOR       The important
+     * @param      urgentOR          The urgent
+     * @param      statusReport          The status
      */
     Task(final String task, final String assigned,
         final int time,
