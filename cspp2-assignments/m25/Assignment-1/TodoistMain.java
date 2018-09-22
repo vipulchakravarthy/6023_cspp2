@@ -26,12 +26,16 @@ class Todoist {
 		}
 		return null;
 	}
-	public Task[] getNextTask(String name, int count) {
+	public List getNextTask(String name, int count) {
+		List<String> array = new List<String>();
 		for (int i = 0; i < taskObj.size(); i++) {
 			if (name.equals(taskObj.get(i).getAssignedTo())) {
+				for (int j = 0; j < count; j++) {
+					array.add(taskObj.get(i).toString());
+				}
 			}
 		}
-		return null;
+		return array;
 	}
 	public int totalTime4Completion() {
 	int total = 0;
@@ -79,8 +83,9 @@ public class TodoistMain {
                 break;
                 case "get-next-n":
                     int n = Integer.parseInt(tokens[2]);
-                    Task[] tasks = todo.getNextTask(tokens[1], n);
-                    System.out.println(Arrays.deepToString(tasks));
+                    // Task[] tasks = todo.getNextTask(tokens[1], n);
+                    // System.out.println(Arrays.deepToString(tasks));
+                    System.out.println(todo.getNextTask(tokens[1], n));
                 break;
                 case "total-time":
                     System.out.println(todo.totalTime4Completion());
