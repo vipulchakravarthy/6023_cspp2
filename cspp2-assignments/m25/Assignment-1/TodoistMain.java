@@ -93,7 +93,7 @@ class Todoist {
 /**
  * Class for todoist main.
  */
-class TodoistMain {
+public class TodoistMain {
     /** this is an empty contructor.
     */
     TodoistMain() {
@@ -211,7 +211,7 @@ class TodoistMain {
  * this class is to specify particular task.
  */
 class Task {
-    /** this is empty constructor
+    /** this is empty constructor.
     */
     Task() {
 
